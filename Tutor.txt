@@ -31,9 +31,18 @@ Git - назначение, git-flow
 значимые и ссылочные типы, место хранения в памяти. (Value Types and Reference Types)
 2. занятие
 практическое использование Git, основные команды и выполнение заданий из книги.
-HW: 45p 54-58p. Создать в feature отдельную папку под названием Dreyer и в ней создать solution с консольным проектом.
-и три первых урока по ITVDN
+HW: 45p 54-58p. Создать в feature отдельную папку под названием Dreyer и в ней создать solution с консольным проектом. (не сделано)
+и три первых урока по ITVDN (+)
 3.	Boxing and Unboxing
+https://itvdn.com/ru/blog/article/boxing-unboxing
+HW подобрать маленькие задания для первых 6 уроков.
+
+Tools->Option ->Keybord:
+Project.NewFolder Alt+C ->создание папки в Solution Explorer
+Project.AddClass Shift+Alt+C -> создание класса
+HW Добавить все выполненные уроки в GIT в solution.
+уроки 4-6.
+
 
 
 
