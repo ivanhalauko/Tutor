@@ -8,14 +8,14 @@ namespace Algorithm
 {
     class Program
     {
-        static void Main()
-        {
-            int a = 5, b = 3;
-            if (a>b)
-            {
-                Console.WriteLine("a>b");
-            }
-            Console.ReadKey();
-        }
+        //static void Main()
+        //{
+        //    int a = 5, b = 3;
+        //    if (a>b)
+        //    {
+        //        Console.WriteLine("a>b");
+        //    }
+        //    Console.ReadKey();
+        //}
     }
 }
