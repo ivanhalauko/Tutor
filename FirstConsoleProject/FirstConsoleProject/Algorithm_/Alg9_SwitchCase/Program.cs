@@ -13,7 +13,14 @@ namespace Alg9_SwitchCase
             Console.WriteLine("Нажмите Y или N");
             string selection = Console.ReadLine();
             selection = selection.ToUpper();
-            switch (selection)
+            Program.SwitchStaticMethod(selection);
+            Program objectProgram = new Program();
+            objectProgram.SwitchNonStaticMethod(selection);
+           
+        }
+        static void SwitchStaticMethod(string button)
+        {
+            switch (button)
             {
                 case "Y":
                     Console.WriteLine("Вы нажали букву Y");
@@ -23,6 +30,21 @@ namespace Alg9_SwitchCase
                     break;
                 default:
                     Console.WriteLine("Вы нажали неизвестную букву");
+                    break;
+            }
+        }
+        public void SwitchNonStaticMethod(string button)
+        {
+            switch (button)
+            {
+                case "Y":
+                    Console.WriteLine("Вы нажали не статическую литеру Y");
+                    break;
+                case "N":
+                    Console.WriteLine("Вы нажали не статическую литеру N");
+                    break;
+                default:
+                    Console.WriteLine("Вы нажали неизвестную не статическую литеру");
                     break;
             }
         }
