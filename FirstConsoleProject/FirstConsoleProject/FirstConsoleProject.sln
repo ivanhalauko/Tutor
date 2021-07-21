@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiderLoop", "SpiderLoop\Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsTypes", "MethodsTypes\MethodsTypes.csproj", "{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab1Var7", "Lab1Var7\Lab1Var7.csproj", "{2DF56BFE-CD0A-4ACE-A2D8-5E74EBB77CCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF56BFE-CD0A-4ACE-A2D8-5E74EBB77CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF56BFE-CD0A-4ACE-A2D8-5E74EBB77CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF56BFE-CD0A-4ACE-A2D8-5E74EBB77CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF56BFE-CD0A-4ACE-A2D8-5E74EBB77CCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
