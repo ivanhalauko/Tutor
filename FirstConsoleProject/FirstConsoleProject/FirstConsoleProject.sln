@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraLoop", "DijkstraLoo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiderLoop", "SpiderLoop\SpiderLoop.csproj", "{561AD078-2486-4FA8-BDAE-1EB29C489BFF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsTypes", "MethodsTypes\MethodsTypes.csproj", "{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{561AD078-2486-4FA8-BDAE-1EB29C489BFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{561AD078-2486-4FA8-BDAE-1EB29C489BFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{561AD078-2486-4FA8-BDAE-1EB29C489BFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45AB935-9D31-4B4C-9AAF-95BAC3819AD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
