@@ -22,7 +22,7 @@ namespace MethodsTypes
     {
         private string[] _studentsName=new string[5];
         public string Name { get; set; }
-        public void ShowStudents()//Структурный метод
+        public void ShowStudents()
         {
             int length =_studentsName.Length;
             for (int i = 0; i < length; i++)
