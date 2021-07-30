@@ -11,6 +11,10 @@ namespace lab3
         static void Main(string[] args)
         {
             Calculation calculation = new Calculation();
+            Console.WriteLine(new string('_', 20));
+            calculation.ShowFindArray();
+            Console.WriteLine(new string('_', 20));
+            calculation.GetRandomArray();
             double[] calarray = calculation.AddArray();
             double[] result=calculation.CalArray(calarray);
             calculation.ShowArray(result);
@@ -20,17 +24,17 @@ namespace lab3
             int datsRank = calculation.GetRank(result);
             calculation.ShowArray(datsRank);
             Console.WriteLine(new string('_', 20));
-            // double[] countData = calculation.GetCountablNumbers(result);
-            //calculation.ShowArray(countData);
+            double[] countData = calculation.GetCountablNumbers(result);
+            calculation.ShowArray(countData);
+            Console.WriteLine(new string('_', 20));
             calculation.ShowArrayWithForeach(result);
             Console.WriteLine(new string('_', 20));
             calculation.ShowReverseArray(result);
             Console.WriteLine(new string('_', 20));
             calculation.ShowCopyArray(result);
             Console.WriteLine(new string('_', 20));
-            calculation.ShowSortArray(result);
-            Console.WriteLine(new string('_', 20));
-            calculation.ShowFindArray(result);
+            calculation.ShowSortArray();
+           
             Console.WriteLine(new string('_', 20));
             calculation.ShowClearArray(result);
         }
@@ -128,14 +132,18 @@ namespace lab3
         }
         public double [] GetCountablNumbers(double [] data)
         {
-            double[] result=new double[data.Length];
+            Console.WriteLine("Countabl Numbers");
+            int k = 2;
+            double[] result=new double[k];
             for (int i = 0; i < data.Length; i++)
             {
                 double ostatok = data[i] % 2;
                 if (ostatok==0)
                 {
                     double element = data[i];
-                    result[i] = element;
+                    k++;
+                    result = new double[k];
+                    result[k] = element;
                 }
             }
             return result;
@@ -158,7 +166,7 @@ namespace lab3
         }
         public double[] GetCountNum(double[] data)
         {
-            double[] result = new double[data.Length];
+            double[] result = new double[2];
             for (int i = 0; i < data.Length; i++)
             {
                 double ost = data[i] % 1;
@@ -172,7 +180,7 @@ namespace lab3
         }
         public void ShowCopyArray(double[] array)
         {
-            double[] res = new double[10];
+            double[] res = new double[array.Length];
             Console.WriteLine("Array copy");
             Array.Copy(array, 0,res, 0, res.Length);//
             foreach (var item in array)
@@ -191,7 +199,7 @@ namespace lab3
                 Console.WriteLine(item);
             }
         }
-        public void ShowSortArray(double [] data)//зачем сюда заводить параметр?
+        public void ShowSortArray()
         {
             Console.WriteLine("Array sort");
             double[] res = {-5,2,5,6,2,12,4,1,0,22,-43};
@@ -201,12 +209,25 @@ namespace lab3
                 Console.WriteLine(item);
             }
         }
-        public void ShowFindArray(double [] data)
+        public void ShowFindArray()
         {
             Console.WriteLine("Array find");
-            //double[] res = { 5, 25, 2, 6, 2, 1, 5, 6, 6, 8, 4, 5, 6, 4, 2, 1, 1, 5, 6, 4, 47, 1 };
-           Array.Find(data,i => i == 6);
-            foreach (var item in data)
+            double[] res = { 5, 25, 2, 6, 2, 1, 5, 6, 6, 8, 4, 5, 6, 4, 2, 1, 1, 5, 6, 4, 47, 1 };
+            double m = 5;
+            double k = 10;
+           double[] elems=Array.FindAll(res, i=>i==m && i==k);
+            foreach (var item in elems)
+            {
+                Console.WriteLine(item);
+            }
+        }
+        public void  GetRandomArray()
+        {
+            Console.WriteLine("Random");
+            var rand = new Random();
+            byte[] elems = new byte[5];
+            rand.NextBytes(elems);
+            foreach (var item in elems)
             {
                 Console.WriteLine(item);
             }
