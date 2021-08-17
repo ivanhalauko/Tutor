@@ -161,7 +161,7 @@ namespace lab3
             Array.Clear(data, 0, data.Length);
             foreach (var item in data)
             {
-                Console.WriteLine(item);//СУПЕР ОГРОМНЫЙ ВОПРОС !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                Console.WriteLine(item);
             }
         }
         public double[] GetCountNum(double[] data)
