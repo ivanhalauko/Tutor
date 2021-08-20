@@ -8,14 +8,17 @@ namespace Task_04
 {
     class Point
     {
-        private double _point1;
-        private double _point2;
-        private int _point3;
-        public double Point1; 
-        public Point(double point1, double point2)
+        private int _x;
+        private int _y;
+        private string _name;
+        public int X { get => _x;}
+        public int Y { get => _y;}
+        public string Name { get => _name;}
+        public Point(int x, int y, string name)
         {
-            _point1 = point1;
-            _point2 = point2;
+            _x = x;
+            _y = y;
+            _name = name;
         }
     }
 }
