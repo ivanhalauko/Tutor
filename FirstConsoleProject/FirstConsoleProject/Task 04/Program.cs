@@ -16,8 +16,14 @@ namespace Task_04
             Point fourPoint = new Point(1, 2, "d");
             Point fivePoint = new Point(4, 0, "e");
             Figure figure = new Figure(firstPoint,secondPoint,thirdPoint,fourPoint, fivePoint);
+            Figure figur = new Figure(firstPoint, secondPoint, thirdPoint);
+            Figure fuger = new Figure(firstPoint, secondPoint, thirdPoint, fourPoint);
             Console.WriteLine(figure._name);
             Console.WriteLine(figure.CalculatePerimetr(figure));
+            Console.WriteLine(figur._name);
+            Console.WriteLine(figur.CalculatePerimetr(figur));
+            Console.WriteLine(fuger._name);
+            Console.WriteLine(fuger.CalculatePerimetr(fuger));
         }
     }
 }
