@@ -29,7 +29,7 @@ namespace Task_04
             _thirdPoint = thirdPoint;
             _fourPoint = fourPoint;
             _name = "Tetragon";
-        }
+        } 
 
         public Figure(Point firstPoint, Point secondPoint, Point thirdPoint, Point fourPoint, Point fivePoint)
         {
