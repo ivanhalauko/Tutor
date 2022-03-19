@@ -17,6 +17,7 @@ namespace Arrays
             Console.WriteLine(new string('_', 20));
             cal.ShowArray(result);
             Console.WriteLine(new string('_', 20));
+            double[] data = null;
             double[] res = cal.CountArray(data);
             cal.ShowArray(res);
             Console.WriteLine(new string('_', 20));

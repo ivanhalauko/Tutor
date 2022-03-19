@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 ////вывести в консоль преобразованное в эту систему исходное число.
 namespace Task_2
 {
-    class Program
+    public class Program
 
     {
         static void Main(string[] args)
@@ -16,11 +16,11 @@ namespace Task_2
             int baseNumber = 11;
             int value = 21;
             Console.WriteLine(value);
-            string result = Program.ConverTo2(value, baseNumber);
-            Console.WriteLine(result);
+           string result = Program.ConverTo(value, baseNumber);
+           Console.WriteLine(result);
         }
 
-            public static string ConverTo2(int value, int baseNumber)
+        public static string ConverTo(int value, int baseNumber)
         {
             Dictionary<int, string> numbers = new Dictionary<int, string>()
             {
@@ -50,12 +50,11 @@ namespace Task_2
             string result = null;
             if (baseNumber>9 && baseNumber <20)
             {
-                int key = 0;
                 string valueFromDictionary = null;
-                numbers.TryGetValue(key,out valueFromDictionary);
                 value = Math.DivRem(value, baseNumber, out remOfDiv);
                 if (remOfDiv > 9)
                 {
+                    numbers.TryGetValue(remOfDiv, out valueFromDictionary);
                     result = valueFromDictionary; 
                 }
                 else

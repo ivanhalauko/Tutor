@@ -19,7 +19,7 @@ namespace Task3
     {
         static void Main(string[] args)
         {
-            int power = 0;
+            int power = 3;
             string volume = "low";
             string type = "super car";
             int serialNumber = 52469;
