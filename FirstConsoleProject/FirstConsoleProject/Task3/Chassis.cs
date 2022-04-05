@@ -7,16 +7,25 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    class Chassis
+    public class Chassis
     {
-       public int wheelsNumber;
-        public int number;
-        public int permissibleLoad;
-        public Chassis(int wheelsNumber, int number, int permissibleLoad)
+       private int _wheelsNumber;
+       private int _number;
+       private int _permissibleLoad;
+
+        public int WheelsNumber { get => _wheelsNumber; set { _wheelsNumber = value; } }
+        public int Number { get => _number; set {_number = value; } }
+        public int PermissibleLoad { get => _permissibleLoad; set {_permissibleLoad = value; }
+        }
+        public Chassis(int _wheelsNumber, int _number, int _permissibleLoad)
         {
-            this.wheelsNumber = wheelsNumber;
-            this.number = number;
-            this.permissibleLoad = permissibleLoad;
+            WheelsNumber = _wheelsNumber;
+            Number = _number;
+            PermissibleLoad = _permissibleLoad;
+        }
+        public override string ToString()
+        {
+            return $"Wheels Number: {WheelsNumber}, Number:{Number},Permissible Load:{PermissibleLoad}";
         }
     }
 }

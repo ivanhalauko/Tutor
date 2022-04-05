@@ -15,7 +15,7 @@ namespace Task_2Tests
             Program program = new Program();
 
             // Act
-            string actual = Program.ConverTo(value, baseNumber);
+            int actual = Program.ConverTo(value, baseNumber);
 
             // Assert
             Assert.AreEqual(expected, actual);
@@ -25,6 +25,15 @@ namespace Task_2Tests
         [TestCase("2A", 32, 11)]
         [TestCase("3A", 43, 11)]
         [TestCase("4A", 54, 11)]
+        [TestCase("1", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
+        [TestCase("1A", 21, 11)]
         public void COnverTo_WhenDataValide_ShouldValidResult(
             string expected, int value, int baseNumber)
         {
@@ -32,7 +41,7 @@ namespace Task_2Tests
             Program program = new Program();
 
             // Act
-            string actual = Program.ConverTo(value, baseNumber);
+            int actual = Program.ConverTo(value, baseNumber);
 
             // Assert
             Assert.AreEqual(expected, actual);

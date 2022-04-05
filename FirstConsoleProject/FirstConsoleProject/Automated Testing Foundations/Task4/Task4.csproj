@@ -4,14 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB087E28-0755-4B78-AC15-7CAD8AF574CE}</ProjectGuid>
+    <ProjectGuid>{A594BF43-7748-47E3-B860-59CAEFE5BFA2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task3</RootNamespace>
-    <AssemblyName>Task3</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>Task4</RootNamespace>
+    <AssemblyName>Task4</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,15 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bus.cs" />
-    <Compile Include="Chassis.cs" />
-    <Compile Include="Engine.cs" />
-    <Compile Include="PassengerCar.cs" />
+    <Compile Include="Airplane.cs" />
+    <Compile Include="Bird.cs" />
+    <Compile Include="Drone.cs" />
+    <Compile Include="IFlyble.cs" />
+    <Compile Include="MyFirstAbstractClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scooter.cs" />
-    <Compile Include="Transmission.cs" />
-    <Compile Include="Truck.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
