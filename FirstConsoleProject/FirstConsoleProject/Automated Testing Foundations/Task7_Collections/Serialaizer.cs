@@ -13,7 +13,7 @@ namespace Task7_Collections
     {
         public void Serialaize<T>(T entities) where T : List<Vehicle>
         {
-            XmlSerializer xmlSerializer = new XmlSerializer(entities.GetType());
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             using (FileStream fs = new FileStream("CarsList.xml", FileMode.OpenOrCreate))
             {
                 xmlSerializer.Serialize(fs, entities);
