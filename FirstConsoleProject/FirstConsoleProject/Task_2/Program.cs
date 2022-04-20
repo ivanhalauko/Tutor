@@ -89,9 +89,7 @@ namespace Task_2
             int baseNumber = 11;
             int value = 21;
             Console.WriteLine(value);
-
-            string result = Program.ConverTo(value, baseNumber);
-            Console.WriteLine(result);
+            Console.WriteLine(AlgorithmWorking(value,baseNumber, Program.ConverTo(value, baseNumber)));
         }
 
         public static int ConverTo(int value, int baseNumber)
@@ -102,7 +100,7 @@ namespace Task_2
             return remOfDiv;
         }
 
-        public static int AlgorithmWorking(int value, int baseNumber, int remOfDiv)
+        public static string AlgorithmWorking(int value, int baseNumber, int remOfDiv)
         {
             Dictionary<int, string> dictionary = Lib.Numbers;
             string result = null;
@@ -135,6 +133,7 @@ namespace Task_2
                     }
                 }
             }
+
             char[] charArray = result.ToCharArray();
             Array.Reverse(charArray);
             result = new string(charArray);

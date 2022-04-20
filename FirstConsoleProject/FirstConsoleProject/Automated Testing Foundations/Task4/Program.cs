@@ -19,9 +19,9 @@ namespace Task4
     {
         static void Main(string[] args)
         {
-            Drone drone = new Drone(10, "stay");
+            //Drone drone = new Drone(10, "stay");
             //drone.MyProperty = 102;
-            drone.MySecondProperty = 99;
+            //drone.MySecondProperty = 99;
         }
     }
 }

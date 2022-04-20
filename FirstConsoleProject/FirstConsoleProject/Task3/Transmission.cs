@@ -24,6 +24,11 @@ namespace Task3
             NumberOfGears = _numberOfGears;
             Manufacturer = _manufacturer;
         }
+
+        public Transmission()
+        {
+        }
+
         public override string ToString()
         {
             return $"Type Tran: {TypeTran}, Number of Gears:{NumberOfGears},Manufacturer:{Manufacturer}";

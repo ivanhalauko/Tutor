@@ -23,6 +23,11 @@ namespace Task3
             Number = _number;
             PermissibleLoad = _permissibleLoad;
         }
+
+        public Chassis()
+        {
+        }
+
         public override string ToString()
         {
             return $"Wheels Number: {WheelsNumber}, Number:{Number},Permissible Load:{PermissibleLoad}";

@@ -13,16 +13,32 @@ namespace Task4
         private int _endPoint;
         private int _flyTime;
 
-        public int Speed { get => _speed; set {_speed = value; } }
+        public int Speed 
+        { 
+            get => _speed; 
+            set 
+            {
+                _speed = new Random().Next(0, 20);
+                _speed = CatchValueSpeed(_speed);
+            } 
+        }
 
+        private int CatchValueSpeed(int _speed)
+        {
+            while (_speed == 0)
+            {
+                _speed = new Random().Next(0, 20);
+            }
+            return _speed;
+        }
         public int CurrentPosition { get => _currentPosition; set {_currentPosition = value; } }
         public int EndPoint { get => _endPoint; set {_endPoint = value; } }
 
-        public int FlyTime { get => GetFlyTime(); set {_flyTime = value; } }
+        public int FlyTime { get => GetFlyTime(EndPoint); set {_flyTime = value; } }
 
-        public Bird(int _speed , int _currenPosition)
+        public Bird(int _endpoint, int _currenPosition)
         {
-            Speed = _speed;
+            EndPoint = _endPoint;
             CurrentPosition = _currenPosition;
         }
         public override string ToString()
@@ -32,13 +48,12 @@ namespace Task4
 
         public int FlyTo(int finish)
         {
-            _endPoint = finish;
-            return _endPoint; 
+            return finish; 
         }
 
-        public int GetFlyTime()
+        public int GetFlyTime(int finish)
         {
-            FlyTime = (_currentPosition - _endPoint) / _speed;
+            FlyTime = (_currentPosition - finish) / _speed;
             return FlyTime;
         }
     }

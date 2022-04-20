@@ -29,6 +29,11 @@ namespace Task3
             Type = _type;
             SerialNumber = _serialNumber;
         }
+
+        public Engine()
+        {
+        }
+
         public override string ToString()
         {
             return $"EnginePower: {Power}, Volume:{Volume},Type{Type}, SerialNumber:{SerialNumber}";

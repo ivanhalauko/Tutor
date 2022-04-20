@@ -27,6 +27,10 @@ namespace Task3
             Chassis = new Chassis(wheelsNumber, number, permissibleLoad);
         }
 
+        public PassengerCar()
+        {
+        }
+
         public override string ToString()
         {
             return $"Transmission:{Transmission}, Engine: {Engine}, Chassis:{Chassis}";

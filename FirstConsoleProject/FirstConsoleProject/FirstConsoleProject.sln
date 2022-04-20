@@ -125,6 +125,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4", "Automated Testing 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleOfCollection", "Automated Testing Foundations\ExampleOfCollection\ExampleOfCollection.csproj", "{0464723F-6867-46B2-A472-4BF3B40C90D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task7_Collections", "Automated Testing Foundations\Task7_Collections\Task7_Collections.csproj", "{1DE9CE98-5542-430E-967A-879291389684}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleSerializationMetanit", "Automated Testing Foundations\ExampleSerializationMetanit\ExampleSerializationMetanit.csproj", "{3CEE2E7F-CF5B-45AF-BAA9-95363FA9041C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -331,6 +335,14 @@ Global
 		{0464723F-6867-46B2-A472-4BF3B40C90D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0464723F-6867-46B2-A472-4BF3B40C90D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0464723F-6867-46B2-A472-4BF3B40C90D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DE9CE98-5542-430E-967A-879291389684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DE9CE98-5542-430E-967A-879291389684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DE9CE98-5542-430E-967A-879291389684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DE9CE98-5542-430E-967A-879291389684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CEE2E7F-CF5B-45AF-BAA9-95363FA9041C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEE2E7F-CF5B-45AF-BAA9-95363FA9041C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEE2E7F-CF5B-45AF-BAA9-95363FA9041C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEE2E7F-CF5B-45AF-BAA9-95363FA9041C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -375,6 +387,8 @@ Global
 		{FD95C71C-1907-442D-A3D6-B2A8A582A1F3} = {ECF3A6E8-5819-4C55-A095-662637EE1B9A}
 		{A594BF43-7748-47E3-B860-59CAEFE5BFA2} = {7D00C2A6-2705-4435-BCB8-D87DC08333DA}
 		{0464723F-6867-46B2-A472-4BF3B40C90D2} = {7D00C2A6-2705-4435-BCB8-D87DC08333DA}
+		{1DE9CE98-5542-430E-967A-879291389684} = {7D00C2A6-2705-4435-BCB8-D87DC08333DA}
+		{3CEE2E7F-CF5B-45AF-BAA9-95363FA9041C} = {7D00C2A6-2705-4435-BCB8-D87DC08333DA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E775CFD-4062-4A75-BB70-DD56819D43EE}

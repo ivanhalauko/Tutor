@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Task3
 {
-    class Scooter
+    [XmlInclude(typeof(Scooter))]
+    [Serializable]
+    public class Scooter
     {
         private Transmission _transmission;
         private Engine _engine;
@@ -27,6 +30,11 @@ namespace Task3
             Engine = new Engine(_power, _volume, _type, _serialNumber);
             Chassis = new Chassis(wheelsNumber, number, permissibleLoad);
         }
+
+        public Scooter()
+        {
+        }
+
         public override string ToString()
         {
             return $"Transmission:{Transmission}, Engine: {Engine}, Chassis:{Chassis}";

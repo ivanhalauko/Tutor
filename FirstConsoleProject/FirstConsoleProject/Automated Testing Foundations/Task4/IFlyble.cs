@@ -9,6 +9,6 @@ namespace Task4
     public interface IFlyble
     {
         int FlyTo(int finish);
-        int GetFlyTime();
+        int GetFlyTime(int finish);
     }
 }

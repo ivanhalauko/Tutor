@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task3
 {
-    class Truck
+    public class Truck
     {
         private Transmission _transmission;
         private Engine _engine;
@@ -27,6 +27,11 @@ namespace Task3
             Engine = new Engine(_power, _volume, _type, _serialNumber);
             Chassis = new Chassis(wheelsNumber, number, permissibleLoad);
         }
+
+        public Truck()
+        {
+        }
+
         public override string ToString()
         {
             return $"Transmission:{Transmission}, Engine: {Engine}, Chassis:{Chassis}";

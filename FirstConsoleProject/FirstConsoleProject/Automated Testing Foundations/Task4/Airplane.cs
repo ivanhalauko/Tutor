@@ -6,19 +6,49 @@ using System.Threading.Tasks;
 
 namespace Task4
 {
-    class Airplane
+    class Airplane : IFlyble
     {
-        private int _speed;
-        private string _currentPosition;
+        private int _speed = 0;
+        private int _currentPosition;
+        private const int VELOSITYSTEP = 10;
+        private int _endPoint;
+        private int _flyTime;
 
-        public int Speed { get => _speed; set { _speed = value; } }
+        public int Speed 
+        { 
+            get => _speed = _speed + VELOSITYSTEP;
+        }
 
-        public string CurrentPosition { get => _currentPosition; set { _currentPosition = value; } }
+        public int CurrentPosition { get => _currentPosition; set { _currentPosition = value; } }
 
-        public Airplane(int _speed, string _currenPosition)
+        public int EndPoint { get => _endPoint; set { _endPoint = value; } }
+
+        public int FlyTime { get => GetFlyTime(EndPoint); set { _flyTime = value; } }
+
+
+        public Airplane(int _endPoint, int _currenPosition)
         {
-            Speed = _speed;
+            EndPoint = _endPoint;
             CurrentPosition = _currenPosition;
+        }
+
+
+        public int FlyTo(int finish)
+        {
+            EndPoint = finish;
+            return EndPoint - CurrentPosition;
+        }
+        public int GetFlyTime(int finish)
+        {
+            int time = 0;
+            int step = FlyTo(finish) / 10;
+            for (int i = 0; i < step; i++)
+            {
+               int timeStep = step / Speed;
+                time = time + timeStep;
+            }
+            FlyTime = time;
+            return FlyTime;
         }
         public override string ToString()
         {
