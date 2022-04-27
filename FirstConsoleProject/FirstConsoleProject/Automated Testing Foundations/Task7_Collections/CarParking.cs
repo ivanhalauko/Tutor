@@ -81,7 +81,7 @@ namespace Task7_Collections
 
             List<Vehicle> carParkingCollection = new List<Vehicle>();
             carParkingCollection.Add(bus);
-            //carParkingCollection.Add(scooter);
+            carParkingCollection.Add(scooter);
             //carParkingCollection.Add(truck);
             //carParkingCollection.Add(passengerCar);
             return carParkingCollection;

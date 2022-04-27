@@ -73,8 +73,8 @@ namespace Task7_Collections
             //Scooter scooter2 = null;
             //scooter2 = serializScooter.Deserialize();
 
-            Serialaizer serialaizer = new Serialaizer();
-            serialaizer.Serialaize<List<Vehicle>>(list);
+            GenericSerializer<List<Vehicle>> serialaizer = new GenericSerializer<List<Vehicle>>();
+            serialaizer.Serialaize(list);
         }
     }
 }
