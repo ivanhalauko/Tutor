@@ -1,0 +1,7 @@
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\bin\Debug\ExampleOfCollection.exe.config
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\bin\Debug\ExampleOfCollection.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\bin\Debug\ExampleOfCollection.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\obj\Debug\ExampleOfCollection.csproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\obj\Debug\ExampleOfCollection.csproj.CoreCompileInputs.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\obj\Debug\ExampleOfCollection.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleOfCollection\obj\Debug\ExampleOfCollection.pdb

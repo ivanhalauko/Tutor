@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Truck xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Transmission>
+    <TypeTran>Truck trans</TypeTran>
+    <NumberOfGears>10</NumberOfGears>
+    <Manufacturer>Volvo</Manufacturer>
+  </Transmission>
+  <Engine>
+    <Power>0</Power>
+    <SerialNumber>0</SerialNumber>
+  </Engine>
+  <Chassis>
+    <WheelsNumber>6</WheelsNumber>
+    <Number>4</Number>
+    <PermissibleLoad>2390</PermissibleLoad>
+  </Chassis>
+</Truck>

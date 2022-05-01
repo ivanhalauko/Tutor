@@ -1,0 +1,7 @@
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\bin\Debug\FirstConsoleProject.exe.config
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\bin\Debug\FirstConsoleProject.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\bin\Debug\FirstConsoleProject.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\obj\Debug\CastSystemTypes.csproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\obj\Debug\CastSystemTypes.csproj.CoreCompileInputs.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\obj\Debug\FirstConsoleProject.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\FirstConsoleProject\obj\Debug\FirstConsoleProject.pdb

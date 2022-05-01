@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Scooter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Transmission>
+    <TypeTran>Scooter trans</TypeTran>
+    <NumberOfGears>2</NumberOfGears>
+    <Manufacturer>Minsk</Manufacturer>
+  </Transmission>
+  <Engine>
+    <Power>0</Power>
+    <SerialNumber>0</SerialNumber>
+  </Engine>
+  <Chassis>
+    <WheelsNumber>2</WheelsNumber>
+    <Number>3</Number>
+    <PermissibleLoad>12</PermissibleLoad>
+  </Chassis>
+</Scooter>

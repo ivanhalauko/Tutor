@@ -1,0 +1,7 @@
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\bin\Debug\ExampleSerializationMetanit.exe.config
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\bin\Debug\ExampleSerializationMetanit.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\bin\Debug\ExampleSerializationMetanit.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\obj\Debug\ExampleSerializationMetanit.csproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\obj\Debug\ExampleSerializationMetanit.csproj.CoreCompileInputs.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\obj\Debug\ExampleSerializationMetanit.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\ExampleSerializationMetanit\obj\Debug\ExampleSerializationMetanit.pdb

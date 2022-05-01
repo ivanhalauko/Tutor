@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Bus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Transmission>
+    <TypeTran>Bus trans</TypeTran>
+    <NumberOfGears>7</NumberOfGears>
+    <Manufacturer>Volvo</Manufacturer>
+  </Transmission>
+  <Engine>
+    <Power>0</Power>
+    <SerialNumber>0</SerialNumber>
+  </Engine>
+  <Chassis>
+    <WheelsNumber>4</WheelsNumber>
+    <Number>2</Number>
+    <PermissibleLoad>523</PermissibleLoad>
+  </Chassis>
+</Bus>

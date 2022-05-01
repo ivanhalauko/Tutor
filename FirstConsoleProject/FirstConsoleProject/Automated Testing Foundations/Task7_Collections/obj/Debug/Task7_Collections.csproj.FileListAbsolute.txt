@@ -1,0 +1,11 @@
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\bin\Debug\Task7_Collections.exe.config
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\bin\Debug\Task7_Collections.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\bin\Debug\Task7_Collections.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\obj\Debug\Task7_Collections.csproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\obj\Debug\Task7_Collections.csproj.CoreCompileInputs.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\obj\Debug\Task7_Collections.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\obj\Debug\Task7_Collections.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\bin\Debug\Task3.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\bin\Debug\Task3.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\bin\Debug\Task3.exe.config
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Automated Testing Foundations\Task7_Collections\obj\Debug\Task7_Collections.csproj.CopyComplete

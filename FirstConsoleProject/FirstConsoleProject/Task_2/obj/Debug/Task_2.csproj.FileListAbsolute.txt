@@ -1,0 +1,7 @@
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\bin\Debug\Task_2.exe.config
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\bin\Debug\Task_2.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\bin\Debug\Task_2.pdb
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\obj\Debug\Task_2.csproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\obj\Debug\Task_2.csproj.CoreCompileInputs.cache
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\obj\Debug\Task_2.exe
+D:\LearnDotNet\Tutor\FirstConsoleProject\FirstConsoleProject\Task_2\obj\Debug\Task_2.pdb

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PassengerCar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Transmission>
+    <TypeTran>super car</TypeTran>
+    <NumberOfGears>6</NumberOfGears>
+    <Manufacturer>Ferrari</Manufacturer>
+  </Transmission>
+  <Engine>
+    <Power>0</Power>
+    <SerialNumber>0</SerialNumber>
+  </Engine>
+  <Chassis>
+    <WheelsNumber>2</WheelsNumber>
+    <Number>1</Number>
+    <PermissibleLoad>512</PermissibleLoad>
+  </Chassis>
+</PassengerCar>
