@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "FTTWy0bQjfBE84gM8dC+z4xCTjaQIeEyAauEAdq4DeYs7eiJIocb2Fd2AruEs1u++fqiDCH/u643Z4WGin32DA==",
+  "success": true,
+  "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\src\\AccountingWorksIinstruments.DataAccess\\AccountingWorkInstruments.DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sergey\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

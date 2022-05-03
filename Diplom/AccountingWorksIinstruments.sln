@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{44E0
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AccountingWorksIinstruments.Database", "src\AccountingWorksIinstruments.Database\AccountingWorksIinstruments.Database.sqlproj", "{E7EEA32A-82FC-4D95-AB99-6F0DD16957D5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountingWorkInstruments.DataAccess", "src\AccountingWorksIinstruments.DataAccess\AccountingWorkInstruments.DataAccess.csproj", "{38ED283F-C931-4817-9076-3514E4977108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{E7EEA32A-82FC-4D95-AB99-6F0DD16957D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7EEA32A-82FC-4D95-AB99-6F0DD16957D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E7EEA32A-82FC-4D95-AB99-6F0DD16957D5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{38ED283F-C931-4817-9076-3514E4977108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38ED283F-C931-4817-9076-3514E4977108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38ED283F-C931-4817-9076-3514E4977108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38ED283F-C931-4817-9076-3514E4977108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E7EEA32A-82FC-4D95-AB99-6F0DD16957D5} = {0B23ED55-75CC-433E-905B-2355A076A259}
+		{38ED283F-C931-4817-9076-3514E4977108} = {0B23ED55-75CC-433E-905B-2355A076A259}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3160E0C2-1909-4860-A342-26196BAF1325}
