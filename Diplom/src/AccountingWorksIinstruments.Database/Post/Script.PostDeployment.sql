@@ -1,18 +1,10 @@
-﻿--- Worker
-if not exists (SELECT*FROM dbo.Worker WHERE Name='Nikolai' and Surname='Nikolaev' and SecondName='Nikolaevich' and PositionId=1 and ToolId=1)
+﻿--- Location
+if not exists (SELECT*FROM dbo.Location WHERE TheNameOfTheOrganization='RKP' and Warehouse1='Equipped' and Warehouse2='Equipped' and Warehouse3='Equipped')
 begin
-insert into dbo.Worker (Name,Surname,SecondName,PositionId,ToolId)
+insert into dbo.Location(TheNameOfTheOrganization,Warehouse1,Warehouse2,Warehouse3)
 values
-('Nikolai','Nikolaev','Nikolaevich',1,1)
+('RKP','Equipped','Equipped','Equipped')
 end
-GO
---- Position
-if not exists (SELECT*FROM dbo.Position WHERE Name='Master')
-begin
-insert into dbo.Position(Name)
-values
-('Master')
-end 
 GO
 
 --- Tool
@@ -24,11 +16,20 @@ values
 end
 GO
 
---- Location
-if not exists (SELECT*FROM dbo.Location WHERE TheNameOfTheOrganization='RKP' and Warehouse1='Equipped' and Warehouse2='Equipped' and Warehouse3='Equipped')
+--- Position
+if not exists (SELECT*FROM dbo.Position WHERE Name='Master')
 begin
-insert into dbo.Location(TheNameOfTheOrganization,Warehouse1,Warehouse2,Warehouse3)
+insert into dbo.Position(Name)
 values
-('RKP','Equipped','Equipped','Equipped')
+('Master')
+end 
+GO
+
+--- Worker
+if not exists (SELECT*FROM dbo.Worker WHERE Name='Nikolai' and Surname='Nikolaev' and SecondName='Nikolaevich' and PositionId=1 and ToolId=1)
+begin
+insert into dbo.Worker (Name,Surname,SecondName,PositionId,ToolId)
+values
+('Nikolai','Nikolaev','Nikolaevich',1,1)
 end
 GO
