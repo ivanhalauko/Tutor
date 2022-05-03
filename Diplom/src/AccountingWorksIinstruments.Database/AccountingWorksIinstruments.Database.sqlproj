@@ -59,7 +59,6 @@
     <Folder Include="Tables" />
     <Folder Include="Post" />
     <Folder Include="ForeignKeys" />
-    <Folder Include="EF" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Worker.sql" />
@@ -78,8 +77,5 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Post\Script.PostDeployment.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="EF\WiDbContext.cs" />
   </ItemGroup>
 </Project>
