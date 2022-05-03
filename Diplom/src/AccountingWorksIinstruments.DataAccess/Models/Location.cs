@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountingWorkInstruments.DataAccess.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -7,7 +8,7 @@ using System.Text;
 namespace AccountingWorkInstruments.DataAccess.Models
 {
     [Table("Location")]
-    public class Location
+    public class Location : IEntity
     {
         [Key]
         public int Id { get; set; }
