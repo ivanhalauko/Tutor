@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[Tool]
+	ADD CONSTRAINT [FK_Tool_Location]
+	FOREIGN KEY (LocationId)
+	REFERENCES [Location] (Id)
+	ON DELETE CASCADE

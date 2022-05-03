@@ -56,5 +56,26 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Post" />
+    <Folder Include="ForeignKeys" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Worker.sql" />
+    <Build Include="Tables\Position.sql" />
+    <Build Include="ForeignKeys\FK_Position_Worker.sql" />
+    <Build Include="Tables\Tool.sql" />
+    <Build Include="ForeignKeys\FK_Tool_Worker.sql" />
+    <Build Include="Tables\Location.sql" />
+    <Build Include="ForeignKeys\FK_Tool_Location.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="AccountingWorksIinstruments.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AccountingWorksIinstruments.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Post\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
