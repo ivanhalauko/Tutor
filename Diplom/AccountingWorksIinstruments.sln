@@ -13,6 +13,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AccountingWorksIinstruments
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountingWorkInstruments.DataAccess", "src\AccountingWorksIinstruments.DataAccess\AccountingWorkInstruments.DataAccess.csproj", "{38ED283F-C931-4817-9076-3514E4977108}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingWorksIinstruments.IntegrationTests", "test\AccountingWorksIinstruments.IntegrationTests\AccountingWorksIinstruments.IntegrationTests.csproj", "{8C7569B2-A43D-4134-A6D4-37EF4407A793}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{38ED283F-C931-4817-9076-3514E4977108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38ED283F-C931-4817-9076-3514E4977108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38ED283F-C931-4817-9076-3514E4977108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7569B2-A43D-4134-A6D4-37EF4407A793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7569B2-A43D-4134-A6D4-37EF4407A793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7569B2-A43D-4134-A6D4-37EF4407A793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7569B2-A43D-4134-A6D4-37EF4407A793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +42,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E7EEA32A-82FC-4D95-AB99-6F0DD16957D5} = {0B23ED55-75CC-433E-905B-2355A076A259}
 		{38ED283F-C931-4817-9076-3514E4977108} = {0B23ED55-75CC-433E-905B-2355A076A259}
+		{8C7569B2-A43D-4134-A6D4-37EF4407A793} = {1D8BD772-AE3E-4BE9-9ABC-E9D4BB2D226D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3160E0C2-1909-4860-A342-26196BAF1325}
