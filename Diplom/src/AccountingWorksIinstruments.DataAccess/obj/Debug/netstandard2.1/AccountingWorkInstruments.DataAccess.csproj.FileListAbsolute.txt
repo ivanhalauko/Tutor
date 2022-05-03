@@ -1,0 +1,16 @@
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\NUnit3.TestAdapter.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\NUnit3.TestAdapter.pdb
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\nunit.engine.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\nunit.engine.api.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\nunit.engine.core.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\testcentric.engine.metadata.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.deps.json
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.pdb
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.csproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.AssemblyInfoInputs.cache
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.AssemblyInfo.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.csproj.CoreCompileInputs.cache
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.pdb
