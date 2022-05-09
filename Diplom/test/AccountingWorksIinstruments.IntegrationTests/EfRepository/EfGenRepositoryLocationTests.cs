@@ -13,6 +13,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
     {
         private EfGenRepository<Location> _entityRepository;
         private WiDbContext _tmContext;
+        private double expected;
 
         //private string _connectionString = "Data Source=SEREGIN;Initial Catalog=AccountingWorksIinstruments.Database;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -31,16 +32,20 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         }
 
         [Test]
-        [TestCase(1, "Alcopuck", "Equipped", "Equipped", "Equipped")]
-        [TestCase(2, "NoWhere", "Not found", "Not found", "Not found")]
-        [TestCase(3, "NoWhere", "Not found", "Equipped", "Not found")]
+        //[TestCase(1, "Alcopuck", "Equipped", "Not found", "Not found")]
+        //[TestCase(2, "NoWhere", "Not found", "Not found", "Not found")]
+        //[TestCase(3, "NoWhere", "Not found", "Equipped", "Not found")]
         public void ReadAllAsyncObjects_WhenPropertiesIsNotNull_ThenOutUsListOfEntitiesFromDatabase()
         {
             // Arrange
+            var expected = new List<Location> 
+            {
+               
+            }; 
             // Act
             var actualResult = _entityRepository.ReadAllAsync().Result;
             // Assert
-            Assert.Pass();
+            Assert.AreEqual(expected, actualResult);
         }
     }
 

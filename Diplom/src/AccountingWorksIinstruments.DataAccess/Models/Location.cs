@@ -10,6 +10,16 @@ namespace AccountingWorkInstruments.DataAccess.Models
     [Table("Location")]
     public class Location : IEntity
     {
+        public Location(int id, string theNameOfTheOrganization, 
+            string warehouse1, string warehouse2, string warehouse3)
+        {
+            Id = id;
+            TheNameOfTheOrganization = theNameOfTheOrganization;
+            Warehouse1 = warehouse1;
+            Warehouse2 = warehouse2;
+            Warehouse3 = warehouse3;
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -20,5 +30,7 @@ namespace AccountingWorkInstruments.DataAccess.Models
         public string Warehouse2 { get; set; }
 
         public string Warehouse3 { get; set; }
+
+
     }
 }
