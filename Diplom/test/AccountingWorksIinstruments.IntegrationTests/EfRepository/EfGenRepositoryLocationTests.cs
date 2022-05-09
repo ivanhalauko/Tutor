@@ -32,14 +32,16 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
 
         [Test]
         [TestCase(1, "Alcopuck", "Equipped", "Equipped", "Equipped")]
+        [TestCase(2, "NoWhere", "Not found", "Not found", "Not found")]
+        [TestCase(3, "NoWhere", "Not found", "Equipped", "Not found")]
         public void ReadAllAsyncObjects_WhenPropertiesIsNotNull_ThenOutUsListOfEntitiesFromDatabase()
         {
             // Arrange
-
             // Act
             var actualResult = _entityRepository.ReadAllAsync().Result;
             // Assert
             Assert.Pass();
         }
     }
+
 }
