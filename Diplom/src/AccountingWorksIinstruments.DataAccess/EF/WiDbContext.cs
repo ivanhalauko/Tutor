@@ -27,5 +27,23 @@ namespace AccountingWorksIinstruments.Database
                 optionsBuilder.UseSqlServer(_connectionString);
             }
         }
+
+        //public DbSet<Position> Position { get; set; }
+        //protected override void OnConfigurings(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(_connectionString);
+        //    }
+        //}
+
+        //public DbSet<Tool> Tool { get; set; }
+        //protected override void OnConfigurings(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(_connectionString);
+        //    }
+        //}
     }
 }
