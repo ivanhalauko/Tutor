@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o0mvGaSigyEsKk5hkpyVXtNLe3pt9ftbrcpEbHX/k3MHl+W+LNGSLvNBN00zjwyZuGsxMorZPmDN6JXtQX1VMA==",
+  "dgSpecHash": "8AWMhrKZDjdLe8K1dDNOIKuWR34KXDQ6AjuFqfeKybeS5dQnVfrDyUc7tMYDGLVt7CftfcEF88rbmDF3I6f34w==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\src\\AccountingWorksIinstruments.DataAccess\\AccountingWorkInstruments.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sergey\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Sergey\\.nuget\\packages\\fluentassertions\\6.0.0\\fluentassertions.6.0.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

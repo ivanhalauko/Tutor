@@ -154,3 +154,4 @@ D:\LearnDotNet\Tutor\Diplom\test\AccountingWorksIinstruments.IntegrationTests\ob
 D:\LearnDotNet\Tutor\Diplom\test\AccountingWorksIinstruments.IntegrationTests\obj\Debug\netcoreapp3.1\AccountingWorksIinstruments.IntegrationTests.dll
 D:\LearnDotNet\Tutor\Diplom\test\AccountingWorksIinstruments.IntegrationTests\obj\Debug\netcoreapp3.1\AccountingWorksIinstruments.IntegrationTests.pdb
 D:\LearnDotNet\Tutor\Diplom\test\AccountingWorksIinstruments.IntegrationTests\obj\Debug\netcoreapp3.1\AccountingWorksIinstruments.IntegrationTests.genruntimeconfig.cache
+D:\LearnDotNet\Tutor\Diplom\test\AccountingWorksIinstruments.IntegrationTests\bin\Debug\netcoreapp3.1\FluentAssertions.dll

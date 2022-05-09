@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xlNXW91YEgdAsKAIQIMT69hv+7pIxpm9yNYDaLLxIaFI2px7tPOkBfi3s7yS0KNo/SAqlEyPeNL7EvhfyG2MZw==",
+  "dgSpecHash": "xbCzi4aUIjzSlKApMuCuD3rhh5VJpqIq1lLSsH9/JnvDE4PigF3PJjNK7oe7b/WDd40WoSYgfEY0mbJp3k4goQ==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\test\\AccountingWorksIinstruments.IntegrationTests\\AccountingWorksIinstruments.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sergey\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\Sergey\\.nuget\\packages\\fluentassertions\\6.0.0\\fluentassertions.6.0.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

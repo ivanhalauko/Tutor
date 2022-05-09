@@ -20,6 +20,10 @@ namespace AccountingWorksIinstruments.Database
         }
 
         public DbSet<Location> Locations { get; set; }
+        public DbSet<Position> Position { get; set; }
+        public DbSet<Tool> Tool { get; set; }
+        public DbSet<Worker> Worker { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -27,23 +31,5 @@ namespace AccountingWorksIinstruments.Database
                 optionsBuilder.UseSqlServer(_connectionString);
             }
         }
-
-        //public DbSet<Position> Position { get; set; }
-        //protected override void OnConfigurings(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        optionsBuilder.UseSqlServer(_connectionString);
-        //    }
-        //}
-
-        //public DbSet<Tool> Tool { get; set; }
-        //protected override void OnConfigurings(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        optionsBuilder.UseSqlServer(_connectionString);
-        //    }
-        //}
     }
 }
