@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xbCzi4aUIjzSlKApMuCuD3rhh5VJpqIq1lLSsH9/JnvDE4PigF3PJjNK7oe7b/WDd40WoSYgfEY0mbJp3k4goQ==",
+  "dgSpecHash": "NuM4wIrNVD6k6DmOaFAowHR+/sM0lMMvpBGTz8eqSf0SZGy0EhjdbKQvIhUSb/ttag/mqsxSdSrnN7gtpa7OmQ==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\test\\AccountingWorksIinstruments.IntegrationTests\\AccountingWorksIinstruments.IntegrationTests.csproj",
   "expectedPackageFiles": [
