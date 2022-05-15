@@ -1,4 +1,7 @@
-﻿using AccountingWorkInstruments.DataAccess.IntefacesServices;
+﻿using AccountingWorkInstruments.DataAccess.EfRepository;
+using AccountingWorkInstruments.DataAccess.IntefacesServices;
+using AccountingWorkInstruments.DataAccess.Interfaces;
+using AccountingWorkInstruments.DataAccess.Models;
 using AccountingWorkInstruments.DataAccess.Services;
 using AccountingWorksIinstruments.Database;
 using Autofac;
@@ -22,6 +25,8 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<PositionSevice>().As<IPositionService>();
 
             builder.RegisterType<WiDbContext>().As<WiDbContext>().WithParameter("connectionString", _connectionString);
+
+            builder.RegisterType<EfGenRepository<Position>>().As<IEfGenRepository<Position>>();
         }
     }
 }

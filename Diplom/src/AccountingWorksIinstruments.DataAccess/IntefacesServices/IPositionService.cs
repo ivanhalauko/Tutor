@@ -8,5 +8,7 @@ namespace AccountingWorkInstruments.DataAccess.IntefacesServices
     public interface IPositionService
     {
         public int Add(Position position);
+
+        public IEnumerable<Position> ReadAll();
     }
 }

@@ -21,5 +21,11 @@ namespace AccountingWorkInstruments.DataAccess.Services
             var idNewPosition = _positionRepository.AddAsync(position).Result;
             return idNewPosition;
         }
+
+        public IEnumerable<Position> ReadAll()
+        {
+            var positions = _positionRepository.ReadAllAsync().Result;
+            return positions;
+        }
     }
 }
