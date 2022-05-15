@@ -89,7 +89,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         public void AddAsync_WhenPropertiesIsNotNull_ThenOutUsListOfEntitiesFromDatabase()
         {
             // Arrange
-            var expected = new Position(name: "master");
+            var expected = new Position(name: "slesar");
             // Act
             var actualResult = _entityRepository.AddAsync(expected);
             // Assert
