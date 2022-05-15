@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HgujmhfemarTpOn0vK6JPJ1Kfla67eF5wohMij0ibxMPYdSnRYkklYfGyHl93X+9BHKwCo9wyBtlmTSxoLHIoA==",
+  "dgSpecHash": "IFDhH1tDMMAUlQMbZ4neAA/pzsbrJW2Spr6hg8bMuH7t7MZJvA9FFo/WgcFeKtYmXmjEqh2jABV8n8AGp8Ut6g==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\src\\AccountingWorksIinstruments.Web\\AccountingWorksIinstruments.Web.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Sergey\\.nuget\\packages\\autofac\\6.2.0\\autofac.6.2.0.nupkg.sha512",
+    "C:\\Users\\Sergey\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

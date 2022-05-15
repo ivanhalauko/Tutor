@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4mWWOi/1LlIqeljCTKcVEr0DIKhI+XM+6c3T1v9y4kI3ZgLpoahUIHDeNqGP4TJisxs5+Ud8RzbhLhBIiJNWsA==",
+  "dgSpecHash": "dVcRio4StUvQDX4eiLwnlmgk5Z7BnKOypZM5Ijg98reNcOZTrEFZbjn6a+jYgmRKcjx8iVwrbMEXLo9rM65bEA==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\src\\AccountingWorksIinstruments.DataAccess\\AccountingWorkInstruments.DataAccess.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sergey\\.nuget\\packages\\autofac\\6.2.0\\autofac.6.2.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\fluentassertions\\6.0.0\\fluentassertions.6.0.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

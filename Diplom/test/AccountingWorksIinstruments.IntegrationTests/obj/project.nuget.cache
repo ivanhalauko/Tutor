@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "NuM4wIrNVD6k6DmOaFAowHR+/sM0lMMvpBGTz8eqSf0SZGy0EhjdbKQvIhUSb/ttag/mqsxSdSrnN7gtpa7OmQ==",
+  "dgSpecHash": "d81Uc+3lrP4dHyVk2x1W67HfsOX2AJTc8yc2lFPMrFlBvqjp7b5x03i3W1rIKPoWrIo9R7ucqAWFgytaxCL8KQ==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\test\\AccountingWorksIinstruments.IntegrationTests\\AccountingWorksIinstruments.IntegrationTests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Sergey\\.nuget\\packages\\autofac\\6.2.0\\autofac.6.2.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\fluentassertions\\6.0.0\\fluentassertions.6.0.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
