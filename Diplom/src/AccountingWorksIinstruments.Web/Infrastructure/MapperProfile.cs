@@ -14,9 +14,13 @@ namespace AccountingWorksIinstruments.Web.Infrastructure
         {
             //DAL to WEB
             CreateMap<Position, PositionViewModel>();
+            CreateMap<Location, LocationViewModel>();
+            CreateMap<Tool, ToolViewModel>();
 
             //WEB to DAL
             CreateMap<PositionViewModel, Position>();
+            CreateMap<LocationViewModel, Location>();
+            CreateMap<ToolViewModel, Tool>();
         }
     }
 }
