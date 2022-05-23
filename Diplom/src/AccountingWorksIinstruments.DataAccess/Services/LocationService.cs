@@ -29,7 +29,7 @@ namespace AccountingWorkInstruments.DataAccess.Services
             return locations;
         }
 
-        public Location UpdateAll(Location location)
+        public Location Update(Location location)
         {
             var updateLocation = _locationRepository.UpdateAsync(location).Result;
 
@@ -41,6 +41,11 @@ namespace AccountingWorkInstruments.DataAccess.Services
             _locationRepository.DeleteAsync(location).Wait();
             var deletePosition = _locationRepository.ReadAllAsync().Result;
             return deletePosition;
+        }
+        public IEnumerable<Location> GetById(int id)
+        {
+            var locations = _locationRepository.GetByIdAsync(id).Result;
+            return locations;
         }
     }
 }

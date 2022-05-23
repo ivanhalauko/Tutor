@@ -11,7 +11,8 @@ namespace AccountingWorkInstruments.DataAccess.IntefacesServices
 
         public int Add(Location location);
         public IEnumerable<Location> ReadAll();
-        public Location UpdateAll(Location location);
+        public Location Update(Location location);
         public IQueryable<Location> DeleteAll(Location location);
+        public IEnumerable<Location> GetById(int id);
     }
 }

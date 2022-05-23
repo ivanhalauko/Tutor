@@ -18,12 +18,14 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IMapperConfig _mapperConfig;
         private readonly IPositionService _positionService;
+        private readonly ILocationServices _locationServices;
 
-        public HomeController(ILogger<HomeController> logger, IMapperConfig mapConfig, IPositionService positionService)
+        public HomeController(ILogger<HomeController> logger, IMapperConfig mapConfig, IPositionService positionService,ILocationServices locationServices)
         {
             _mapperConfig = mapConfig;
             _logger = logger;
             _positionService = positionService;
+            _locationServices = locationServices;
         }
 
         public IActionResult Index()
@@ -118,6 +120,100 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 Position positionEntity = new Position(id, position);
                 _positionService.Add(positionEntity);
                 return RedirectToAction("Positions");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public IActionResult Locations()
+        {
+            var entities = _locationServices.ReadAll();
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(entities);
+            return View(locations);
+        }
+        public IActionResult GetByIdLocation(int Id)
+        {
+            var entities = _locationServices.GetById(Id);
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(entities);
+            return View(locations);
+        }
+        public IActionResult UpdateLocation(int id)
+        {
+
+            var entities = _locationServices.GetById(id);
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(entities).FirstOrDefault();
+            return View(locations);
+        }
+        [HttpPost]
+        public IActionResult UpdateLocation(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string theNameOfTheOrganization = Convert.ToString(collection["TheNameOfTheOrganization"]);
+                string warehouse1 = Convert.ToString(collection["Warehouse1"]);
+                string warehouse2 = Convert.ToString(collection["Warehouse2"]);
+                string warehouse3 = Convert.ToString(collection["Warehouse3"]);
+                Location locationEntity = new Location(id, theNameOfTheOrganization, warehouse1,warehouse2,warehouse3);
+                _locationServices.Update(locationEntity);
+                return RedirectToAction("Locations");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public IActionResult DeleteLocation(int id)
+        {
+            var entities = _locationServices.GetById(id);
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(entities).FirstOrDefault();
+            return View(locations);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteLocation(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string theNameOfTheOrganization = Convert.ToString(collection["NameOfTheOrganization"]);
+                string warehouse1 = Convert.ToString(collection["Warehouse1"]);
+                string warehouse2 = Convert.ToString(collection["Warehouse2"]);
+                string warehouse3 = Convert.ToString(collection["Warehouse3"]);
+                Location locationEntity = new Location(id, theNameOfTheOrganization, warehouse1, warehouse2, warehouse3);
+                _locationServices.DeleteAll(locationEntity);
+                return RedirectToAction("Locations");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public IActionResult CreateLocation()
+        {
+            var entities = new Location(0, null,null,null,null);
+            var locations = _mapperConfig.Mapper.Map<Location, LocationViewModel>(entities);
+            return View(locations);
+        }
+
+        [HttpPost]
+        public IActionResult CreateLocation(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string theNameOfTheOrganization = Convert.ToString(collection["NameOfOrganization"]);
+                string warehouse1 = Convert.ToString(collection["Warehouse1"]);
+                string warehouse2 = Convert.ToString(collection["Warehouse2"]);
+                string warehouse3 = Convert.ToString(collection["Warehouse3"]);
+                Location locationEntity = new Location(id, theNameOfTheOrganization, warehouse1, warehouse2, warehouse3);
+                _locationServices.Add(locationEntity);
+                return RedirectToAction("Locations");
             }
             catch (Exception ex)
             {
