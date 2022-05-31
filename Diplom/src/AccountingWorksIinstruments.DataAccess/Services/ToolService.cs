@@ -25,20 +25,27 @@ namespace AccountingWorkInstruments.DataAccess.Services
 
         public IEnumerable<Tool> ReadAll()
         {
-            var tools = _toolRepository.ReadAllAsync().Result;
-            return tools;
+            var tool = _toolRepository.ReadAllAsync().Result;
+            return tool;
         }
 
-        public int Update(Tool tool)
+        public Tool Update(Tool tool)
         {
             var updateTool = _toolRepository.UpdateAsync(tool).Result;
 
-            return updateTool.Id;
+            return updateTool;
         }
 
-        public void DeleteAll(Tool tool)
+        public IQueryable<Tool> DeleteAll(Tool tool)
         {
             _toolRepository.DeleteAsync(tool).Wait();
+            var deleteTool = _toolRepository.ReadAllAsync().Result;
+            return deleteTool;
+        }
+        public IEnumerable<Tool> GetById(int id)
+        {
+            var tool = _toolRepository.GetByIdAsync(id).Result;
+            return tool;
         }
     }
 }

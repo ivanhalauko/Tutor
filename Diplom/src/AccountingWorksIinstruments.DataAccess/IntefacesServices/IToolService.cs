@@ -11,8 +11,8 @@ namespace AccountingWorkInstruments.DataAccess.IntefacesServices
         public int Add(Tool tool);
 
         public IEnumerable<Tool> ReadAll();
-        public int Update(Tool tool);
-        public void DeleteAll(Tool tool);
-
+        public Tool Update(Tool tool);
+        public IQueryable<Tool> DeleteAll(Tool tool);
+        public IEnumerable<Tool> GetById(int id);
     }
 }

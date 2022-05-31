@@ -11,35 +11,25 @@ namespace AccountingWorkInstruments.DataAccess.Models
     public class Location : IEntity
     {
 
-        public Location(string theNameOfTheOrganization, string warehouse1, string warehouse2, string warehouse3)
+        public Location(string nameOfTheOrganization, string warehouse)
         {
-            TheNameOfTheOrganization = theNameOfTheOrganization;
-            Warehouse1 = warehouse1;
-            Warehouse2 = warehouse2;
-            Warehouse3 = warehouse3;
-        }
+            NameOfTheOrganization = nameOfTheOrganization;
+            Warehouse = warehouse;
+                    }
 
-        public Location(int id, string theNameOfTheOrganization, 
-            string warehouse1, string warehouse2, string warehouse3)
+        public Location(int id, string nameOfTheOrganization, 
+            string warehouse)
         {
             Id = id;
-            TheNameOfTheOrganization = theNameOfTheOrganization;
-            Warehouse1 = warehouse1;
-            Warehouse2 = warehouse2;
-            Warehouse3 = warehouse3;
+            NameOfTheOrganization = nameOfTheOrganization;
+            Warehouse = warehouse;
         }
 
         [Key]
         public int Id { get; set; }
 
-        public string TheNameOfTheOrganization { get; set; }
+        public string NameOfTheOrganization { get; set; }
 
-        public string Warehouse1 { get; set; }
-
-        public string Warehouse2 { get; set; }
-
-        public string Warehouse3 { get; set; }
-
-
+        public string Warehouse { get; set; }
     }
 }

@@ -12,5 +12,7 @@ namespace AccountingWorksIinstruments.Web.Models
         public string Description { get; set; }
 
         public int LocationId { get; set; }
+
+        public string NameOfTheOrganization { get; set; }
     }
 }

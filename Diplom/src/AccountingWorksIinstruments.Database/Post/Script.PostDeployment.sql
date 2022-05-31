@@ -1,9 +1,9 @@
 ﻿--- Location
-if not exists (SELECT*FROM dbo.Location WHERE TheNameOfTheOrganization='RKP' and Warehouse1='Equipped' and Warehouse2='Equipped' and Warehouse3='Equipped')
+if not exists (SELECT*FROM dbo.Location WHERE NameOfTheOrganization='RKP' and Warehouse='Equipped')
 begin
-insert into dbo.Location(TheNameOfTheOrganization,Warehouse1,Warehouse2,Warehouse3)
+insert into dbo.Location(NameOfTheOrganization,Warehouse)
 values
-('RKP','Equipped','Equipped','Equipped')
+('RKP','Equipped')
 end
 GO
 

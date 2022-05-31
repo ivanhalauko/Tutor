@@ -1,0 +1,66 @@
+﻿@model AccountingWorksIinstruments.Web.Models.ToolViewModel
+
+@{
+    ViewData["Title"] = "CreateTool";
+}
+
+<h1>CreateTool</h1>
+
+<h4>ToolViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateTool">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div hidden class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="LocationId" class="control-label"></label>
+                <input asp-for="LocationId" class="form-control" />
+                <span asp-validation-for="LocationId" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="NameOfTheOrganization" class="control-label"></label>
+                <input asp-for="NameOfTheOrganization" class="form-control" />
+                <span asp-validation-for="NameOfTheOrganization" class="text-danger"></span>
+            </div>*@
+            <div>
+                <label asp-for="NameOfTheOrganization" class="control-label">Name of the Organization</label>
+                @Html.DropDownList("NameOfTheOrganization", ViewBag.Locations as SelectList, new { id = "nameOfTheOrganization" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#nameOfTheOrganization').change(function()
+        {
+            var id = $(this).val();
+            $.ajax({
+                type:'GET',
+                url:'@Url.Action("GetItemsPartial")/' + id
+            });
+        });
+    })
+</script>

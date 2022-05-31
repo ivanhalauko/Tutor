@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<AccountingWorksIinstruments.Web.Models.LocationViewModel>
 
 @{
-    ViewData["Title"] = "Location";
+    ViewData["Title"] = "Locations";
 }
 
 <h1>Locations</h1>
@@ -16,16 +16,10 @@
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NameOfOrganization)
+                @Html.DisplayNameFor(model => model.NameOfTheOrganization)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Warehouse1)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Warehouse2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Warehouse3)
+                @Html.DisplayNameFor(model => model.Warehouse)
             </th>
             <th></th>
         </tr>
@@ -37,20 +31,14 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.NameOfOrganization)
+                @Html.DisplayFor(modelItem => item.NameOfTheOrganization)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Warehouse1)
+                @Html.DisplayFor(modelItem => item.Warehouse)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Warehouse2)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Warehouse3)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "UpdateLocation", new { id=item.Id}) |
-                @Html.ActionLink("Details", "GetByIdLocation", new { id=item.Id}) |
+                @Html.ActionLink("Edit", "UpdateLocation", new { id=item.Id }) |
+                @Html.ActionLink("Details", "GetByIdLocation", new { id=item.Id }) |
                 @Html.ActionLink("Delete", "DeleteLocation", new { id=item.Id })
             </td>
         </tr>

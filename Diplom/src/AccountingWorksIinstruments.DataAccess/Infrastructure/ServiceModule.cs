@@ -25,12 +25,14 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<PositionSevice>().As<IPositionService>();
 
             builder.RegisterType<LocationService>().As<ILocationServices>();
+            builder.RegisterType<ToolService>().As<IToolService>();
 
             builder.RegisterType<WiDbContext>().As<WiDbContext>().WithParameter("connectionString", _connectionString);
 
             builder.RegisterType<EfGenRepository<Position>>().As<IEfGenRepository<Position>>();
 
             builder.RegisterType<EfGenRepository<Location>>().As<IEfGenRepository<Location>>();
+            builder.RegisterType<EfGenRepository<Tool>>().As<IEfGenRepository<Tool>>();
         }
     }
 }

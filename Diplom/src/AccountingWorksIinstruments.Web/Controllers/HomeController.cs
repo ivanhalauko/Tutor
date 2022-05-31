@@ -4,6 +4,7 @@ using AccountingWorksIinstruments.Web.Interfaces;
 using AccountingWorksIinstruments.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,15 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly IMapperConfig _mapperConfig;
         private readonly IPositionService _positionService;
         private readonly ILocationServices _locationServices;
+        private readonly IToolService _toolService;
 
-        public HomeController(ILogger<HomeController> logger, IMapperConfig mapConfig, IPositionService positionService,ILocationServices locationServices)
+        public HomeController(ILogger<HomeController> logger, IMapperConfig mapConfig, IPositionService positionService,ILocationServices locationServices, IToolService toolService)
         {
             _mapperConfig = mapConfig;
             _logger = logger;
             _positionService = positionService;
             _locationServices = locationServices;
+            _toolService = toolService;
         }
 
         public IActionResult Index()
@@ -152,11 +155,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
             try
             {
                 int id = Convert.ToInt32(collection["Id"]);
-                string theNameOfTheOrganization = Convert.ToString(collection["TheNameOfTheOrganization"]);
-                string warehouse1 = Convert.ToString(collection["Warehouse1"]);
-                string warehouse2 = Convert.ToString(collection["Warehouse2"]);
-                string warehouse3 = Convert.ToString(collection["Warehouse3"]);
-                Location locationEntity = new Location(id, theNameOfTheOrganization, warehouse1,warehouse2,warehouse3);
+                string NameOfTheOrganization = Convert.ToString(collection["TheNameOfTheOrganization"]);
+                string warehouse = Convert.ToString(collection["Warehouse"]);
+                Location locationEntity = new Location(id,NameOfTheOrganization, warehouse);
                 _locationServices.Update(locationEntity);
                 return RedirectToAction("Locations");
             }
@@ -180,11 +181,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
             try
             {
                 int id = Convert.ToInt32(collection["Id"]);
-                string theNameOfTheOrganization = Convert.ToString(collection["NameOfTheOrganization"]);
-                string warehouse1 = Convert.ToString(collection["Warehouse1"]);
-                string warehouse2 = Convert.ToString(collection["Warehouse2"]);
-                string warehouse3 = Convert.ToString(collection["Warehouse3"]);
-                Location locationEntity = new Location(id, theNameOfTheOrganization, warehouse1, warehouse2, warehouse3);
+                string NameOfTheOrganization = Convert.ToString(collection["NameOfTheOrganization"]);
+                string warehouse = Convert.ToString(collection["Warehouse"]);
+                Location locationEntity = new Location(id,NameOfTheOrganization, warehouse);
                 _locationServices.DeleteAll(locationEntity);
                 return RedirectToAction("Locations");
             }
@@ -196,7 +195,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         }
         public IActionResult CreateLocation()
         {
-            var entities = new Location(0, null,null,null,null);
+            var entities = new Location(0, null,null);
             var locations = _mapperConfig.Mapper.Map<Location, LocationViewModel>(entities);
             return View(locations);
         }
@@ -207,11 +206,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
             try
             {
                 int id = Convert.ToInt32(collection["Id"]);
-                string theNameOfTheOrganization = Convert.ToString(collection["NameOfOrganization"]);
-                string warehouse1 = Convert.ToString(collection["Warehouse1"]);
-                string warehouse2 = Convert.ToString(collection["Warehouse2"]);
-                string warehouse3 = Convert.ToString(collection["Warehouse3"]);
-                Location locationEntity = new Location(id, theNameOfTheOrganization, warehouse1, warehouse2, warehouse3);
+                string NameOfTheOrganization = Convert.ToString(collection["NameOfOrganization"]);
+                string warehouse = Convert.ToString(collection["Warehouse"]);
+                Location locationEntity = new Location(id,NameOfTheOrganization, warehouse);
                 _locationServices.Add(locationEntity);
                 return RedirectToAction("Locations");
             }
@@ -222,6 +219,114 @@ namespace AccountingWorksIinstruments.Web.Controllers
             }
         }
 
+        public IActionResult Tool()
+        {
+            var tools = _toolService.ReadAll();
+            var locations = _locationServices.ReadAll().ToList();
+            var viewTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tools);
+            foreach (ToolViewModel item in viewTools)
+            {
+                int locationId=item.LocationId;
+                Location location =locations.Find(p => p.Id == locationId);
+                item.NameOfTheOrganization = location.NameOfTheOrganization;
+            }
+            return View(viewTools);
+        }
+        public IActionResult GetByIdTool(int Id)
+        {
+            var entities = _toolService.GetById(Id);
+            var tool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(entities);
+            return View(tool);
+        }
+        public IActionResult UpdateTool(int id)
+        {
+
+            var entities = _toolService.GetById(id);
+            var tool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(entities).FirstOrDefault();
+            return View(tool);
+        }
+        [HttpPost]
+        public IActionResult UpdateTool(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string Name = Convert.ToString(collection["Name"]);
+                string Description = Convert.ToString(collection["Description"]);
+                int LocationId = Convert.ToInt32(collection["LocationId"]);
+                Tool toolEntity = new Tool(id, Name, Description, LocationId);
+                _toolService.Update(toolEntity);
+                return RedirectToAction("Tool");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public IActionResult DeleteTool(int id)
+        {
+            var tool = _toolService.GetById(id);
+            var locations = _locationServices.GetById(id).ToList();
+            var viewTool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tool).FirstOrDefault();
+            int locationId= tool.FirstOrDefault().LocationId;
+            viewTool.NameOfTheOrganization = locations.FirstOrDefault().NameOfTheOrganization;
+            return View(viewTool);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteTool(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string name = Convert.ToString(collection["Name"]);
+                string description = Convert.ToString(collection["Description"]);
+                int locationId = Convert.ToInt32(collection["LocationId"]);
+                Tool toolEntity = new Tool(id, name, description, locationId);
+                _toolService.DeleteAll(toolEntity);
+                return RedirectToAction("Tool");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public ActionResult GetItemsPartial(int id)
+        {
+            return PartialView(_locationServices.ReadAll().Where(x => x.Id == id).ToList());
+        }
+        public IActionResult CreateTool()
+        {
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(_locationServices.ReadAll());
+            var entities = new Tool(0, null, null,0);
+            var tools = _mapperConfig.Mapper.Map<Tool, ToolViewModel>(entities);
+            ViewBag.Locations = new SelectList(locations, "Id", "NameOfTheOrganization", 1);
+            return View(tools);
+        }
+
+        [HttpPost]
+        public IActionResult CreateTool(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string Name = Convert.ToString(collection["Name"]);
+                string Description = Convert.ToString(collection["Description"]);
+                int LocationId = Convert.ToInt32(collection["LocationId"]);
+                Tool toolEntity = new Tool(id, Name, Description, LocationId);
+                _toolService.Update(toolEntity);
+                return RedirectToAction("Tool");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
         public IActionResult Privacy()
         {
             return View();
