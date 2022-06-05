@@ -1,0 +1,42 @@
+﻿@model IEnumerable<AccountingWorksIinstruments.Web.Models.PositionViewModel>
+
+@{
+    ViewData["Title"] = "Positions";
+}
+
+<h1>Positions</h1>
+
+<p>
+    <a asp-action="CreatePosition">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdatePosition", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "GetByIdPosition", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "DeletePosition", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
