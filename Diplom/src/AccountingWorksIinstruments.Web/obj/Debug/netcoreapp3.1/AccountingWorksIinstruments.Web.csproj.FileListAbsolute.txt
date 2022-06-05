@@ -249,7 +249,6 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcor
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\Tool.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\GetByIdTool.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\CreateTool.cshtml.g.cs
-D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\DeleteTool.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\UpdateTool.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Location\CreateLocation.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Location\DeleteLocation.cshtml.g.cs
@@ -262,3 +261,4 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcor
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Position\GetByIdPosition.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Position\Positions.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Position\UpdatePosition.cshtml.g.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\DeleteTool.cshtml.g.cs
