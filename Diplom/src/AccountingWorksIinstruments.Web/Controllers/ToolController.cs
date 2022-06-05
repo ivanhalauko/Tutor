@@ -60,9 +60,10 @@ namespace AccountingWorksIinstruments.Web.Controllers
 
         public IActionResult UpdateTool(int id)
         {
-
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(_locationServices.ReadAll());
             var entities = _toolService.GetById(id);
             var tool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(entities).FirstOrDefault();
+            ViewBag.Locations = new SelectList(locations, "Id", "NameOfTheOrganization", 1);
             return View(tool);
         }
         [HttpPost]
@@ -73,8 +74,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 int id = Convert.ToInt32(collection["Id"]);
                 string Name = Convert.ToString(collection["Name"]);
                 string Description = Convert.ToString(collection["Description"]);
-                int LocationId = Convert.ToInt32(collection["LocationId"]);
-                Tool toolEntity = new Tool(id, Name, Description, LocationId);
+                int idOfTheOrganization = Convert.ToInt32(collection["NameOfTheOrganization"]);
+                Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization);
                 _toolService.Update(toolEntity);
                 return RedirectToAction("Tool");
             }
