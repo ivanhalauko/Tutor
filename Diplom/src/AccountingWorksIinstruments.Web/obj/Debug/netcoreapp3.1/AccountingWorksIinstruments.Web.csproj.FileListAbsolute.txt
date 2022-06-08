@@ -262,3 +262,4 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcor
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Position\Positions.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Position\UpdatePosition.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tool\DeleteTool.cshtml.g.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Worker\Workers.cshtml.g.cs

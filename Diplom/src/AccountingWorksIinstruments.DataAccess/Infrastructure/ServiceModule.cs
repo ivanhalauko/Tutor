@@ -23,16 +23,16 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<PositionSevice>().As<IPositionService>();
-
             builder.RegisterType<LocationService>().As<ILocationServices>();
             builder.RegisterType<ToolService>().As<IToolService>();
+            builder.RegisterType<WorkerService>().As<IWorkerServices>();
 
             builder.RegisterType<WiDbContext>().As<WiDbContext>().WithParameter("connectionString", _connectionString);
 
             builder.RegisterType<EfGenRepository<Position>>().As<IEfGenRepository<Position>>();
-
             builder.RegisterType<EfGenRepository<Location>>().As<IEfGenRepository<Location>>();
             builder.RegisterType<EfGenRepository<Tool>>().As<IEfGenRepository<Tool>>();
+            builder.RegisterType<EfGenRepository<Worker>>().As<IEfGenRepository<Worker>>();
         }
     }
 }
