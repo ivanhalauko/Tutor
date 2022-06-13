@@ -5,5 +5,4 @@
     [Name] NVARCHAR(50) NULL, 
     [SecondName] NVARCHAR(50) NULL, 
     [PositionId] INT NULL, 
-    [ToolId] INT NULL
-)
+    )

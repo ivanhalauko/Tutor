@@ -1,5 +1,5 @@
-﻿ALTER TABLE [dbo].[Worker]
+﻿ALTER TABLE [dbo].[Tool]
 	ADD CONSTRAINT [FK_Tool_Worker]
-	FOREIGN KEY (ToolId)
-	REFERENCES [Tool] (Id)
+	FOREIGN KEY (WorkerId)
+	REFERENCES [Worker] (Id)
 	ON DELETE CASCADE

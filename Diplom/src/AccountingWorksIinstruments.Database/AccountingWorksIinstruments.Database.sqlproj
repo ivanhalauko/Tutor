@@ -68,7 +68,22 @@
     <Build Include="ForeignKeys\FK_Tool_Worker.sql" />
     <Build Include="Tables\Location.sql" />
     <Build Include="ForeignKeys\FK_Tool_Location.sql" />
+    <Build Include="Tables\SubmissionForTools.sql" />
     <Build Include="Tables\Status.sql" />
+    <Build Include="Tables\Warehouse.sql" />
+    <Build Include="Tables\NoteDelivery.sql" />
+    <Build Include="Tables\SubmissionForToolTool.sql" />
+    <Build Include="Tables\NotesDeliveryTool.sql" />
+    <Build Include="Tables\SubmissionWriteOff.sql" />
+    <Build Include="Tables\SubmissionWriteTool.sql" />
+    <Build Include="ForeignKeys\FK_Submission_SubmissionForTool.sql" />
+    <Build Include="ForeignKeys\FK_SubmissionForToolTool_Tool.sql" />
+    <Build Include="ForeignKeys\Tool_Status.sql" />
+    <Build Include="ForeignKeys\FK_SubmissionWriteOff_SubmissionWriteTool.sql" />
+    <Build Include="ForeignKeys\FK_SubmissionWriteTool_Tool.sql" />
+    <Build Include="ForeignKeys\FK_Location_Warehouse.sql" />
+    <Build Include="ForeignKeys\FK_NotesDeliveryTool_NotesDelivery.sql" />
+    <Build Include="ForeignKeys\FK_NotesDeliveryTool_Tool.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AccountingWorksIinstruments.Database.refactorlog" />

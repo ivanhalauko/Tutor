@@ -24,6 +24,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.NameOfTheOrganization)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerId)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -41,6 +44,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NameOfTheOrganization)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.WorkerId)
             </td>
             <td>
                 @Html.ActionLink("Edit", "UpdateTool", new { id = item.Id }) |

@@ -25,7 +25,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
             string _connectionString = "Data Source=SEREGIN;Initial Catalog=AccountingWorksIinstruments.Database;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             _tmContext = new WiDbContext(_connectionString);
             _entityRepository = new EfGenRepository<Tool>(_tmContext);
-            var firstEntity = new Tool(name: "Grinder", description: "to work for metal", locationId: 19);
+            var firstEntity = new Tool(name: "Grinder", description: "to work for metal", locationId: 19, workerId: 1);
             var ent = _entityRepository.ReadAllAsync().Result;
             if (ent.FirstOrDefault() == null)
             {
@@ -37,7 +37,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         [TearDown]
         public void BackUpDataBase()
         {
-            var firstEntity = new Tool(name: "Grinder", description: "to work for metal", locationId: 1);
+            var firstEntity = new Tool(name: "Grinder", description: "to work for metal", locationId: 1, workerId:1);
             _entityRepository.UpdateAsync(firstEntity);
         }
 
@@ -47,7 +47,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
             // Arrange
             var expected = new List<Tool>
             {
-               new Tool(name: "Grinder", description: "to work for metal", locationId: 19)
+               new Tool(name: "Grinder", description: "to work for metal", locationId: 19,workerId:1)
             };
             // Act
             var actualResult = _entityRepository.ReadAllAsync().Result;
@@ -60,8 +60,8 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         public void UpdateAllAsyncObjects_WhenPropertiesIsNotNull_ThenOutUsListOfEntitiesFromDatabase()
         {
             // Arrange
-            var expected = new Tool(id: 6,name: "drill", description: "to work for metal", locationId: 2);
-            var updatedEntity = new Tool(id: 6,name: "drill", description: "to work for metal", locationId: 2);
+            var expected = new Tool(id: 6,name: "drill", description: "to work for metal", locationId: 2, workerId: 1);
+            var updatedEntity = new Tool(id: 6,name: "drill", description: "to work for metal", locationId: 2, workerId: 1);
 
             // Act
             var actualResult = _entityRepository.UpdateAsync(updatedEntity).Result;
@@ -75,7 +75,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         {
             // Arrange
             List<Position> expected = null;
-            var deletedEntity = new Tool(id:7,name: "Grinder", description: "to work for metal", locationId: 2);
+            var deletedEntity = new Tool(id:7,name: "Grinder", description: "to work for metal", locationId: 2, workerId: 1);
             // Act
             _entityRepository.DeleteAsync(deletedEntity).Wait();
             var actualResult = _entityRepository.ReadAllAsync().Result;
@@ -90,7 +90,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         public void AddAsync_WhenPropertiesIsNotNull_ThenOutUsListOfEntitiesFromDatabase()
         {
             // Arrange
-            var expected = new Tool(name: "Grinder", description:"to work for metal", locationId:19);
+            var expected = new Tool(name: "Grinder", description:"to work for metal", locationId:19, workerId: 1);
             // Act
             var actualResult = _entityRepository.AddAsync(expected);
             // Assert

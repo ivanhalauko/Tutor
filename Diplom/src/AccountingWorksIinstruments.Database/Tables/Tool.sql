@@ -3,5 +3,7 @@
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Name] NVARCHAR(50) NULL, 
     [Description] NVARCHAR(50) NULL, 
-    [LocationId] INT NULL
+    [LocationId] INT NULL, 
+    [WorkerId] INT NULL, 
+    [StatusId] INT NULL
 )

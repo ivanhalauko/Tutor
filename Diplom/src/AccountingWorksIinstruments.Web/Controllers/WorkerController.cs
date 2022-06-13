@@ -52,8 +52,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 string Name = Convert.ToString(collection["Name"]);
                 string SecondName = Convert.ToString(collection["SecondName"]);
                 int PositionId = Convert.ToInt32(collection["PositionId"]);
-                int ToolId = Convert.ToInt32(collection["ToolId"]);
-                Worker workerEntity = new Worker(id, Surname, Name, SecondName, PositionId, ToolId);
+                Worker workerEntity = new Worker(id, Surname, Name, SecondName, PositionId);
                 _workerServices.Update(workerEntity);
                 return RedirectToAction("Workers");
             }
@@ -81,8 +80,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 string Name = Convert.ToString(collection["Name"]);
                 string SecondName = Convert.ToString(collection["SecondName"]);
                 int PositionId = Convert.ToInt32(collection["PositionId"]);
-                int ToolId = Convert.ToInt32(collection["ToolId"]);
-                Worker workerEntity = new Worker(id, Surname, Name, SecondName, PositionId, ToolId);
+                Worker workerEntity = new Worker(id, Surname, Name, SecondName, PositionId);
                 _workerServices.DeleteAll(workerEntity);
                 return RedirectToAction("Workers");
             }
@@ -94,7 +92,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         }
         public IActionResult CreateWorker()
         {
-            var entities = new Worker(0, null, null, null, 0, 0);
+            var entities = new Worker(0, null, null, null, 0);
             var workers = _mapperConfig.Mapper.Map<Worker, WorkerViewModel>(entities);
             return View(workers);
         }
@@ -109,8 +107,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 string Name = Convert.ToString(collection["Name"]);
                 string SecondName = Convert.ToString(collection["SecondName"]);
                 int PositionId = Convert.ToInt32(collection["PositionId"]);
-                int ToolId = Convert.ToInt32(collection["ToolId"]);
-                Worker workerEntity = new Worker(id, Surname, Name, SecondName, PositionId, ToolId);
+                Worker workerEntity = new Worker(id, Surname, Name, SecondName, PositionId);
                 _workerServices.Add(workerEntity);
                 return RedirectToAction("Workers");
             }

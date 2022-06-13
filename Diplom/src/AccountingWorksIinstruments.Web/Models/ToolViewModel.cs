@@ -14,5 +14,6 @@ namespace AccountingWorksIinstruments.Web.Models
         public int LocationId { get; set; }
 
         public string NameOfTheOrganization { get; set; }
+        public int WorkerId { get; set; }
     }
 }

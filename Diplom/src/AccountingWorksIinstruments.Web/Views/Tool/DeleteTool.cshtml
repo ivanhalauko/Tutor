@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="DeleteTool">
+        <form asp-action="DeleteToolById">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @*<div class="form-group">
                     <label asp-for="Id" class="control-label"></label>
@@ -41,6 +41,10 @@
                 @*<input type="submit" value="Delete" class="btn btn-primary"/>*@
                 @Html.ActionLink("Delete Tool", "DeleteToolById", "Tool", new { id = Model.Id })
             </div>
+            <div class="form-group">
+                  <input type="submit" value="Yes" class="btn btn-danger" /> |
+                    <a asp-action="Index">Back to List</a>
+                </div>
         </form>
     </div>
 </div>
@@ -49,9 +53,6 @@
     <a asp-action="Tool" asp-controller="Tool">Back to List</a>
 </div>
 
-<form asp-action="DeleteToolById" asp-controller="Tool">
-    <input type="submit" value="Delete" class="btn btn-danger" /> |
-    <a asp-action="Index">Back to List</a>
-</form>
+
 </div>
 

@@ -17,6 +17,5 @@ namespace AccountingWorksIinstruments.Web.Models
 
         public int PositionId { get; set; }
 
-        public int ToolId { get; set; }
     }
 }
