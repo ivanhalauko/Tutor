@@ -23,8 +23,8 @@ namespace AccountingWorksIinstruments.Database
         public DbSet<Position> Position { get; set; }
         public DbSet<Tool> Tool { get; set; }
         public DbSet<Worker> Worker { get; set; }
-
         public DbSet<Warehouse> Warehouse { get; set; }
+        public DbSet<SubmissionWriteTool> SubmissionWriteTool { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -26,7 +26,8 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<LocationService>().As<ILocationServices>();
             builder.RegisterType<ToolService>().As<IToolService>();
             builder.RegisterType<WorkerService>().As<IWorkerServices>();
-            builder.RegisterType<WarehouseService>().As<IWorkerServices>();
+            builder.RegisterType<WarehouseService>().As<IWarehouseService>();
+            builder.RegisterType<SubmissionWriteToolService>().As<ISubmissionWriteToolService>();
 
             builder.RegisterType<WiDbContext>().As<WiDbContext>().WithParameter("connectionString", _connectionString);
 
@@ -35,6 +36,7 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<EfGenRepository<Tool>>().As<IEfGenRepository<Tool>>();
             builder.RegisterType<EfGenRepository<Worker>>().As<IEfGenRepository<Worker>>();
             builder.RegisterType<EfGenRepository<Warehouse>>().As<IEfGenRepository<Warehouse>>();
+            builder.RegisterType<EfGenRepository<SubmissionWriteTool>>().As<IEfGenRepository<SubmissionWriteTool>>();
         }
     }
 }
