@@ -29,6 +29,7 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<WarehouseService>().As<IWarehouseService>();
             builder.RegisterType<SubmissionWriteToolService>().As<ISubmissionWriteToolService>();
             builder.RegisterType<SubmissionWriteOffService>().As<ISubmissionWriteOffService>();
+            builder.RegisterType<SubmissionForToolTool>().As<ISubmissionForToolToolService>();
 
             builder.RegisterType<WiDbContext>().As<WiDbContext>().WithParameter("connectionString", _connectionString);
 
@@ -39,6 +40,7 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<EfGenRepository<Warehouse>>().As<IEfGenRepository<Warehouse>>();
             builder.RegisterType<EfGenRepository<SubmissionWriteTool>>().As<IEfGenRepository<SubmissionWriteTool>>();
             builder.RegisterType<EfGenRepository<SubmissionWriteOff>>().As<IEfGenRepository<SubmissionWriteOff>>();
+            builder.RegisterType<EfGenRepository<SubmissionForToolTool>>().As<IEfGenRepository<SubmissionForToolTool>>();
         }
     }
 }
