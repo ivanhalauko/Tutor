@@ -7,6 +7,7 @@ using System.Text;
 
 namespace AccountingWorkInstruments.DataAccess.Models
 {
+    [Table("SubmissionWriteTool")]
     public class SubmissionWriteTool : IEntity
     {
         public SubmissionWriteTool(int id,int toolId, int submissionWriteID)

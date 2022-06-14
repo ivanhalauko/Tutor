@@ -25,6 +25,7 @@ namespace AccountingWorksIinstruments.Database
         public DbSet<Worker> Worker { get; set; }
         public DbSet<Warehouse> Warehouse { get; set; }
         public DbSet<SubmissionWriteTool> SubmissionWriteTool { get; set; }
+        public DbSet<SubmissionWriteOff> SubmissionWriteOff { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
