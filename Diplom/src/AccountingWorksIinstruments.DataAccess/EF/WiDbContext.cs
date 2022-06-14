@@ -30,6 +30,7 @@ namespace AccountingWorksIinstruments.Database
         public DbSet<SubmissionForTools> SubmissionForTools { get; set; }
         public  DbSet<Status> Status { get; set; }
         public DbSet<NotesDeliveryTool> NotesDeliveryTool { get; set; }
+        public DbSet<NoteDelivery> NoteDelivery { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

@@ -33,6 +33,7 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<SubmissionForToolsService>().As<ISubmissionForToolsService>();
             builder.RegisterType<StatusService>().As<IStatusService>();
             builder.RegisterType<NotesDeliveryToolService>().As<INotesDeliveryToolService>();
+            builder.RegisterType<NoteDeliveryService>().As<INoteDeliveryService>();
 
             builder.RegisterType<WiDbContext>().As<WiDbContext>().WithParameter("connectionString", _connectionString);
 
@@ -47,6 +48,7 @@ namespace AccountingWorkInstruments.DataAccess.Infrastructure
             builder.RegisterType<EfGenRepository<SubmissionForTools>>().As<IEfGenRepository<SubmissionForTools>>();
             builder.RegisterType<EfGenRepository<Status>>().As<IEfGenRepository<Status>>();
             builder.RegisterType<EfGenRepository<NotesDeliveryTool>>().As<IEfGenRepository<NotesDeliveryTool>>();
+            builder.RegisterType<EfGenRepository<NoteDelivery>>().As<IEfGenRepository<NoteDelivery>>();
         }
     }
 }
