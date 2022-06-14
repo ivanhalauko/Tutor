@@ -24,6 +24,8 @@ namespace AccountingWorksIinstruments.Database
         public DbSet<Tool> Tool { get; set; }
         public DbSet<Worker> Worker { get; set; }
 
+        public DbSet<Warehouse> Warehouse { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
