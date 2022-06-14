@@ -22,6 +22,7 @@ namespace AccountingWorkInstruments.DataAccess.Models
             Purpose = purpose;
             DateOfDelivery = dateOfDelivery;
         }
+        [Key]
         public int Id { get; set; }
         public string Purpose { get; set; }
         public DateTime DateOfDelivery { get; set; }
