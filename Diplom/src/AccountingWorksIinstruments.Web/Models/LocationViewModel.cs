@@ -12,6 +12,6 @@ namespace AccountingWorksIinstruments.Web.Models
 
         public string NameOfTheOrganization { get; set; }
 
-        public string Warehouse { get; set; }
+        public string WarehouseId { get; set; }
     }
 }

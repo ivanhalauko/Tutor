@@ -11,18 +11,18 @@ namespace AccountingWorkInstruments.DataAccess.Models
     public class Location : IEntity
     {
 
-        public Location(string nameOfTheOrganization, string warehouse)
+        public Location(string nameOfTheOrganization, int warehouseId)
         {
             NameOfTheOrganization = nameOfTheOrganization;
-            Warehouse = warehouse;
+            WarehouseId = warehouseId;
                     }
 
         public Location(int id, string nameOfTheOrganization, 
-            string warehouse)
+            int warehouseId)
         {
             Id = id;
             NameOfTheOrganization = nameOfTheOrganization;
-            Warehouse = warehouse;
+            WarehouseId = warehouseId;
         }
 
         [Key]
@@ -30,6 +30,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
 
         public string NameOfTheOrganization { get; set; }
 
-        public string Warehouse { get; set; }
+        public int WarehouseId { get; set; }
     }
 }

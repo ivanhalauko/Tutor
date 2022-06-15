@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AccountingWorksIinstruments.Web.Models.ToolViewModel>
+
+@{
+    ViewData["Title"] = "ShowMyTools";
+}
+
+<h1>ShowMyTools</h1>
+
+<p>
+    <a asp-action="PersonalAccount">Back to personal account</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfTheOrganization)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.WorkerId)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.LocationId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfTheOrganization)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.WorkerId)
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
