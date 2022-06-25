@@ -48,13 +48,13 @@ namespace AccountingWorksIinstruments.Web.Controllers
         {
             var submissionForToolTools = _submissionForToolToolService.ReadAll();
             var submissionForTools = _submissionForToolsService.ReadAll();
-            var viewsubmissionForToolTools = _mapperConfig.Mapper.Map<IEnumerable<SubmissionForToolTool>, IEnumerable<StockAccountController>>(submissionForToolTools);
+            var viewsubmissionForToolTools = _mapperConfig.Mapper.Map<IEnumerable<SubmissionForToolTool>, IEnumerable<SubmissionFromWorkersViewModel>>(submissionForToolTools);
             return View(viewsubmissionForToolTools);
         }
         public ActionResult HistoryOfADeliveryNotes()
         {
             var notesOfDelivery = _noteDeliveryService.ReadAll();
-            var viewNotesOfDelivery = _mapperConfig.Mapper.Map<IEnumerable<NoteDelivery>, IEnumerable<StockAccountViewModel>>(notesOfDelivery);
+            var viewNotesOfDelivery = _mapperConfig.Mapper.Map<IEnumerable<NoteDelivery>, IEnumerable<HistoryOfADelivaryNotesViewModel>>(notesOfDelivery);
             return View(viewNotesOfDelivery);
         }
         // GET: StockAccountController/Create

@@ -84,6 +84,13 @@
     <Build Include="ForeignKeys\FK_Location_Warehouse.sql" />
     <Build Include="ForeignKeys\FK_NotesDeliveryTool_NotesDelivery.sql" />
     <Build Include="ForeignKeys\FK_NotesDeliveryTool_Tool.sql" />
+    <Build Include="Tables\AspNetRoleClaims.sql" />
+    <Build Include="Tables\AspNetRoles.sql" />
+    <Build Include="Tables\AspNetUserClaims.sql" />
+    <Build Include="Tables\AspNetUserLogins.sql" />
+    <Build Include="Tables\AspNetUserRoles.sql" />
+    <Build Include="Tables\AspNetUsers.sql" />
+    <Build Include="Tables\AspNetUserTokens.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AccountingWorksIinstruments.Database.refactorlog" />

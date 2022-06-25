@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pd3jFxsIGuG+HzWBmYLda7ETvfkkyCZL9V2Ff/wVbjNxQ4Xc55OQMAk0kw50rAtA/pKinwy75C3X8rhlDJg1bg==",
+  "dgSpecHash": "zXC1Tzr3VMHqyhx/BxbaFO7jFOonZ22WrQxUU8b/chF4FtbgMImoNXQK6HwkXgp8RgYx4n2Rpq3xRDcTMZsIug==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\src\\AccountingWorksIinstruments.Web\\AccountingWorksIinstruments.Web.csproj",
   "expectedPackageFiles": [
@@ -172,8 +172,7 @@
     "C:\\Users\\Sergey\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Sergey\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\Sergey\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Sergey\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
+    "C:\\Users\\Sergey\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
