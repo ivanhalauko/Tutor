@@ -1,0 +1,33 @@
+﻿@model AccountingWorksIinstruments.Web.Models.DeleteUserViewModel
+
+@{
+    ViewData["Title"] = "DeleteUser";
+}
+
+<h1>Delete</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-action="DeleteUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label><br />
+                <input type="hidden" asp-for="Id" name="Id" class="form-control" />
+                <p>@Html.DisplayFor(x => x.Id)</p>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label><br />
+                <p>@Model.Email</p>
+            </div>
+            <div class="form-group">
+                <b>Are you sure you want delete this account?</b>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Yes" class="btn btn-primary" size="20" />
+                <a class="btn btn-secondary" asp-action="Index" asp-controller="Account">Back to List</a>
+            </div>
+
+        </form>
+    </div>
+</div>
