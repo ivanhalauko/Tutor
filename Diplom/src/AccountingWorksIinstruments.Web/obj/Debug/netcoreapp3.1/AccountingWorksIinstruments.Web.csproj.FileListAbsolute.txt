@@ -274,3 +274,4 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\bin\Debug\netcor
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
