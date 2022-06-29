@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 
 namespace AccountingWorksIinstruments.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AccountController : Controller
     {
         private const string _userRole = "User";
         private readonly UserManager<IdentityUser> _identityUserManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        
         public AccountController(UserManager<IdentityUser> identityUserManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _identityUserManager = identityUserManager;
@@ -64,7 +66,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 //    _amountService.Create(amount);
 
                 await _signInManager.SignInAsync(user, false);
-                return RedirectToAction(Url.Action(nameof(Index), nameof(HomeController)));
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -150,6 +152,45 @@ namespace AccountingWorksIinstruments.Web.Controllers
             return View(name);
         }
 
+        [HttpGet]
+        [Route("Account/EditUsersRole/{userId}")]
+        public async Task<IActionResult> EditUsersRole(string userId)
+        {
+            var user = await _identityUserManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                var userRoles = await _identityUserManager.GetRolesAsync(user);
+                var allRoles = _roleManager.Roles.ToList();
+                var model = new RoleViewModel
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email,
+                    UserRoles = userRoles,
+                    AllRoles = allRoles,
+                };
+                return View(model);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditUsersRole(string userId, List<string> roles)
+        {
+            var user = await _identityUserManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                var userRoles = await _identityUserManager.GetRolesAsync(user);
+                _roleManager.Roles.ToList();
+                var addedRoles = roles.Except(userRoles);
+                var removedRoles = userRoles.Except(roles);
+                await _identityUserManager.AddToRolesAsync(user, addedRoles);
+                await _identityUserManager.RemoveFromRolesAsync(user, removedRoles);
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
         [HttpPost]
         public async Task<IActionResult> DeleteRole(string id)
         {
