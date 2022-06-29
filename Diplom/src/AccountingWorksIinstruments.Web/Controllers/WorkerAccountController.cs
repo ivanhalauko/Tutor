@@ -97,24 +97,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
         }
 
         // GET: WorkerAccountController/Create
-        public ActionResult Create()
+        public ActionResult CreateSubmission()
         {
-            return View();
-        }
-
-        // POST: WorkerAccountController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("CreateSubmission", "SubmissionController");
         }
 
         // GET: WorkerAccountController/Edit/5

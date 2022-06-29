@@ -19,10 +19,7 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LocationId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NameOfTheOrganization)
+                @Html.DisplayNameFor(model => model.NameOfLocation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.WorkerId)
@@ -32,9 +29,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DateOfDelivery)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToolId)
             </th>
             <th></th>
         </tr>
@@ -49,10 +43,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LocationId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameOfTheOrganization)
+                @Html.DisplayFor(modelItem => item.NameOfLocation)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.WorkerId)
@@ -62,9 +53,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfDelivery)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ToolId)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
