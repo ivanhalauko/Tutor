@@ -15,17 +15,15 @@ namespace AccountingWorksIinstruments.Web.Controllers
     {
         private readonly IMapperConfig _mapperConfig;
         private readonly IToolService _toolService;
-        private readonly IWorkerServices _workerService;
         private readonly ILocationServices _locationServices;
         private readonly ISubmissionForToolsService _submissionForToolsService;
         private readonly ISubmissionForToolToolService _submissionForToolToolService;
         public WorkerAccountController(IMapperConfig mapConfig, ILocationServices locationServices, ISubmissionForToolToolService submissionForToolToolService,
-            IToolService toolService, IWorkerServices workerService, ISubmissionForToolsService submissionForToolsService)
+            IToolService toolService, ISubmissionForToolsService submissionForToolsService)
         {
             _mapperConfig = mapConfig;
             _locationServices = locationServices;
             _toolService = toolService;
-            _workerService = workerService;
             _submissionForToolsService = submissionForToolsService;
             _submissionForToolToolService = submissionForToolToolService;
 
@@ -37,59 +35,59 @@ namespace AccountingWorksIinstruments.Web.Controllers
         }
         
 
-        public ActionResult ShowMyTools(int workerId)
-        {
-            var tools = _toolService.ReadAll();
-            var locations = _locationServices.ReadAll().ToList();
-            var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
-            var viewTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(toolsByWorkerId);
-            foreach (ToolViewModel item in viewTools)
-            {
-                int locationId = item.LocationId;
-                Location location = locations.Find(p => p.Id == locationId);
-                item.NameOfLocation = location.NameOfLocation;
-            }
-            return View(viewTools);
-        }
+        //public ActionResult ShowMyTools(int workerId)
+        //{
+        //    var tools = _toolService.ReadAll();
+        //    var locations = _locationServices.ReadAll().ToList();
+        //    var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
+        //    var viewTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(toolsByWorkerId);
+        //    foreach (ToolViewModel item in viewTools)
+        //    {
+        //        int locationId = item.LocationId;
+        //        Location location = locations.Find(p => p.Id == locationId);
+        //        item.NameOfLocation = location.NameOfLocation;
+        //    }
+        //    return View(viewTools);
+        //}
         ///WorkerAccount/ShowMySubmission?workerId=1
-        public ActionResult ShowMySubmission(int workerId)
-        {
-            var tools = _toolService.ReadAll();
-            var submissionForTools = _submissionForToolsService.ReadAll();
-            var submissionForToolTools = _submissionForToolToolService.ReadAll();
-            var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
-            List<SubmissionForToolTool> submissionForToolByWorkerId = new List<SubmissionForToolTool>(); 
+        //public ActionResult ShowMySubmission(int workerId)
+        //{
+        //    var tools = _toolService.ReadAll();
+        //    var submissionForTools = _submissionForToolsService.ReadAll();
+        //    var submissionForToolTools = _submissionForToolToolService.ReadAll();
+        //    var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
+        //    List<SubmissionForToolTool> submissionForToolByWorkerId = new List<SubmissionForToolTool>(); 
 
-            foreach (var toolId in toolsByWorkerId)
-            {
-                foreach (var item in submissionForToolTools)
-                {
-                    if (item.ToolId == toolId.Id)
-                    {
-                        submissionForToolByWorkerId.Add(item);
-                    }
-                }
-            }
-            List<SubmissionForToolsViewModel> submissionForToolsById = new List<SubmissionForToolsViewModel>();
-            foreach (var submission in submissionForToolByWorkerId)
-            {
-                foreach (var item in submissionForTools)
-                {
-                    if (item.Id == submission.SubmissionId)
-                    {
-                        SubmissionForToolsViewModel model = new SubmissionForToolsViewModel();
-                        model.Purpose = item.Purpose;
-                        model.DateOfDelivery = item.DateOfDelivery;
-                        model.Name = toolsByWorkerId.Select(x => x.Name).FirstOrDefault();
-                        submissionForToolsById.Add(model);
-                    }
-                }
-            }
+        //    foreach (var toolId in toolsByWorkerId)
+        //    {
+        //        foreach (var item in submissionForToolTools)
+        //        {
+        //            if (item.ToolId == toolId.Id)
+        //            {
+        //                submissionForToolByWorkerId.Add(item);
+        //            }
+        //        }
+        //    }
+        //    List<SubmissionForToolsViewModel> submissionForToolsById = new List<SubmissionForToolsViewModel>();
+        //    foreach (var submission in submissionForToolByWorkerId)
+        //    {
+        //        foreach (var item in submissionForTools)
+        //        {
+        //            if (item.Id == submission.SubmissionId)
+        //            {
+        //                SubmissionForToolsViewModel model = new SubmissionForToolsViewModel();
+        //                model.Purpose = item.Purpose;
+        //                model.DateOfDelivery = item.DateOfDelivery;
+        //                model.Name = toolsByWorkerId.Select(x => x.Name).FirstOrDefault();
+        //                submissionForToolsById.Add(model);
+        //            }
+        //        }
+        //    }
 
-            //var submissionForToolToolById = submissionForToolTools.GroupBy(p => p.ToolId)
-            //var submissionForToolById = submissionForTools.Where(x => x.)
-            return View(submissionForToolsById);
-        }
+        //    //var submissionForToolToolById = submissionForToolTools.GroupBy(p => p.ToolId)
+        //    //var submissionForToolById = submissionForTools.Where(x => x.)
+        //    return View(submissionForToolsById);
+        //}
         // GET: WorkerAccountController/Details/5
         public ActionResult Details(int id)
         {

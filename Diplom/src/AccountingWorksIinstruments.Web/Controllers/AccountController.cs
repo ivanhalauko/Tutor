@@ -13,11 +13,12 @@ namespace AccountingWorksIinstruments.Web.Controllers
     public class AccountController : Controller
     {
         private const string _userRole = "User";
-        private readonly UserManager<IdentityUser> _identityUserManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<User> _identityUserManager;
+        private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         
-        public AccountController(UserManager<IdentityUser> identityUserManager, SignInManager<IdentityUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<User> identityUserManager, SignInManager<User> signInManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _identityUserManager = identityUserManager;
             _signInManager = signInManager;

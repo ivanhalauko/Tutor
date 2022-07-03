@@ -4,6 +4,6 @@
     [Name] NVARCHAR(50) NULL, 
     [Description] NVARCHAR(50) NULL, 
     [LocationId] INT NULL, 
-    [WorkerId] INT NULL, 
-    [StatusId] INT NULL
+    [StatusId] INT NULL, 
+    [AspNetUsersId] NVARCHAR(450) NULL
 )

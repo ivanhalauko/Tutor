@@ -21,7 +21,6 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly IPositionService _positionService;
         private readonly ILocationServices _locationServices;
         private readonly IToolService _toolService;
-        private readonly IWorkerServices _workerServices;
 
         public HomeController(ILogger<HomeController> logger, IMapperConfig mapConfig, IPositionService positionService,ILocationServices locationServices, IToolService toolService)
         {

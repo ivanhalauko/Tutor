@@ -65,7 +65,7 @@
     <Build Include="Tables\Position.sql" />
     <Build Include="ForeignKeys\FK_Position_Worker.sql" />
     <Build Include="Tables\Tool.sql" />
-    <Build Include="ForeignKeys\FK_Tool_Worker.sql" />
+    <Build Include="ForeignKeys\FK_Tool_AspNetUsers.sql" />
     <Build Include="Tables\Location.sql" />
     <Build Include="ForeignKeys\FK_Tool_Location.sql" />
     <Build Include="Tables\SubmissionForTools.sql" />
@@ -92,6 +92,8 @@
     <Build Include="Tables\AspNetUsers.sql" />
     <Build Include="Tables\AspNetUserTokens.sql" />
     <Build Include="Tables\StatusSubmission.sql" />
+    <Build Include="ForeignKeys\FK_AspNetUsers_Location.sql" />
+    <Build Include="ForeignKeys\FK_AspNetUsers_Position.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AccountingWorksIinstruments.Database.refactorlog" />

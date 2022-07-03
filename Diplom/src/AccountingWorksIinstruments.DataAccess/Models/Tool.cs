@@ -9,21 +9,22 @@ namespace AccountingWorkInstruments.DataAccess.Models
     [Table("Tool")]
     public class Tool : IEntity
     {
-        public Tool(string name, string description, int locationId, int workerId)
+        public Tool(string name, string description,
+            int locationId,string nameOfLocation)
         {
             Name = name;
             Description = description;
             LocationId = locationId;
-            WorkerId = workerId;
+            NameOfLocation = nameOfLocation;
         }
 
-        public Tool(int id, string name, string description, int locationId, int workerId)
+        public Tool(int id, string name, string description,
+            int locationId)
         {
             Id = id;
             Name = name;
             Description = description;
             LocationId = locationId;
-            WorkerId = workerId;
         }
 
         public int Id { get; set; }
@@ -34,6 +35,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
 
         public int LocationId { get; set; }
 
-        public int WorkerId { get; set; }
+        public string NameOfLocation { get; set; }
     }
 }

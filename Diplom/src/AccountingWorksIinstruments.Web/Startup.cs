@@ -1,6 +1,7 @@
 using AccountingWorkInstruments.DataAccess.Infrastructure;
 using AccountingWorksIinstruments.Web.Context;
 using AccountingWorksIinstruments.Web.Infrastructure;
+using AccountingWorksIinstruments.Web.Models;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
@@ -35,7 +36,7 @@ namespace AccountingWorksIinstruments.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(_connectionString));
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddRazorPages();
@@ -67,6 +68,7 @@ namespace AccountingWorksIinstruments.Web
         {
             builder.RegisterModule(new AppModule());
             builder.RegisterModule(new ServiceModule(_connectionString));
+            //builder.RegisterModule(new ApplicationDbContext());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

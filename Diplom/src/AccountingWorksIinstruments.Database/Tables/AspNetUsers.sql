@@ -15,6 +15,8 @@
         [LockoutEnabled] bit NOT NULL,
         [AccessFailedCount] int NOT NULL,
         [Surname] NVARCHAR(256) NULL, 
+    [PositionId] INT NULL, 
+    [LocationId] INT NULL, 
     CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
     );
 

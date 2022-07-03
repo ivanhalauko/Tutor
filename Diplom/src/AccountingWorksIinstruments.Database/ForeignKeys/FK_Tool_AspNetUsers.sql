@@ -1,0 +1,5 @@
+﻿ALTER TABLE [dbo].[Tool]
+	ADD CONSTRAINT [FK_Tool_AspNetUsers]
+	FOREIGN KEY (AspNetUsersId)
+	REFERENCES [AspNetUsers] (Id)
+	ON DELETE CASCADE

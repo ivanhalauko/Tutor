@@ -31,7 +31,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
             string _connectionString = "Data Source=SEREGIN;Initial Catalog=AccountingWorksIinstruments.Database;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             _tmContext = new WiDbContext(_connectionString);
             _entityRepository = new EfGenRepository<Location>(_tmContext);
-            var firstEntity = new Location(nameOfTheOrganization: "RKP", warehouse: "Equipped");
+            var firstEntity = new Location(nameOfLocation: "RKP", warehouseId: 1);
             var ent = _entityRepository.ReadAllAsync().Result;
             if ( ent.FirstOrDefault() == null)
             {
@@ -43,7 +43,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         [TearDown]
         public void BackUpDataBase()
         {
-            var firstEntity = new Location(id: 1, nameOfTheOrganization: "RKP", warehouse: "Equipped");
+            var firstEntity = new Location(id: 1, nameOfLocation: "RKP", warehouseId: 1);
            _entityRepository.UpdateAsync(firstEntity);
         }
 
@@ -53,7 +53,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
             // Arrange
             var expected = new List<Location> 
             {
-               new Location(id:1,nameOfTheOrganization: "RKP", warehouse:"Equipped")
+               new Location(id:1,nameOfLocation: "RKP", warehouseId:1)
             };
             // Act
             var actualResult = _entityRepository.ReadAllAsync().Result;
@@ -66,8 +66,8 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         public void UpdateAllAsyncObjects_WhenPropertiesIsNotNull_ThenOutUsListOfEntitiesFromDatabase()
         {
             // Arrange
-            var expected = new Location(id: 1, nameOfTheOrganization: "RKPnew", warehouse: "Equipped");
-            var updatedEntity = new Location(id: 1,nameOfTheOrganization: "RKPnew", warehouse: "Equipped");
+            var expected = new Location(id: 1, nameOfLocation: "RKPnew", warehouseId: 1);
+            var updatedEntity = new Location(id: 1, nameOfLocation: "RKPnew", warehouseId: 1);
 
             // Act
             var actualResult = _entityRepository.UpdateAsync(updatedEntity).Result;
@@ -81,7 +81,7 @@ namespace AccountingWorksIinstruments.IntegrationTests.EfRepository
         {
             // Arrange
             List<Location> expected = null;
-            var deletedEntity = new Location(id: 1,nameOfTheOrganization: "RKP", warehouse: "Equipped");
+            var deletedEntity = new Location(id: 1, nameOfLocation: "RKP", warehouseId: 1);
             // Act
             _entityRepository.DeleteAsync(deletedEntity).Wait();
             var actualResult = _entityRepository.ReadAllAsync().Result;

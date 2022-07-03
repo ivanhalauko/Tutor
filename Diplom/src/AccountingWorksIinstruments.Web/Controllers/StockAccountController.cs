@@ -17,20 +17,18 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly IToolService _toolService;
         private readonly ILocationServices _locationServices;
         private readonly IStatusService _statusService;
-        private readonly IWorkerServices _workerService;
         private readonly ISubmissionForToolsService _submissionForToolsService;
         private readonly ISubmissionForToolToolService _submissionForToolToolService;
         private readonly INoteDeliveryService _noteDeliveryService;
 
         public StockAccountController(IMapperConfig mapperConfig, IToolService toolService, ILocationServices locationServices, 
-            IStatusService statusService, IWorkerServices workerService, ISubmissionForToolsService submissionForToolsService,
+            IStatusService statusService, ISubmissionForToolsService submissionForToolsService,
             ISubmissionForToolToolService submissionForToolToolService, INoteDeliveryService noteDeliveryService)
         {
             _mapperConfig = mapperConfig;
             _toolService = toolService;
             _locationServices = locationServices;
             _statusService = statusService;
-            _workerService = workerService;
             _submissionForToolsService = submissionForToolsService;
             _submissionForToolToolService = submissionForToolToolService;
             _noteDeliveryService = noteDeliveryService;
@@ -58,20 +56,20 @@ namespace AccountingWorksIinstruments.Web.Controllers
             return View(viewNotesOfDelivery);
         }
         // GET: StockAccountController/Create
-        public ActionResult CreateTool(int workerId)
-        {
-            var tools = _toolService.ReadAll();
-            var locations = _locationServices.ReadAll().ToList();
-            var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
-            var viewCreateTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(toolsByWorkerId);
-            foreach (ToolViewModel item in viewCreateTools)
-            {
-                int locationId = item.LocationId;
-                Location location = locations.Find(p => p.Id == locationId);
-                item.NameOfLocation = location.NameOfLocation;
-            }
-            return View(viewCreateTools);
-        }
+        //public ActionResult CreateTool(int workerId)
+        //{
+        //    var tools = _toolService.ReadAll();
+        //    var locations = _locationServices.ReadAll().ToList();
+        //    var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
+        //    var viewCreateTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(toolsByWorkerId);
+        //    foreach (ToolViewModel item in viewCreateTools)
+        //    {
+        //        int locationId = item.LocationId;
+        //        Location location = locations.Find(p => p.Id == locationId);
+        //        item.NameOfLocation = location.NameOfLocation;
+        //    }
+        //    return View(viewCreateTools);
+        //}
 
         // POST: StockAccountController/Create
         [HttpPost]

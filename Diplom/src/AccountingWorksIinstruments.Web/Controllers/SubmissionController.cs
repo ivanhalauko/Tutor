@@ -15,18 +15,16 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly ISubmissionForToolsService _submissionForToolsService;
         private readonly ISubmissionForToolToolService _submissionForToolToolService;
         private readonly IToolService _toolService;
-        private readonly IWorkerServices _workerService;
         private readonly ILocationServices _locationServices;
         private readonly UserManager<IdentityUser> _userManager;
 
         public SubmissionController(IMapperConfig mapperConfig, ISubmissionForToolsService submissionForToolsService, ISubmissionForToolToolService submissionForToolToolService,
-            IToolService toolService, IWorkerServices workerService, ILocationServices locationServices, UserManager<IdentityUser> userManager)
+            IToolService toolService,  ILocationServices locationServices, UserManager<IdentityUser> userManager)
         {
             _mapperConfig = mapperConfig;
             _submissionForToolsService = submissionForToolsService;
             _submissionForToolToolService = submissionForToolToolService;
             _toolService = toolService;
-            _workerService = workerService;
             _locationServices = locationServices;
             _userManager = userManager;
         }
