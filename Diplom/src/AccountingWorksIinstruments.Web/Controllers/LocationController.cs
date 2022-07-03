@@ -48,9 +48,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
             try
             {
                 int id = Convert.ToInt32(collection["Id"]);
-                string NameOfTheOrganization = Convert.ToString(collection["NameOfTheOrganization"]);
+                string NameOfLocation = Convert.ToString(collection["NameOfLocation"]);
                 int warehouse = Convert.ToInt32(collection["Warehouse"]);
-                Location locationEntity = new Location(id, NameOfTheOrganization, warehouse);
+                Location locationEntity = new Location(id, NameOfLocation, warehouse);
                 _locationServices.Update(locationEntity);
                 return RedirectToAction("Locations");
             }
@@ -74,9 +74,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
             try
             {
                 int id = Convert.ToInt32(collection["Id"]);
-                string NameOfTheOrganization = Convert.ToString(collection["NameOfTheOrganization"]);
+                string NameOfLocation = Convert.ToString(collection["NameOfTLocation"]);
                 int warehouse = Convert.ToInt32(collection["Warehouse"]);
-                Location locationEntity = new Location(id, NameOfTheOrganization, warehouse);
+                Location locationEntity = new Location(id, NameOfLocation, warehouse);
                 _locationServices.DeleteAll(locationEntity);
                 return RedirectToAction("Locations");
             }
@@ -99,9 +99,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
             try
             {
                 int id = Convert.ToInt32(collection["Id"]);
-                string NameOfTheOrganization = Convert.ToString(collection["NameOfTheOrganization"]);
+                string NameOfLocation = Convert.ToString(collection["NameOfLocation"]);
                 int warehouse = Convert.ToInt32(collection["Warehouse"]);
-                Location locationEntity = new Location(id, NameOfTheOrganization, warehouse);
+                Location locationEntity = new Location(id, NameOfLocation, warehouse);
                 _locationServices.Add(locationEntity);
                 return RedirectToAction("Locations");
             }

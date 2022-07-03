@@ -91,6 +91,7 @@
     <Build Include="Tables\AspNetUserRoles.sql" />
     <Build Include="Tables\AspNetUsers.sql" />
     <Build Include="Tables\AspNetUserTokens.sql" />
+    <Build Include="Tables\StatusSubmission.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="AccountingWorksIinstruments.Database.refactorlog" />

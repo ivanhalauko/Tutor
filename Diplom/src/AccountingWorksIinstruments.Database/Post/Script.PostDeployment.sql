@@ -1,4 +1,40 @@
-﻿---Warehouse
+﻿---AspNetRoles
+if not exists (SELECT*FROM dbo.AspNetRoles WHERE Id='93288d77-4729-4b10-8d58-caa19f6a73cf' and Name='Admin' and NormalizedName='ADMIN' and 
+ConcurrencyStamp='24a9e76f-a0b8-4579-8cf3-719b01eb3831')
+begin
+insert into dbo.AspNetRoles(Id,Name,NormalizedName,ConcurrencyStamp)
+values
+('93288d77-4729-4b10-8d58-caa19f6a73cf','Admin','ADMIN','24a9e76f-a0b8-4579-8cf3-719b01eb3831')
+end
+GO
+
+
+---AspNetUser
+if not exists (SELECT*FROM dbo.AspNetUsers WHERE Id='b8055e4f-d51d-4422-a59a-bd1f87ab616b' and UserName='admin123@sobaca.ru' and NormalizedUserName='ADMIN123@SOBACA.RU' 
+and Email='admin123@sobaca.ru' and NormalizedEmail='ADMIN123@SOBACA.RU' and EmailConfirmed='False' 
+and PasswordHash='AQAAAAEAACcQAAAAELAR7Z6yRX31T3BvBZe+1N1oevws7oWS7pGf1t9ntDIq9oAppNpo+0PB+1F0ywEapA==' 
+and SecurityStamp='MQ7KQM5ONQ5QYN7YXGNCPWLNTYUU6WHJ' and ConcurrencyStamp='e7ade904-565d-4963-8d1b-02d2961954f6' 
+and PhoneNumber=NULL and PhoneNumberConfirmed='False' and TwoFactorEnabled='False' and LockoutEnd=NULL and LockoutEnabled='True' 
+and AccessFailedCount=0 and Surname=NULL)
+begin
+insert into dbo.AspNetUsers(Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,
+ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount,Surname)
+values
+('b8055e4f-d51d-4422-a59a-bd1f87ab616b','admin123@sobaca.ru','ADMIN123@SOBACA.RU','admin123@sobaca.ru','ADMIN123@SOBACA.RU','False',
+'AQAAAAEAACcQAAAAELAR7Z6yRX31T3BvBZe+1N1oevws7oWS7pGf1t9ntDIq9oAppNpo+0PB+1F0ywEapA==',
+'MQ7KQM5ONQ5QYN7YXGNCPWLNTYUU6WHJ','e7ade904-565d-4963-8d1b-02d2961954f6',NULL,'False','False',
+NULL,'True',0,NULL)
+end 
+GO
+---AspNetUserRoles
+if not exists (SELECT*FROM dbo.AspNetUserRoles WHERE UserId='b8055e4f-d51d-4422-a59a-bd1f87ab616b' and RoleId='93288d77-4729-4b10-8d58-caa19f6a73cf')
+begin 
+insert into dbo.AspNetUserRoles(UserId,RoleId)
+values
+('b8055e4f-d51d-4422-a59a-bd1f87ab616b','93288d77-4729-4b10-8d58-caa19f6a73cf')
+end
+GO
+---Warehouse
 if not exists (SELECT*FROM dbo.Warehouse WHERE WarehouseNumber='Sklad №1')
 begin
 insert into dbo.Warehouse(WarehouseNumber)
@@ -9,9 +45,9 @@ values
 end
 GO
 --- Location
-if not exists (SELECT*FROM dbo.Location WHERE NameOfTheOrganization='RKP' and WarehouseId=1)
+if not exists (SELECT*FROM dbo.Location WHERE NameOfLocation='RKP' and WarehouseId=1)
 begin
-insert into dbo.Location(NameOfTheOrganization,WarehouseId)
+insert into dbo.Location(NameOfLocation,WarehouseId)
 values
 ('RKP',1),
 ('Alcopack',2),
@@ -34,13 +70,13 @@ end
 GO
 
 --- Worker
-if not exists (SELECT*FROM dbo.Worker WHERE Name='Nikolai' and Surname='Nikolaev' and SecondName='Nikolaevich' and PositionId=1)
+if not exists (SELECT*FROM dbo.Worker WHERE Name='Nikolai' and Surname='Nikolaev' and SecondName='Nikolaevich' and PositionId=1 and LocationId=1)
 begin
-insert into dbo.Worker (Name,Surname,SecondName,PositionId)
+insert into dbo.Worker (Name,Surname,SecondName,PositionId,LocationId)
 values
-('Nikolai','Nikolaev','Nikolaevich',1),
-('Petrov','Petr','Petrovich',2),
-('Sidorov','Sidr','Sidorovich',3)
+('Nikolai','Nikolaev','Nikolaevich',1,3),
+('Petrov','Petr','Petrovich',2,4),
+('Sidorov','Sidr','Sidorovich',3,2)
 end
 GO
 
@@ -125,5 +161,14 @@ insert into dbo.NotesDeliveryTool(ToolId,NoteDeliveryId)
 values
 (2,1),
 (1,3)
+end
+GO
+
+if not exists (SELECT*FROM dbo.StatusSubmission WHERE StatusSub='Approved')
+begin
+insert into dbo.StatusSubmission(StatusSub)
+values
+('Approved'),
+('Denied')
 end
 GO

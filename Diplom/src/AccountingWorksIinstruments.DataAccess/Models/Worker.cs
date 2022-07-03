@@ -9,21 +9,23 @@ namespace AccountingWorkInstruments.DataAccess.Models
     [Table("Worker")]
     public class Worker : IEntity
     {
-        public Worker(string surname, string name, string secondName, int positionId)
+        public Worker(string surname, string name, string secondName, int positionId, int locationId)
         {
             Surname = surname;
             Name = name;
             SecondName = secondName;
             PositionId = positionId;
+            LocationId = locationId;
         }
 
-        public Worker(int id, string surname, string name, string secondName, int positionId)
+        public Worker(int id, string surname, string name, string secondName, int positionId, int locationId)
         {
             Id = id;
             Surname = surname;
             Name = name;
             SecondName = secondName;
             PositionId = positionId;
+            LocationId = locationId;
         }
 
         public int Id { get; set; }
@@ -36,5 +38,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
 
         public int PositionId { get; set; }
 
+        public int LocationId { get; set; }
     }
 }

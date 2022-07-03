@@ -42,7 +42,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             {
                 int locationId = item.LocationId;
                 Location location = locations.Find(p => p.Id == locationId);
-                item.NameOfTheOrganization = location.NameOfTheOrganization;
+                item.NameOfLocation = location.NameOfLocation;
             }
             return View(viewTools);
         }
@@ -56,7 +56,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             {
                 int locationId = item.LocationId;
                 Location location = locations.Find(p => p.Id == locationId);
-                item.NameOfTheOrganization = location.NameOfTheOrganization;
+                item.NameOfLocation = location.NameOfLocation;
             }
             return View(viewTools);
         }
@@ -66,7 +66,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(_locationServices.ReadAll());
             var entities = _toolService.GetById(id);
             var tool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(entities).FirstOrDefault();
-            ViewBag.Locations = new SelectList(locations, "Id", "NameOfTheOrganization", 1);
+            ViewBag.Locations = new SelectList(locations, "Id", "NameOfLocation", 1);
             return View(tool);
         }
         [HttpPost]
@@ -77,9 +77,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 int id = Convert.ToInt32(collection["Id"]);
                 string Name = Convert.ToString(collection["Name"]);
                 string Description = Convert.ToString(collection["Description"]);
-                int idOfTheOrganization = Convert.ToInt32(collection["NameOfTheOrganization"]);
+                int idOfLocation = Convert.ToInt32(collection["NameOfLocation"]);
                 int toolId = Convert.ToInt32(collection["ToolId"]);
-                Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization,toolId);
+                Tool toolEntity = new Tool(id, Name, Description, idOfLocation, toolId);
                 _toolService.Update(toolEntity);
                 return RedirectToAction("Tool");
             }
@@ -96,7 +96,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var viewTool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tool).FirstOrDefault();
             int locationIdFromTool = tool.ToList().FirstOrDefault().LocationId;
             var locations = _locationServices.GetById(locationIdFromTool);
-            viewTool.NameOfTheOrganization = locations.ToList().FirstOrDefault().NameOfTheOrganization;
+            viewTool.NameOfLocation = locations.ToList().FirstOrDefault().NameOfLocation;
             return View(viewTool);
         }
 

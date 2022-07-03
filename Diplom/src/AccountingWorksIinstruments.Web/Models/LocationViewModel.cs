@@ -10,7 +10,7 @@ namespace AccountingWorksIinstruments.Web.Models
 
         public int Id { get; set; }
 
-        public string NameOfTheOrganization { get; set; }
+        public string NameOfLocation { get; set; }
 
         public string WarehouseId { get; set; }
     }

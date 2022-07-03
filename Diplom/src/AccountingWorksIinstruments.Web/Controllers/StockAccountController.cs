@@ -68,7 +68,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             {
                 int locationId = item.LocationId;
                 Location location = locations.Find(p => p.Id == locationId);
-                item.NameOfTheOrganization = location.NameOfTheOrganization;
+                item.NameOfLocation = location.NameOfLocation;
             }
             return View(viewCreateTools);
         }

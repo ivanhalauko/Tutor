@@ -33,8 +33,8 @@
                 <span asp-validation-for="LocationId" class="text-danger"></span>
             </div>*@
             <div>
-                <label asp-for="NameOfTheOrganization" class="control-label">Name of the Organization</label>
-                @Html.DropDownList("NameOfTheOrganization", ViewBag.Locations as SelectList, new { id = "nameOfTheOrganization" })
+                <label asp-for="NameOfLocation" class="control-label">Name of the Organization</label>
+                @Html.DropDownList("NameOfLocation", ViewBag.Locations as SelectList, new { id = "nameOfLocation" })
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -50,7 +50,7 @@
 
 <script type="text/javascript">
     $(function() {
-        $('#nameOfTheOrganization').change(function()
+        $('#nameOfLocation').change(function()
         {
             var id = $(this).val();
             $.ajax({

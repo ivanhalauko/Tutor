@@ -17,5 +17,7 @@ namespace AccountingWorksIinstruments.Web.Models
 
         public int PositionId { get; set; }
 
+        public int LocationId { get; set; }
+
     }
 }

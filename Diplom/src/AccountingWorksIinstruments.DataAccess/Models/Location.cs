@@ -11,24 +11,24 @@ namespace AccountingWorkInstruments.DataAccess.Models
     public class Location : IEntity
     {
 
-        public Location(string nameOfTheOrganization, int warehouseId)
+        public Location(string nameOfLocation, int warehouseId)
         {
-            NameOfTheOrganization = nameOfTheOrganization;
+            NameOfLocation = nameOfLocation;
             WarehouseId = warehouseId;
                     }
 
-        public Location(int id, string nameOfTheOrganization, 
+        public Location(int id, string nameOfLocation, 
             int warehouseId)
         {
             Id = id;
-            NameOfTheOrganization = nameOfTheOrganization;
+            NameOfLocation = nameOfLocation;
             WarehouseId = warehouseId;
         }
 
         [Key]
         public int Id { get; set; }
 
-        public string NameOfTheOrganization { get; set; }
+        public string NameOfLocation { get; set; }
 
         public int WarehouseId { get; set; }
     }
