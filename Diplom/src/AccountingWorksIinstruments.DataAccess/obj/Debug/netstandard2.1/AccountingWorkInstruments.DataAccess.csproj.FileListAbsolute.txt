@@ -7,6 +7,7 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.deps.json
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.dll
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\bin\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.pdb
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.csproj.AssemblyReference.cache
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.AssemblyInfoInputs.cache
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.DataAccess\obj\Debug\netstandard2.1\AccountingWorkInstruments.DataAccess.AssemblyInfo.cs

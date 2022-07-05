@@ -51,15 +51,15 @@ and Email='admin123@sobaca.ru' and NormalizedEmail='ADMIN123@SOBACA.RU' and Emai
 and PasswordHash='AQAAAAEAACcQAAAAELAR7Z6yRX31T3BvBZe+1N1oevws7oWS7pGf1t9ntDIq9oAppNpo+0PB+1F0ywEapA==' 
 and SecurityStamp='MQ7KQM5ONQ5QYN7YXGNCPWLNTYUU6WHJ' and ConcurrencyStamp='e7ade904-565d-4963-8d1b-02d2961954f6' 
 and PhoneNumber=NULL and PhoneNumberConfirmed='False' and TwoFactorEnabled='False' and LockoutEnd=NULL and LockoutEnabled='True' 
-and AccessFailedCount=0 and Surname=NULL and PositionId=1 and LocationId=1)
+and AccessFailedCount=0 and Surname=NULL and PositionId=1)
 begin
 insert into dbo.AspNetUsers(Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,
-ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount,Surname)
+ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount,Surname,PositionId)
 values
 ('b8055e4f-d51d-4422-a59a-bd1f87ab616b','admin123@sobaca.ru','ADMIN123@SOBACA.RU','admin123@sobaca.ru','ADMIN123@SOBACA.RU','False',
 'AQAAAAEAACcQAAAAELAR7Z6yRX31T3BvBZe+1N1oevws7oWS7pGf1t9ntDIq9oAppNpo+0PB+1F0ywEapA==',
 'MQ7KQM5ONQ5QYN7YXGNCPWLNTYUU6WHJ','e7ade904-565d-4963-8d1b-02d2961954f6',NULL,'False','False',
-NULL,'True',0,NULL)
+NULL,'True',0,NULL,1)
 end 
 GO
 ---AspNetUserRoles
