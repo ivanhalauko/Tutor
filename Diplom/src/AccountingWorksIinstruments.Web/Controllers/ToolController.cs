@@ -17,12 +17,14 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly IMapperConfig _mapperConfig;
         private readonly ILocationServices _locationServices;
         private readonly IToolService _toolService;
+        private readonly IStatusService _statusService;
 
-        public ToolController(IMapperConfig mapConfig, ILocationServices locationServices, IToolService toolService)
+        public ToolController(IMapperConfig mapConfig, ILocationServices locationServices, IToolService toolService, IStatusService statusService)
         {
             _mapperConfig = mapConfig;
             _locationServices = locationServices;
             _toolService = toolService;
+            _statusService = statusService;
         }
 
         public IActionResult Index()
@@ -34,12 +36,16 @@ namespace AccountingWorksIinstruments.Web.Controllers
         {
             var tools = _toolService.ReadAll();
             var locations = _locationServices.ReadAll().ToList();
+            var statusis = _statusService.ReadAll().ToList();
             var viewTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tools);
             foreach (ToolViewModel item in viewTools)
             {
                 int locationId = item.LocationId;
                 Location location = locations.Find(p => p.Id == locationId);
                 item.NameOfLocation = location.NameOfLocation;
+                int statusId = item.StatusId;
+                Status status = statusis.Find(p => p.Id == statusId);
+                item.StatusDiscription = status.StatusDiscription;
             }
             return View(viewTools);
         }
