@@ -19,7 +19,7 @@ namespace AccountingWorkInstruments.DataAccess.Models
         }
 
         public Tool(int id, string name, string description,
-            int locationId)
+            int locationId, int someParam)
         {
             Id = id;
             Name = name;

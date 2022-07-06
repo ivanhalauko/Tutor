@@ -13,11 +13,11 @@ namespace AccountingWorksIinstruments.Web.Controllers
     public class AccountController : Controller
     {
         private const string _userRole = "User";
-        private readonly UserManager<User> _identityUserManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<AppUser> _identityUserManager;
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         
-        public AccountController(UserManager<User> identityUserManager, SignInManager<User> signInManager,
+        public AccountController(UserManager<AppUser> identityUserManager, SignInManager<AppUser> signInManager,
             RoleManager<IdentityRole> roleManager)
         {
             _identityUserManager = identityUserManager;
@@ -48,7 +48,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 return View(model);
             }
 
-            var user = new User { Email = model.Email, UserName = model.Email };
+            var user = new AppUser { Email = model.Email, UserName = model.Email };
             var result = await _identityUserManager.CreateAsync(user, model.Password);
             await _identityUserManager.AddToRoleAsync(user, _userRole);
             if (result.Succeeded)

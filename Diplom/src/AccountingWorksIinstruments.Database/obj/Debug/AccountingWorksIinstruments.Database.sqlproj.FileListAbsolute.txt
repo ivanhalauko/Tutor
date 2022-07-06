@@ -7,3 +7,13 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\A
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.pdb
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.dll
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.pdb
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.dacpac
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.dll
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.pdb
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.sqlproj.AssemblyReference.cache
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\Model.xml
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\refactor.xml
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\postdeploy.sql
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\predeploy.sql
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.dll
+c:\MyFiles\LEARNdotNET\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.pdb

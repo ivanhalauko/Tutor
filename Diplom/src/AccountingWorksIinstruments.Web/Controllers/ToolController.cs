@@ -76,7 +76,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 string Description = Convert.ToString(collection["Description"]);
                 int idOfLocation = Convert.ToInt32(collection["NameOfLocation"]);
                 int toolId = Convert.ToInt32(collection["ToolId"]);
-                Tool toolEntity = new Tool(id, Name, Description, idOfLocation);
+                Tool toolEntity = new Tool(id, Name, Description, idOfLocation, 1);
                 _toolService.Update(toolEntity);
                 return RedirectToAction("Tool");
             }
@@ -126,7 +126,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 //string name = Convert.ToString(collection["Name"]);
                 //string description = Convert.ToString(collection["Description"]);
                 //int locationId = Convert.ToInt32(collection["LocationId"]);
-                Tool toolEntity = new Tool(id,null,null,0);
+                Tool toolEntity = new Tool(id,null,null,0,1);
                 _toolService.DeleteAll(toolEntity);
                 return RedirectToAction("Tool");
             }
@@ -143,7 +143,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         public IActionResult CreateTool()
         {
             var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(_locationServices.ReadAll());
-            var entities = new Tool(0, null, null, 0);
+            var entities = new Tool(0, null, null, 0, 1);
             var tools = _mapperConfig.Mapper.Map<Tool, ToolViewModel>(entities);
             ViewBag.Locations = new SelectList(locations, "Id", "NameOfTheOrganization", 1);
             return View(tools);
@@ -159,7 +159,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 string Description = Convert.ToString(collection["Description"]);
                 int idOfTheOrganization = Convert.ToInt32(collection["NameOfTheOrganization"]);
                 int toolId = Convert.ToInt32(collection["ToolId"]);
-                Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization);
+                Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization, 1);
                 _toolService.Add(toolEntity);
                 return RedirectToAction("Tool");
             }
