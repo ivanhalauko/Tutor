@@ -30,7 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.StatusDiscription)
             </th>
-           
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -44,22 +46,25 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             @*<td hidden>
-                @Html.DisplayFor(modelItem => item.LocationId)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.LocationId)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.NameOfLocation)
             </td>
             @*<td>
-                @Html.DisplayFor(modelItem => item.StatusId)
-            </td>*@
+            @Html.DisplayFor(modelItem => item.StatusId)
+        </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.StatusDiscription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "UpdateTool", new { id = item.Id }) |
                 @Html.ActionLink("Details", "GetByIdTool", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "DeleteTool", new { id = item.Id }) |
-                @Html.ActionLink("Relocate", "UpdateTool", new { /*id = item.Id */})
+                @Html.ActionLink("Change owner", "ChangeOwner", new { id = item.Id })
             </td>
         </tr>
 }

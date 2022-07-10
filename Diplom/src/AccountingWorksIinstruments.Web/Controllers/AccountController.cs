@@ -12,7 +12,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
     [Authorize(Roles = "Admin")]
     public class AccountController : Controller
     {
-        private const string _userRole = "User";
+        private const string _userRole = "worker";
         private readonly UserManager<ApplicationUser> _identityUserManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -48,24 +48,11 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 return View(model);
             }
 
-            var user = new ApplicationUser { Email = model.Email, UserName = model.Email };
+            var user = new ApplicationUser { Email = model.Email, UserName = model.Email, PositionId=1 };
             var result = await _identityUserManager.CreateAsync(user, model.Password);
             await _identityUserManager.AddToRoleAsync(user, _userRole);
             if (result.Succeeded)
             {
-                //    var cart = new BusinessLogic.DtoModels.CartDto
-                //    {
-                //        AspNetUserId = user.Id,
-                //    };
-                //    _cartService.Create(cart);
-
-                //    var amount = new BusinessLogic.DtoModels.UsersAmountDto
-                //    {
-                //        AspNetUserId = user.Id,
-                //        Amount = 0,
-                //    };
-                //    _amountService.Create(amount);
-
                 await _signInManager.SignInAsync(user, false);
                 return RedirectToAction("Index", "Home");
             }

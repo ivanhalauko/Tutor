@@ -16,5 +16,7 @@ namespace AccountingWorksIinstruments.Web.Models
         public string NameOfLocation { get; set; }
         public int StatusId { get; set; }
         public string StatusDiscription { get; set; }
+        public string AspNetUserId { get; set; }
+        public string UserName { get; set; }
     }
 }

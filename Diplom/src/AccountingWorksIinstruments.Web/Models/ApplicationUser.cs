@@ -17,5 +17,6 @@ namespace AccountingWorksIinstruments.Web.Models
         [Display(Name = "PositionId")]
         [Column(TypeName = "int")]
         public int PositionId { get; set; }
+
     }
 }

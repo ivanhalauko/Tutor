@@ -1,16 +1,15 @@
 ﻿@model AccountingWorksIinstruments.Web.Models.ToolViewModel
 
 @{
-    ViewData["Title"] = "UpdateTool";
+    ViewData["Title"] = "ChangeOwner";
 }
 
-<h1>UpdateTool</h1>
+<h1>ChangeOwner</h1>
 
-<h4>ToolViewModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="UpdateTool">
+        <form asp-action="ChangeOwner">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" type="hidden">
                 <input type="hidden" asp-for="Id" class="form-control" />
