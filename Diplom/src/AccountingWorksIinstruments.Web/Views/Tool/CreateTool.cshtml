@@ -27,11 +27,11 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div hidden class="form-group">
+            @*<div hidden class="form-group">
             <label asp-for="LocationId" class="control-label"></label>
             <input asp-for="LocationId" class="form-control" />
             <span asp-validation-for="LocationId" class="text-danger"></span>
-        </div>
+        </div>*@
             @*<div class="form-group">
             <label asp-for="NameOfTheOrganization" class="control-label"></label>
             <input asp-for="NameOfTheOrganization" class="form-control" />
@@ -39,16 +39,16 @@
         </div>*@
             <div>
                 <label asp-for="NameOfLocation" class="control-label">Name of Location</label>
-                @Html.DropDownList("NameOfLocation", ViewBag.Locations as SelectList, new { id = "nameOfLocation" })
+                @Html.DropDownList("LocationId", ViewBag.Locations as SelectList, new { id = "nameOfLocation" })
             </div>
-            <div hidden class="form-group">
+            @*<div hidden class="form-group">
                 <label asp-for="StatusId" class="control-label"></label>
                 <input asp-for="StatusId" class="form-control"/>
                 <span asp-validation-for="StatusId" class="text-danger"></span>
-            </div>
+            </div>*@
             <div>
                 <label asp-for="StatusDiscription" class="control-label">Status</label>
-                @Html.DropDownList("StatusDiscription", ViewBag.Status as SelectList, new { id = "statusDiscription" })
+                @Html.DropDownList("StatusId", ViewBag.Status as SelectList, new { id = "statusDiscription" })
             </div>
             <label asp-for="PosterImage" class="control-label">Poster-Image</label>
             <div class="custom-file">

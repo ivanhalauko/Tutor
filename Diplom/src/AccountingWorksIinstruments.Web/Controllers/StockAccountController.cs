@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AccountingWorksIinstruments.Web.Controllers
 {
-    public class StockAccountController : Controller
+    public class StockController : Controller
     {
         private readonly IMapperConfig _mapperConfig;
         private readonly IToolService _toolService;
@@ -21,7 +21,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly ISubmissionForToolToolService _submissionForToolToolService;
         private readonly INoteDeliveryService _noteDeliveryService;
 
-        public StockAccountController(IMapperConfig mapperConfig, IToolService toolService, ILocationServices locationServices, 
+        public StockController(IMapperConfig mapperConfig, IToolService toolService, ILocationServices locationServices, 
             IStatusService statusService, ISubmissionForToolsService submissionForToolsService,
             ISubmissionForToolToolService submissionForToolToolService, INoteDeliveryService noteDeliveryService)
         {

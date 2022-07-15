@@ -50,7 +50,11 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var statuses = _statusService.ReadAll().ToList();
             var viewTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tools);
             var users =_identityUserManager.Users.ToList();
-            foreach (ToolViewModel item in viewTools)
+            var userName = User.Identity.Name;
+            var user = _identityUserManager.FindByNameAsync(userName).Result;
+            var userId = user.Id;
+            var viewToolByUserId = viewTools.Where(id => id.AspNetUsersId == userId);
+            foreach (ToolViewModel item in viewToolByUserId)
             {
                 int locationId = item.LocationId;
                 Location location = locations.Find(p => p.Id == locationId);
@@ -59,11 +63,11 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 Status status = statuses.Find(p => p.Id == statusId);
                 item.StatusDiscription = status.StatusDiscription;
                 //item.UserName = User.Identity.Name;
-                var temp = await _identityUserManager.FindByIdAsync(item.AspNetUserId);
-                var secTemp = temp.UserName.ToString();
-                //item.UserName = (await _identityUserManager.FindByIdAsync(item.AspNetUserId)).UserName.ToString();  
+                //var temp = await _identityUserManager.FindByIdAsync(item.AspNetUserId);
+                //var secTemp = temp.UserName.ToString();
+                //item.UserName = (await _identityUserManager.FindByIdAsync(item.AspNetUserId)).UserName.ToString();
             }
-            return View(viewTools);
+            return View(viewToolByUserId);
         }
 
         public IActionResult GetByIdTool(int Id)
@@ -241,6 +245,9 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 toolViewModel.PosterImage.CopyTo(new FileStream(pathToFile, FileMode.Create));
                 Tool toolEntity = new Tool(id, name, description, locationId, status);
                 toolEntity.PosterImageUrl = "/" + folder;
+                var userName = User.Identity.Name;
+                var user = _identityUserManager.FindByNameAsync(userName).Result;
+                toolEntity.AspNetUsersId = user.Id;
                 _toolService.Add(toolEntity);
                 return RedirectToAction("Tool");
             }

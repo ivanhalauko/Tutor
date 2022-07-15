@@ -39,5 +39,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
         public string PosterImageUrl { get; set; }
 
         //public string NameOfLocation { get; set; }
+        public string AspNetUsersId { get; set; }
     }
 }
