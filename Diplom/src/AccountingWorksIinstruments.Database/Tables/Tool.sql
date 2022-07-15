@@ -5,5 +5,6 @@
     [Description] NVARCHAR(50) NULL, 
     [LocationId] INT NULL, 
     [StatusId] INT NULL, 
-    [AspNetUsersId] NVARCHAR(450) NULL
+    [AspNetUsersId] NVARCHAR(450) NULL, 
+    [PosterImageUrl] NVARCHAR(MAX) NULL
 )

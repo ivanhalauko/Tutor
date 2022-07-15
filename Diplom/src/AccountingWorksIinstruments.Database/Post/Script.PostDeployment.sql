@@ -40,7 +40,9 @@ ConcurrencyStamp='24a9e76f-a0b8-4579-8cf3-719b01eb3831')
 begin
 insert into dbo.AspNetRoles(Id,Name,NormalizedName,ConcurrencyStamp)
 values
-('93288d77-4729-4b10-8d58-caa19f6a73cf','Admin','ADMIN','24a9e76f-a0b8-4579-8cf3-719b01eb3831')
+('93288d77-4729-4b10-8d58-caa19f6a73cf','Admin','ADMIN','24a9e76f-a0b8-4579-8cf3-719b01eb3831'),
+('03b995ca-b196-43c9-9a54-b1be52f97412','Stock Boy','STOCK BOY','5a470f50-829c-4468-ae2e-de6fb151e276'),
+('2834e398-f2e5-4477-8e43-8211d3dc9d5b','worker','WORKER','1919c07e-8114-4ba3-aabe-8d565b429de5')
 end
 GO
 
@@ -59,7 +61,16 @@ values
 ('b8055e4f-d51d-4422-a59a-bd1f87ab616b','admin123@sobaca.ru','ADMIN123@SOBACA.RU','admin123@sobaca.ru','ADMIN123@SOBACA.RU','False',
 'AQAAAAEAACcQAAAAELAR7Z6yRX31T3BvBZe+1N1oevws7oWS7pGf1t9ntDIq9oAppNpo+0PB+1F0ywEapA==',
 'MQ7KQM5ONQ5QYN7YXGNCPWLNTYUU6WHJ','e7ade904-565d-4963-8d1b-02d2961954f6',NULL,'False','False',
-NULL,'True',0,NULL,1)
+NULL,'True',0,NULL,1),
+('54301f6b-5463-4024-9cac-770a6eaee02f','antonstepanovich@mail.com','ANTONSTEPANOVICH@MAIL.COM','antonstepanovich@mail.com','ANTONSTEPANOVICH@MAIL.COM',
+'False','AQAAAAEAACcQAAAAEKjmlfjOfI9peuPnSzxjLXWWkMcT+XxZVNVkkPb9sFmW9FqAW0keysBWJyCq5UZTVw==','Q3Z2A3T6ZI3AL7OLPG3FFTXREJGEITQ2',
+'090fa272-6616-469b-92aa-481188562461',NULL,'False','False',NULL,'True',0,NULL,1),
+('283b1569-66d6-461e-8f72-f92c394884fe','stockboy@mail.ri','STOCKBOY@MAIL.RI','stockboy@mail.ri','STOCKBOY@MAIL.RI','False',
+'AQAAAAEAACcQAAAAEBPmct7/Db38LhSyZ8y9q5sZz98ssE3lqUqDByL5lHx3DXTb+zqKqwEKVu9D49g1KA==','SUGHPAARFLROWEPBSMCSHSZOLEY7B2W5',
+'b4bb3a8c-1c2a-4499-8284-0bd8d852c31f',NULL,'False','False',NULL,'True',0,NULL,1),
+('c24811f8-56af-4807-8abb-6604d3392844','vasyapertrovich@mail.ru','VASYAPERTROVICH@MAIL.RU','vasyapertrovich@mail.ru','VASYAPERTROVICH@MAIL.RU',
+'False','AQAAAAEAACcQAAAAEBTGVuq8hw5XNnhTgtZfgcgHxSXvJ5EWq8WxIved4MI8pMb8YVNshp4DoGN1rudzSQ==','7DLJFWM5V6ZNWTUGKAA6JTECH2T6X5V6',
+'1728bf49-0c04-437d-9e50-0da956f6a8d4',NULL,'False','False',NULL,'True',0,NULL,1)
 end 
 GO
 ---AspNetUserRoles
@@ -99,12 +110,12 @@ GO
 
 --- Tool
 if not exists (SELECT*FROM dbo.Tool WHERE Name='Grinder' and Description='Work with metal' and LocationId=1 and StatusId=1
-and AspNetUsersId='b8055e4f-d51d-4422-a59a-bd1f87ab616b')
+and AspNetUsersId='b8055e4f-d51d-4422-a59a-bd1f87ab616b' and PosterImageUrl=null)
 begin
-insert into dbo.Tool(Name,Description,LocationId,StatusId,AspNetUsersId)
+insert into dbo.Tool(Name,Description,LocationId,StatusId,AspNetUsersId,PosterImageUrl)
 values
-('Grinder','Work with metal',1,2,'b8055e4f-d51d-4422-a59a-bd1f87ab616b'),
-('Svarka','Work with metal',3,1,'b8055e4f-d51d-4422-a59a-bd1f87ab616b')
+('Grinder','Work with metal',1,2,'b8055e4f-d51d-4422-a59a-bd1f87ab616b',null),
+('Svarka','Work with metal',3,1,'b8055e4f-d51d-4422-a59a-bd1f87ab616b', null)
 end
 GO
 

@@ -2,12 +2,15 @@
 using AccountingWorkInstruments.DataAccess.Models;
 using AccountingWorksIinstruments.Web.Interfaces;
 using AccountingWorksIinstruments.Web.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,9 +24,10 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly IStatusService _statusService;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _identityUserManager;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
         public ToolController(IMapperConfig mapConfig, ILocationServices locationServices, IToolService toolService, IStatusService statusService, 
-            SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> identityUserManager)
+            SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> identityUserManager, IWebHostEnvironment webHostEnvironment)
         {
             _mapperConfig = mapConfig;
             _locationServices = locationServices;
@@ -31,6 +35,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _statusService = statusService;
             _signInManager = signInManager;
             _identityUserManager = identityUserManager;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         public IActionResult Index()
@@ -204,17 +209,38 @@ namespace AccountingWorksIinstruments.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateTool(IFormCollection collection)
+        public IActionResult CreateTool([FromForm] ToolViewModel toolViewModel)
         {
             try
             {
-                int id = Convert.ToInt32(collection["Id"]);
-                string Name = Convert.ToString(collection["Name"]);
-                string Description = Convert.ToString(collection["Description"]);
-                int idOfTheOrganization = Convert.ToInt32(collection["NameOfLocation"]);
-                int status = Convert.ToInt32(collection["StatusDiscription"]);
-                int toolId = Convert.ToInt32(collection["ToolId"]);
-                Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization, status);
+                ////int id = Convert.ToInt32(collection["Id"]);
+                ////string Name = Convert.ToString(collection["Name"]);
+                ////string Description = Convert.ToString(collection["Description"]);
+                ////int idOfTheOrganization = Convert.ToInt32(collection["NameOfLocation"]);
+                ////int status = Convert.ToInt32(collection["StatusDiscription"]);
+                ////int toolId = Convert.ToInt32(collection["ToolId"]);
+                //string urlImage = Convert.ToString(collection["PosterImageUrl"]);
+                ////StringValues value;
+                ////IFormFile image = collection.TryGetValue("PosterImage", out value);
+                //IFormFile image = collection.Keys;
+                //string folder = "poster/image/";
+                //folder += Guid.NewGuid().ToString() + "_" + urlImage;
+                //string pathToFile = Path.Combine(_webHostEnvironment.WebRootPath, folder);
+                //urlImage.CopyTo(new FileStream(pathToFile, FileMode.Create));
+                //Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization, status);
+                //_toolService.Add(toolEntity);
+                int id = toolViewModel.Id;
+                string name = toolViewModel.Name;
+                string description = toolViewModel.Description;
+                int locationId = toolViewModel.LocationId;
+                int status = toolViewModel.StatusId;
+                string urlImage = toolViewModel.PosterImage.FileName;
+                string folder = "posters/image/";
+                folder += Guid.NewGuid().ToString() + "_" + urlImage;
+                string pathToFile = Path.Combine(_webHostEnvironment.WebRootPath, folder);
+                toolViewModel.PosterImage.CopyTo(new FileStream(pathToFile, FileMode.Create));
+                Tool toolEntity = new Tool(id, name, description, locationId, status);
+                toolEntity.PosterImageUrl = "/" + folder;
                 _toolService.Add(toolEntity);
                 return RedirectToAction("Tool");
             }

@@ -7,3 +7,4 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\A
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.pdb
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.dll
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.pdb
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.sqlproj.AssemblyReference.cache

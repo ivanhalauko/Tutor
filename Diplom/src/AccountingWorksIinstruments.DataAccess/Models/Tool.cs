@@ -36,6 +36,7 @@ namespace AccountingWorkInstruments.DataAccess.Models
 
         public int LocationId { get; set; }
         public int StatusId { get; set; }
+        public string PosterImageUrl { get; set; }
 
         //public string NameOfLocation { get; set; }
     }
