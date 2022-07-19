@@ -25,5 +25,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
         public int Id { get; set; }
         public int ToolId { get; set; }
         public int SubmissionId { get; set; }
+
     }
 }

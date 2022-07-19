@@ -11,5 +11,6 @@ namespace AccountingWorksIinstruments.Web.Models
         public string Purpose { get; set; }
         public DateTime DateOfDelivery { get; set; }
         public int ToolId { get; set; }
+        public int SubmissionId { get; set; }
     }
 }

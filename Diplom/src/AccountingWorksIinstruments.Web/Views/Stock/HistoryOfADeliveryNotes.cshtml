@@ -1,0 +1,47 @@
+﻿@model IEnumerable<AccountingWorksIinstruments.Web.Models.HistoryOfADelivaryNotesViewModel>
+
+@{
+    ViewData["Title"] = "HistoryOfADeliveryNotes";
+}
+
+<h1>HistoryOfADeliveryNotes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfDeliveryNote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CarsNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfDeliveryNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarsNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
