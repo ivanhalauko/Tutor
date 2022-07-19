@@ -29,16 +29,12 @@ namespace AccountingWorkInstruments.DataAccess.Models
         }
 
         public int Id { get; set; }
-
         public string Name { get; set; }
-
         public string Description { get; set; }
-
         public int LocationId { get; set; }
         public int StatusId { get; set; }
         public string PosterImageUrl { get; set; }
-
-        //public string NameOfLocation { get; set; }
         public string AspNetUsersId { get; set; }
+        public bool MarkWriteOffTools { get; set; }
     }
 }

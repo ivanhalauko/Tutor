@@ -22,10 +22,14 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly ISubmissionForToolToolService _submissionForToolToolService;
         private readonly INoteDeliveryService _noteDeliveryService;
         private readonly INotesDeliveryToolService _notesDeliveryToolService;
+        private readonly ISubmissionWriteToolService _submissionWriteToolService;
+        private readonly ISubmissionWriteOffService _submissionWriteOffService;
 
         public StockController(IMapperConfig mapperConfig, IToolService toolService, ILocationServices locationServices, 
             IStatusService statusService, ISubmissionForToolsService submissionForToolsService,
-            ISubmissionForToolToolService submissionForToolToolService, INoteDeliveryService noteDeliveryService, INotesDeliveryToolService notesDeliveryToolService)
+            ISubmissionForToolToolService submissionForToolToolService, INoteDeliveryService noteDeliveryService,
+            INotesDeliveryToolService notesDeliveryToolService, ISubmissionWriteOffService submissionWriteOffService,
+            ISubmissionWriteToolService submissionWriteToolService)
         {
             _mapperConfig = mapperConfig;
             _toolService = toolService;
@@ -35,6 +39,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _submissionForToolToolService = submissionForToolToolService;
             _noteDeliveryService = noteDeliveryService;
             _notesDeliveryToolService = notesDeliveryToolService;
+            _submissionWriteOffService = submissionWriteOffService;
+            _submissionWriteToolService = submissionWriteToolService;
         }
 
 
@@ -78,27 +84,49 @@ namespace AccountingWorksIinstruments.Web.Controllers
         public ActionResult CreateWriteOffTool()
         {
             var tools = _toolService.ReadAll();
-            var status = _statusService.ReadAll();
-            var location = _locationServices.ReadAll();
-            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(_locationServices.ReadAll());
-            var tool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tools).FirstOrDefault();
-            return View(tool);
+            var statuses = _statusService.ReadAll().ToList();
+            var toolsView = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tools);
+            foreach (var item in toolsView)
+            {
+                int statusId = item.StatusId;
+                Status status = statuses.Find(p => p.Id == statusId);
+                item.StatusDiscription = status.StatusDiscription;
+            }
+            return View(toolsView);
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateWriteOffTool(IFormCollection collection)
+        public ActionResult AddToWriteOffList(int toolId)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var tool = _toolService.GetById(toolId).FirstOrDefault();
+            tool.MarkWriteOffTools = true;
+            _toolService.Update(tool);
+            return RedirectToAction("CreateWriteOffTool");
         }
 
+        public ActionResult RemoveFromWriteOffSubmission(int toolId)
+        {
+            var tool = _toolService.GetById(toolId).FirstOrDefault();
+            tool.MarkWriteOffTools = false;
+            _toolService.Update(tool);
+            return RedirectToAction("CreateWriteOffTool");
+        }
+        
+        public ActionResult CreateSubmissionWriteOffTools()
+        {
+            var toolList = _toolService.ReadAll().Where(x => x.MarkWriteOffTools == true).ToList();
+            var newSubmissionId = _submissionWriteOffService.Add(new SubmissionWriteOff ( date : DateTime.Now));
+            foreach (var item in toolList)
+            {
+                var modelSubWriteTool = new SubmissionWriteTool { ToolId = item.Id, SubmissionWriteID = newSubmissionId };
+                var submissionWriteOff = _submissionWriteToolService.Add(modelSubWriteTool);
+            }
+            return RedirectToAction("StockAccount");
+        }
+
+        public ActionResult WriteOffToolsSubmissions()
+        {
+            var submissions = _submissionWriteToolService.ReadAll();
+            return View(submissions);
+        }
         public ActionResult CreateDeliveryNote()
         {
             var notesDeliverys = _noteDeliveryService.ReadAll();
@@ -108,11 +136,12 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var statuses = _statusService.ReadAll();
             ViewBag.Locations = new SelectList(locations, "Id", "NameOfLocation", 1);
             ViewBag.Status = new SelectList(statuses, "Id", "StatusDiscription", 1);
+            return View(tools);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CreateDelivaryNote(IFormCollection collection)
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult CreateDelivaryNote(IFormCollection collection)
         // GET: StockAccountController/Edit/5
         public ActionResult Edit(int id)
         {

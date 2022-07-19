@@ -283,3 +283,5 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcor
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\StockAccount.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\SubmissionsFromWorkers.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\HistoryOfADeliveryNotes.cshtml.g.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\CreateWriteOffTool.cshtml.g.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\WriteOffToolsSubmissions.cshtml.g.cs

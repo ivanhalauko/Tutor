@@ -10,6 +10,7 @@ namespace AccountingWorkInstruments.DataAccess.Models
     [Table("SubmissionWriteTool")]
     public class SubmissionWriteTool : IEntity
     {
+
         public SubmissionWriteTool(int id,int toolId, int submissionWriteID)
         {
             Id = id;
@@ -21,6 +22,11 @@ namespace AccountingWorkInstruments.DataAccess.Models
             ToolId = toolId;
             SubmissionWriteID = submissionWriteID;
         }
+
+        public SubmissionWriteTool()
+        {
+        }
+
         [Key]
         public int Id { get; set; }
         public int ToolId { get; set; }
