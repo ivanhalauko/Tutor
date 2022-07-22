@@ -7,5 +7,6 @@
     [StatusId] INT NULL, 
     [AspNetUsersId] NVARCHAR(450) NULL, 
     [PosterImageUrl] NVARCHAR(MAX) NULL, 
-    [MarkWriteOffTools] BIT NULL
+    [MarkWriteOffTools] BIT NULL, 
+    [MarkForShipment] BIT NULL
 )

@@ -3,6 +3,7 @@ using AccountingWorkInstruments.DataAccess.Models;
 using AccountingWorksIinstruments.Web.Interfaces;
 using AccountingWorksIinstruments.Web.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -24,12 +25,19 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly INotesDeliveryToolService _notesDeliveryToolService;
         private readonly ISubmissionWriteToolService _submissionWriteToolService;
         private readonly ISubmissionWriteOffService _submissionWriteOffService;
+        private readonly UserManager<ApplicationUser> _identityUserManager;
 
-        public StockController(IMapperConfig mapperConfig, IToolService toolService, ILocationServices locationServices, 
-            IStatusService statusService, ISubmissionForToolsService submissionForToolsService,
-            ISubmissionForToolToolService submissionForToolToolService, INoteDeliveryService noteDeliveryService,
-            INotesDeliveryToolService notesDeliveryToolService, ISubmissionWriteOffService submissionWriteOffService,
-            ISubmissionWriteToolService submissionWriteToolService)
+        public StockController(IMapperConfig mapperConfig, 
+            IToolService toolService, 
+            ILocationServices locationServices, 
+            IStatusService statusService,
+            ISubmissionForToolsService submissionForToolsService,
+            ISubmissionForToolToolService submissionForToolToolService,
+            INoteDeliveryService noteDeliveryService,
+            INotesDeliveryToolService notesDeliveryToolService, 
+            ISubmissionWriteOffService submissionWriteOffService,
+            ISubmissionWriteToolService submissionWriteToolService,
+            UserManager<ApplicationUser> identityUserManager)
         {
             _mapperConfig = mapperConfig;
             _toolService = toolService;
@@ -41,6 +49,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _notesDeliveryToolService = notesDeliveryToolService;
             _submissionWriteOffService = submissionWriteOffService;
             _submissionWriteToolService = submissionWriteToolService;
+            _identityUserManager = identityUserManager;
         }
 
 
@@ -64,21 +73,6 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var viewNotesOfDelivery = _mapperConfig.Mapper.Map<IEnumerable<NoteDelivery>, IEnumerable<HistoryOfADelivaryNotesViewModel>>(notesOfDelivery);
             return View(viewNotesOfDelivery);
         }
-        // GET: StockAccountController/Create
-        //public ActionResult CreateTool(int workerId)
-        //{
-        //    var tools = _toolService.ReadAll();
-        //    var locations = _locationServices.ReadAll().ToList();
-        //    var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
-        //    var viewCreateTools = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(toolsByWorkerId);
-        //    foreach (ToolViewModel item in viewCreateTools)
-        //    {
-        //        int locationId = item.LocationId;
-        //        Location location = locations.Find(p => p.Id == locationId);
-        //        item.NameOfLocation = location.NameOfLocation;
-        //    }
-        //    return View(viewCreateTools);
-        //}
 
         // POST: StockAccountController/Create
         public ActionResult CreateWriteOffTool()
@@ -113,7 +107,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         public ActionResult CreateSubmissionWriteOffTools()
         {
             var toolList = _toolService.ReadAll().Where(x => x.MarkWriteOffTools == true).ToList();
-            var newSubmissionId = _submissionWriteOffService.Add(new SubmissionWriteOff ( date : DateTime.Now));
+            var newSubmissionId = _submissionWriteOffService.Add(new SubmissionWriteOff(date: DateTime.Now));
             foreach (var item in toolList)
             {
                 var modelSubWriteTool = new SubmissionWriteTool { ToolId = item.Id, SubmissionWriteID = newSubmissionId };
@@ -127,22 +121,83 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var submissions = _submissionWriteToolService.ReadAll();
             return View(submissions);
         }
+
         public ActionResult CreateDeliveryNote()
         {
-            var notesDeliverys = _noteDeliveryService.ReadAll();
-            var notesDeliveryTools = _notesDeliveryToolService.ReadAll();
-            var tools = _toolService.ReadAll();
-            var locations = _locationServices.ReadAll();
-            var statuses = _statusService.ReadAll();
-            ViewBag.Locations = new SelectList(locations, "Id", "NameOfLocation", 1);
-            ViewBag.Status = new SelectList(statuses, "Id", "StatusDiscription", 1);
-            return View(tools);
+            var availableTools = _toolService.ReadAll();
+            var availableToolsView = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(availableTools);
+            var workers = _identityUserManager.Users.ToList();
+            var destinations = _locationServices.ReadAll();
+
+            var deliveryNotesView = new DeliveryNoteViewModel();
+            deliveryNotesView.AvailableTools = availableToolsView;
+            var toolsWithMarkTrue=_toolService.ReadAll().Where(x => x.MarkForShipment == true);
+            deliveryNotesView.ToolForShipment = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(toolsWithMarkTrue);
+            ViewBag.Locations = new SelectList(destinations, "Id", "NameOfLocation", 1);
+            ViewBag.Workers = new SelectList(workers, "Id", "UserName", 1);
+            return View(deliveryNotesView);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateDeliveryNote(IFormCollection collection)
+        {
+            var newDeliveryNotes = _noteDeliveryService.Add(new NoteDelivery(deliveryDate:DateTime.Today,carsNumber:1423,numberOfDeliveryNote:1241));
+            return RedirectToAction(nameof(StockAccount));
+        }
+        public ActionResult AddToToolForShipmentList(int toolId)
+        {
+            var tool = _toolService.GetById(toolId).FirstOrDefault();
+            tool.MarkForShipment = true;
+            _toolService.Update(tool);
+            return RedirectToAction(nameof(CreateDeliveryNote));
+        }
+        public ActionResult RemoveFromToolForShipmentList(int toolId)
+        {
+            var tool = _toolService.GetById(toolId).FirstOrDefault();
+            tool.MarkForShipment = false;
+            _toolService.Update(tool);
+            return RedirectToAction(nameof(CreateDeliveryNote));
+        }
+
+
+        public ActionResult TransferTool(int id)
+        {
+            var locations = _mapperConfig.Mapper.Map<IEnumerable<Location>, IEnumerable<LocationViewModel>>(_locationServices.ReadAll());
+            var entities = _toolService.GetById(id);
+            var statuses = _statusService.ReadAll().ToList();
+            var tool = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(entities).FirstOrDefault();
+            ViewBag.Locations = new SelectList(locations, "Id", "NameOfLocation", 1);
+            ViewBag.Status = new SelectList(statuses, "Id", "StatusDiscription", 1);
+            return View(tool);
+        }
+
+        public IActionResult TransferTools(IFormCollection collection)
+        {
+            try
+            {
+                int id = Convert.ToInt32(collection["Id"]);
+                string Name = Convert.ToString(collection["Name"]);
+                string Description = Convert.ToString(collection["Description"]);
+                int idOfLocation = Convert.ToInt32(collection["NameOfLocation"]);
+                int toolId = Convert.ToInt32(collection["ToolId"]);
+                int status = Convert.ToInt32(collection["StatusDiscription"]);
+                Tool toolEntity = new Tool(id, Name, Description, idOfLocation, status);
+                _toolService.Update(toolEntity);
+                return RedirectToAction("StockAccount");
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public ActionResult CreateDelivaryNote(IFormCollection collection)
         // GET: StockAccountController/Edit/5
+
+
         public ActionResult Edit(int id)
         {
             return View();
@@ -182,6 +237,11 @@ namespace AccountingWorksIinstruments.Web.Controllers
             {
                 return View();
             }
+        }
+        public ActionResult GetItemsPartial(int id)
+        {
+            return PartialView(_locationServices.ReadAll().Where(x => x.Id == id).ToList());
+
         }
     }
 }

@@ -1,0 +1,177 @@
+﻿@model AccountingWorksIinstruments.Web.Models.DeliveryNoteViewModel
+
+@{
+    ViewData["Title"] = "CreateDeliveryNote";
+}
+
+<h1>CreateDeliveryNote</h1>
+
+<h4>DeliveryNoteViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateDeliveryNote">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NumberOfDeliveryNote" class="control-label"></label>
+                <input asp-for="NumberOfDeliveryNote" class="form-control" />
+                <span asp-validation-for="NumberOfDeliveryNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CarsNumber" class="control-label"></label>
+                <input asp-for="CarsNumber" class="form-control" />
+                <span asp-validation-for="CarsNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeliveryDate" class="control-label"></label>
+                <input asp-for="DeliveryDate" class="form-control" />
+                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destination" class="control-label"></label>
+                <input asp-for="Destination" class="form-control" />
+                <span asp-validation-for="Destination" class="text-danger"></span>
+                @Html.DropDownList("LocationId", ViewBag.Locations as SelectList, new { id = "nameOfLocation" })
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Worker" class="control-label"></label>
+                <input asp-for="Worker" class="form-control" />
+                <span asp-validation-for="Worker" class="text-danger"></span>
+                @Html.DropDownList("WorkerId", ViewBag.Workers as SelectList, new { id = "UserName" })
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().StatusDiscription)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().PosterImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AvailableTools)
+                    {
+                        @if (item.MarkForShipment == true)
+                        {
+                            <tr style="background-color:burlywood; color:slategray">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Add to List", "AddToToolForShipmentList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Add to List", "AddToToolForShipmentList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().StatusDiscription)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().PosterImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ToolForShipment)
+                    {
+                        @if (item.MarkForShipment == true)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Remove", "RemoveFromToolForShipmentList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <table></table>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('#nameOfLocation').change(function()
+        {
+            var id = $(this).val();
+            $.ajax({
+                type:'GET',
+                url: '@Url.Action("GetItemsPartial")/' + id
+                succes: function (data) {
+                    $('UserName').replaceWith(data);
+            });
+        });
+    })
+</script>
