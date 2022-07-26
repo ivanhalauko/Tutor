@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace AccountingWorksIinstruments.Web.Controllers
 {
-    [Authorize(Roles = "Worker")]
+    [Authorize(Roles = "Worker, Admin")]
     public class WorkerAccountController : Controller
     {
         private readonly IMapperConfig _mapperConfig;

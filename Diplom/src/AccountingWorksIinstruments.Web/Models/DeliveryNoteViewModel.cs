@@ -16,5 +16,6 @@ namespace AccountingWorksIinstruments.Web.Models
         public IEnumerable<ApplicationUser> Worker { get; set; }
         public IEnumerable<ToolViewModel> AvailableTools { get; set; }
         public IEnumerable<ToolViewModel> ToolForShipment { get; set; }
+        public string WorkerId { get; set; }
     }
 }

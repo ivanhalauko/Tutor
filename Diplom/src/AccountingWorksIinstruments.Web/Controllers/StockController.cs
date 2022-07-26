@@ -140,9 +140,37 @@ namespace AccountingWorksIinstruments.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateDeliveryNote(IFormCollection collection)
+        public IActionResult CreateDeliveryNote([FromForm] DeliveryNoteViewModel model)
         {
-            var newDeliveryNotes = _noteDeliveryService.Add(new NoteDelivery(deliveryDate:DateTime.Today,carsNumber:1423,numberOfDeliveryNote:1241));
+            var newNoteDelivery = new NoteDelivery
+            {
+                NumberOfDeliveryNote = model.NumberOfDeliveryNote,
+                CarsNumber = model.CarsNumber,
+                DeliveryDate = model.DeliveryDate,
+            };
+            var toolsInNoteDeliveryTools = _notesDeliveryToolService.ReadAll().ToList();
+            var toolsWithMarkForShipment = _toolService.ReadAll().Where(x => x.MarkForShipment == true).ToList();
+
+            var noteDeliveryId = _noteDeliveryService.Add(newNoteDelivery);
+            newNoteDelivery.Id = noteDeliveryId;
+            var mark = 1;
+            foreach (var tool in toolsWithMarkForShipment)
+            {
+                var newDeliveryNote = new NotesDeliveryTool
+                {
+                    ToolId = tool.Id,
+                    NoteDeliveryId = noteDeliveryId,
+                };
+                if (!toolsInNoteDeliveryTools.Exists(x => x.ToolId == tool.Id))
+                {
+                    _notesDeliveryToolService.Add(newDeliveryNote);
+                    mark++;
+                }
+            }
+            if (mark == 1)
+            {
+                _noteDeliveryService.DeleteAll(newNoteDelivery);
+            }
             return RedirectToAction(nameof(StockAccount));
         }
         public ActionResult AddToToolForShipmentList(int toolId)
@@ -238,7 +266,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 return View();
             }
         }
-        public ActionResult GetItemsPartial(int id)
+        public ActionResult GetItemsPartials(int id)
         {
             return PartialView(_locationServices.ReadAll().Where(x => x.Id == id).ToList());
 

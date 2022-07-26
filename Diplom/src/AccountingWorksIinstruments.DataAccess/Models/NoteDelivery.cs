@@ -10,6 +10,10 @@ namespace AccountingWorkInstruments.DataAccess.Models
     [Table("NoteDelivery")]
     public class NoteDelivery : IEntity
     {
+        public NoteDelivery()
+        {
+        }
+
         public NoteDelivery(int numberOfDeliveryNote, int carsNumber, DateTime deliveryDate)
         {
             NumberOfDeliveryNote = numberOfDeliveryNote;

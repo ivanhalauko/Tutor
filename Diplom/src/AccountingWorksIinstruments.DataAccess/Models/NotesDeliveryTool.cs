@@ -22,6 +22,10 @@ namespace AccountingWorkInstruments.DataAccess.Models
             NoteDeliveryId = noteDeliveryId;
         }
 
+        public NotesDeliveryTool()
+        {
+        }
+
         [Key]
         public int Id { get; set; }
         public int ToolId { get; set; }

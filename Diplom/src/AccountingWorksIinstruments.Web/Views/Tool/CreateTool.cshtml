@@ -73,9 +73,10 @@
             var id = $(this).val();
             $.ajax({
                 type:'GET',
-                url: '@Url.Action("GetItemsPartial")/' + id
-                succes: function (data) {
+                url: '@Url.Action("GetItemsPartial")/' + id,
+                success: function (data) {
                     $('#statusId').replaceWith(data);
+                }
             });
         });
     })
