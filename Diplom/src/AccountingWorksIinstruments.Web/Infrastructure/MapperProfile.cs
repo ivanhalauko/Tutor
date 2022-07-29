@@ -18,6 +18,7 @@ namespace AccountingWorksIinstruments.Web.Infrastructure
             CreateMap<Tool, ToolViewModel>();
             CreateMap<SubmissionForToolTool, SubmissionFromWorkersViewModel>();
             CreateMap<NoteDelivery, HistoryOfADelivaryNotesViewModel>();
+            CreateMap<SubmissionForToolTool, SubmissionForToolsViewModel>();
 
             //WEB to DAL
             CreateMap<PositionViewModel, Position>();
@@ -25,6 +26,7 @@ namespace AccountingWorksIinstruments.Web.Infrastructure
             CreateMap<ToolViewModel, Tool>();
             CreateMap<SubmissionFromWorkersViewModel, SubmissionForToolTool>();
             CreateMap<HistoryOfADelivaryNotesViewModel, NoteDelivery>();
+            CreateMap<SubmissionForToolsViewModel, SubmissionForToolTool>();
         }
     }
 }

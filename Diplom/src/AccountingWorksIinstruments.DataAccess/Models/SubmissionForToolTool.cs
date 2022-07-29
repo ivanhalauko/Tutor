@@ -21,6 +21,11 @@ namespace AccountingWorkInstruments.DataAccess.Models
             ToolId = toolId;
             SubmissionId = submissionId;
         }
+
+        public SubmissionForToolTool()
+        {
+        }
+
         [Key]
         public int Id { get; set; }
         public int ToolId { get; set; }

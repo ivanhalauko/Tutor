@@ -1,0 +1,146 @@
+﻿@*@model IEnumerable<AccountingWorksIinstruments.Web.Models.ToolViewModel>*@
+@model AccountingWorksIinstruments.Web.Models.ToolViewModel
+
+@{
+    ViewData["Title"] = "CreateWorkerSubmission";
+}
+ 
+
+<h1>CreateSubmissionFromWorker</h1>
+
+<h4>SubmissionFromWorkers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateWorkerSubmission" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Purpose" class="control-label"></label>
+                <input id="purp" asp-for="Purpose" class="form-control" />
+                <span asp-validation-for="Purpose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfDelivery" class="control-label"></label>
+                <input asp-for="DateOfDelivery" class="form-control" />
+                <span asp-validation-for="DateOfDelivery" class="text-danger"></span>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().StatusDiscription)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().PosterImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AvailableTools)
+                    {
+                        @if (item.MarkFromWorker == true)
+                        {
+                            <tr style="background-color:burlywood; color:slategray">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                @*<td>
+                                    @Html.ActionLink("Add to List", "AddToSubmissionList", new { toolId = item.Id}) |
+                                </td>*@
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Add to List", "AddToSubmissionList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().StatusDiscription)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().PosterImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ToolForShipment)
+                    {
+                        @if (item.MarkFromWorker == true)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Remove", "RemoveFromSubmissionList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <table></table>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

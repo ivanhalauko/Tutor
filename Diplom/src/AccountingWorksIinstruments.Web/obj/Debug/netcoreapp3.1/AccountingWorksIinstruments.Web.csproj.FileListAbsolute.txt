@@ -287,3 +287,4 @@ D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcor
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\WriteOffToolsSubmissions.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stock\CreateDeliveryNote.cshtml.g.cs
 D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\WorkerAccount\PersonalAccount.cshtml.g.cs
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Web\obj\Debug\netcoreapp3.1\Razor\Views\WorkerAccount\CreateWorkerSubmission.cshtml.g.cs

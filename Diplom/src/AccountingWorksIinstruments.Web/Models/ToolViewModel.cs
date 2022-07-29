@@ -17,9 +17,14 @@ namespace AccountingWorksIinstruments.Web.Models
         public string AspNetUsersId { get; set; }
         public bool MarkWriteOffTools { get; set; }
         public bool MarkForShipment { get; set; }
+        public bool MarkFromWorker { get; set; }
         public string UserName { get; set; }
         public IFormFile PosterImage { get; set; }
         public string NameOfLocation { get; set; }
         public string StatusDiscription { get; set; }
+        public string Purpose { get; set; }
+        public DateTime DateOfDelivery { get; set; }
+        public IEnumerable<ToolViewModel> AvailableTools { get; set; }
+        public IEnumerable<ToolViewModel> ToolForShipment { get; set; }
     }
 }

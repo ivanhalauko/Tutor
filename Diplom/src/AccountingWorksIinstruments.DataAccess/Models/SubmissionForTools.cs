@@ -10,6 +10,10 @@ namespace AccountingWorkInstruments.DataAccess.Models
     [Table("SubmissionForTools")]
     public class SubmissionForTools : IEntity
     {
+        public SubmissionForTools()
+        {
+        }
+
         public SubmissionForTools(string purpose, DateTime dateOfDelivery)
         {
             Purpose = purpose;
