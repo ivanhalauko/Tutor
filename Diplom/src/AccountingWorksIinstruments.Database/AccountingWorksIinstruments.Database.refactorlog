@@ -63,4 +63,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="NameOfLocation" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f74de843-ad66-43e9-a3dd-d959b53a4616" ChangeDateTime="08/02/2022 15:54:07">
+    <Property Name="ElementName" Value="[dbo].[Tool].[MarkFor]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tool]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MarkForTransfer" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="94353bd8-9a02-404d-8441-9212ad707138" ChangeDateTime="08/02/2022 17:32:21">
+    <Property Name="ElementName" Value="[dbo].[Tool].[MarkForTransfer]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Tool]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MarkDestinationUser" />
+  </Operation>
 </Operations>

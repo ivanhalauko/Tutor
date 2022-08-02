@@ -9,5 +9,6 @@
     [PosterImageUrl] NVARCHAR(MAX) NULL, 
     [MarkWriteOffTools] BIT NULL, 
     [MarkForShipment] BIT NULL, 
-    [MarkFromWorker] BIT NULL
+    [MarkFromWorker] BIT NULL, 
+    [MarkDestinationUser] NVARCHAR(450) NULL
 )

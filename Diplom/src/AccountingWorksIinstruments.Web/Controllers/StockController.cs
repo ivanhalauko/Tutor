@@ -200,7 +200,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
             return View(tool);
         }
 
-        public IActionResult TransferTools(IFormCollection collection)
+        [HttpPost]
+        public IActionResult TransferTool(IFormCollection collection)
         {
             try
             {

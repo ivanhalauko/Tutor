@@ -38,5 +38,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
         public bool MarkWriteOffTools { get; set; }
         public bool MarkForShipment { get; set; }
         public bool MarkFromWorker { get; set; }
+        public string MarkDestinationUser { get; set; }
     }
 }

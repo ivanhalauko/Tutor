@@ -4,6 +4,7 @@ using AccountingWorksIinstruments.Web.Interfaces;
 using AccountingWorksIinstruments.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,14 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly ISubmissionForToolsService _submissionForToolsService;
         private readonly ISubmissionForToolToolService _submissionForToolToolService;
         private readonly IStatusService _statusService;
+        private readonly UserManager<ApplicationUser> _identityUserManager;
         public WorkerAccountController(IMapperConfig mapConfig, 
             ILocationServices locationServices, 
             ISubmissionForToolToolService submissionForToolToolService,
             IToolService toolService, 
             ISubmissionForToolsService submissionForToolsService,
-            IStatusService statusService
-            )
+            IStatusService statusService,
+            UserManager<ApplicationUser> identityUserManager)
         {
             _mapperConfig = mapConfig;
             _locationServices = locationServices;
@@ -35,6 +37,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _submissionForToolsService = submissionForToolsService;
             _submissionForToolToolService = submissionForToolToolService;
             _statusService = statusService;
+            _identityUserManager = identityUserManager;
         }
         // GET: WorkerAccountController
         public ActionResult PersonalAccount()
@@ -59,6 +62,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         ///WorkerAccount/ShowMySubmission?workerId=1
         public ActionResult ShowMySubmission(int workerId)
         {
+            
             var submissionForToolTools = _submissionForToolToolService.ReadAll();
             var viewSubmissions = _mapperConfig.Mapper.Map<IEnumerable<SubmissionForToolTool>, IEnumerable<SubmissionForToolsViewModel>>(submissionForToolTools);
             //var toolsByWorkerId = tools.Where(x => x.WorkerId == workerId);
@@ -196,6 +200,33 @@ namespace AccountingWorksIinstruments.Web.Controllers
             }
 
             return RedirectToAction(nameof(ShowMySubmission));
+        }
+        public ActionResult ShipmentFromBaseStock()
+        {
+            var transferTools = _toolService.ReadAll();
+            var currentUserName = User.Identity.Name;
+            var currentUser = _identityUserManager.FindByNameAsync(currentUserName).Result;
+            var currentUserId = currentUser.Id;
+            var usersTransferTools = transferTools.Where(x => x.MarkDestinationUser == currentUserId);
+            var DestinationUsersToolsView = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(transferTools);
+            return View(DestinationUsersToolsView);
+        }
+        
+        public ActionResult AcceptTool (int toolId)
+        {
+            var updatedTool = _toolService.GetById(toolId).FirstOrDefault();
+            var currentUserName = User.Identity.Name;
+            var currentUser = _identityUserManager.FindByNameAsync(currentUserName).Result;
+            var currentUserId = currentUser.Id;
+            updatedTool.AspNetUsersId = currentUserId;
+            _toolService.Update(updatedTool);
+            return RedirectToAction(nameof(ShipmentFromBaseStock));
+        }
+        [HttpPost]
+        public ActionResult ShipmentFromBaseStock([FromForm] DeliveryNoteViewModel model)
+        {
+
+            return RedirectToAction();
         }
     }
 }
