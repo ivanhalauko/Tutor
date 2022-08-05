@@ -1,0 +1,130 @@
+﻿@model AccountingWorksIinstruments.Web.Models.ToolViewModel
+
+@{
+    ViewData["Title"] = "CreateWorkerSubmission";
+}
+
+<p>@ViewBag.WorkerFor</p>
+<p>@ViewBag.WorkerDestination</p>
+<h1>CreateSubmissionFromWorker</h1>
+
+<h4>SubmissionFromWorkers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateWorkerSubmission" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().PosterImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.AvailableTools)
+                    {
+                        @if (item.MarkFromWorker == true)
+                        {
+                            <tr style="background-color:burlywood; color:slategray">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                @*<td>
+                                @Html.ActionLink("Add to List", "AddToSubmissionList", new { toolId = item.Id}) |
+                            </td>*@
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Add to List", "AddToSubmissionList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().StatusDiscription)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().PosterImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ToolForShipment)
+                    {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StatusDiscription)
+                                </td>
+                                <td>
+                                    <img src="@item.PosterImageUrl" style="width:100px" />
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Remove", "RemoveFromSubmissionList", new { toolId = item.Id }) |
+                                </td>
+                            </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+        <table></table>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

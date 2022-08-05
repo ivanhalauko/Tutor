@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7f4ACJBbhsJpYJDe0aCSLv8C2PEV5QnWMmVuH4J4uQbVQ1MFRDEsp87Tuh628V0p4QEWXKUUZ7SgoYz0ACDv9w==",
+  "dgSpecHash": "L7r6TCpPEoGC5vVWa0iudX+6zdcu5Ng8ks6yexyp/gnhOCarCk4IS/VTHIXx+HnFYAnZX7gTa9RDuyw3Hc2fOg==",
   "success": true,
   "projectFilePath": "D:\\LearnDotNet\\Tutor\\Diplom\\src\\AccountingWorksIinstruments.DataAccess\\AccountingWorkInstruments.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -171,7 +171,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"NUnit3TestAdapter 4.0.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETStandard,Version=v2.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Package 'NUnit3TestAdapter 4.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.1'. This package may not be fully compatible with your project.",
       "libraryId": "NUnit3TestAdapter",
       "targetGraphs": [
         ".NETStandard,Version=v2.1"

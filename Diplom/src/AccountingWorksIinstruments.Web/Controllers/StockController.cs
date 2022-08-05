@@ -277,5 +277,26 @@ namespace AccountingWorksIinstruments.Web.Controllers
             return PartialView(_locationServices.ReadAll().Where(x => x.Id == id).ToList());
 
         }
+
+        public ActionResult ChooseWorkers()
+        {
+            var workers = _identityUserManager.Users.ToList();
+            ViewBag.WorkersList = new SelectList(workers, "Id", "UserName", 1);
+            ViewBag.DestinationWorker = new SelectList(workers, "Id", "UserName", 1);
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult GetWorkersTool(IFormCollection collection)
+        {
+            var tools = _toolService.ReadAll().Where(x => x.AspNetUsersId == collection["WorkerId"]);
+            var toolsView = _mapperConfig.Mapper.Map<IEnumerable<Tool>, IEnumerable<ToolViewModel>>(tools);
+
+            var availableTools = new ToolViewModel();
+            availableTools.AvailableTools = toolsView;
+            ViewBag.WorkerFor = collection["WorkerId"];
+            ViewBag.WorkerDestination = collection["WorkerId"];
+            return View(availableTools);
+        }
     }
 }
