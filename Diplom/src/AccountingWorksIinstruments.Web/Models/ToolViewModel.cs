@@ -19,6 +19,7 @@ namespace AccountingWorksIinstruments.Web.Models
         public bool MarkForShipment { get; set; }
         public bool MarkFromWorker { get; set; }
         public string MarkDestinationUser { get; set; }
+        public bool MarkForDecline { get; set; }
         public string UserName { get; set; }
         public IFormFile PosterImage { get; set; }
         public string NameOfLocation { get; set; }

@@ -25,9 +25,16 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _identityUserManager;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public ToolController(IMapperConfig mapConfig, ILocationServices locationServices, IToolService toolService, IStatusService statusService, 
-            SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> identityUserManager, IWebHostEnvironment webHostEnvironment)
+        public ToolController(IMapperConfig mapConfig,
+            ILocationServices locationServices,
+            IToolService toolService, 
+            IStatusService statusService, 
+            SignInManager<ApplicationUser> signInManager,
+            UserManager<ApplicationUser> identityUserManager,
+            IWebHostEnvironment webHostEnvironment,
+            RoleManager<IdentityRole> roleManager)
         {
             _mapperConfig = mapConfig;
             _locationServices = locationServices;
@@ -36,6 +43,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _signInManager = signInManager;
             _identityUserManager = identityUserManager;
             _webHostEnvironment = webHostEnvironment;
+            _roleManager = roleManager;
         }
 
         public IActionResult Index()
@@ -213,7 +221,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateTool([FromForm] ToolViewModel toolViewModel)
+        public async Task<IActionResult>  CreateTool([FromForm] ToolViewModel toolViewModel)
         {
             try
             {
@@ -233,6 +241,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 //urlImage.CopyTo(new FileStream(pathToFile, FileMode.Create));
                 //Tool toolEntity = new Tool(id, Name, Description, idOfTheOrganization, status);
                 //_toolService.Add(toolEntity);
+                var stockBoyAccount = await _identityUserManager.GetUsersInRoleAsync("Stock Boy");
+                var stockBoyId = stockBoyAccount.FirstOrDefault().Id;
                 int id = toolViewModel.Id;
                 string name = toolViewModel.Name;
                 string description = toolViewModel.Description;
@@ -247,7 +257,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 toolEntity.PosterImageUrl = "/" + folder;
                 var userName = User.Identity.Name;
                 var user = _identityUserManager.FindByNameAsync(userName).Result;
-                toolEntity.AspNetUsersId = user.Id;
+                toolEntity.AspNetUsersId = stockBoyId;
+                toolEntity.MarkForDecline = false;
                 _toolService.Add(toolEntity);
                 return RedirectToAction("Tool");
             }

@@ -111,13 +111,13 @@ GO
 --- Tool
 if not exists (SELECT*FROM dbo.Tool WHERE Name='Grinder' and Description='Work with metal' and LocationId=1 and StatusId=1
 and AspNetUsersId='b8055e4f-d51d-4422-a59a-bd1f87ab616b' and PosterImageUrl=null and MarkWriteOffTools=0 and MarkForShipment=0 and MarkFromWorker = 0
-and MarkDestinationUser = 0)
+and MarkDestinationUser = 0 and MarkForDecline = 0)
 begin
 insert into dbo.Tool(Name,Description,LocationId,StatusId,AspNetUsersId,PosterImageUrl,MarkWriteOffTools,MarkForShipment,MarkFromWorker,
-MarkDestinationUser)
+MarkDestinationUser,MarkForDecline)
 values
-('Grinder','Work with metal',1,2,'b8055e4f-d51d-4422-a59a-bd1f87ab616b',null,0,0,0,0),
-('Svarka','Work with metal',3,1,'b8055e4f-d51d-4422-a59a-bd1f87ab616b', null,0,0,0,0)
+('Grinder','Work with metal',1,2,'b8055e4f-d51d-4422-a59a-bd1f87ab616b',null,0,0,0,0,0),
+('Svarka','Work with metal',3,1,'b8055e4f-d51d-4422-a59a-bd1f87ab616b', null,0,0,0,0,0)
 end
 GO
 

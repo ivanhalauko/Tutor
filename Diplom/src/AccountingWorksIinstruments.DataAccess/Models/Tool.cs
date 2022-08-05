@@ -39,5 +39,6 @@ namespace AccountingWorkInstruments.DataAccess.Models
         public bool MarkForShipment { get; set; }
         public bool MarkFromWorker { get; set; }
         public string MarkDestinationUser { get; set; }
+        public bool MarkForDecline { get; set; }
     }
 }

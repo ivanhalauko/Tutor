@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace AccountingWorksIinstruments.Web.Controllers
 {
-    [Authorize(Roles = "Worker, Admin")]
+    [Authorize(Roles = "worker, Admin")]
     public class WorkerAccountController : Controller
     {
         private readonly IMapperConfig _mapperConfig;
@@ -222,11 +222,13 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _toolService.Update(updatedTool);
             return RedirectToAction(nameof(ShipmentFromBaseStock));
         }
-        [HttpPost]
-        public ActionResult ShipmentFromBaseStock([FromForm] DeliveryNoteViewModel model)
+        
+        public ActionResult DeclineTool(int toolId)
         {
-
-            return RedirectToAction();
+            var updatedTool = _toolService.GetById(toolId).FirstOrDefault();
+            updatedTool.MarkForDecline = true;
+            _toolService.Update(updatedTool);
+            return RedirectToAction(nameof(ShipmentFromBaseStock));
         }
     }
 }

@@ -1,5 +1,6 @@
-﻿@model IEnumerable<AccountingWorksIinstruments.Web.Models.ToolViewModel>
-
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<AccountingWorksIinstruments.Web.Models.ToolViewModel>
+@inject UserManager<ApplicationUser> _identityUserManager
 @{
     ViewData["Title"] = "ShipmentFromBaseStock";
 }
@@ -33,38 +34,55 @@
             <th>
                 @Html.DisplayNameFor(model => model.DateOfDelivery)
             </th>
-            <th></th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PosterImageUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameOfLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Purpose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfDelivery)
+                </td>
+            
+            @if (item.AspNetUsersId == _identityUserManager.FindByNameAsync(User.Identity.Name).Result.Id)
+            {
+            <td style="background-color:greenyellow">
+                Accepted
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
+            }
+             else if (item.MarkForDecline == true)
+            {
+            <td style="background-color:darkred">
+                Declined
             </td>
+            }
+            else
+            {
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.ActionLink("Accept Tool", "AcceptTool", new { toolId = item.Id }) |
+                @Html.ActionLink("Decline Tool", "DeclineTool", new { toolId = item.Id })
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PosterImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameOfLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Purpose)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfDelivery)
-            </td>
-            <td>
-                @Html.ActionLink("Accept Tool", "AcceptTool", new { id=item.Id }) |
-                @Html.ActionLink("Decline Tool", "DeclineTool", new {  id=item.Id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            }   
+                </tr>
+    }
+        </tbody>
+    </table>

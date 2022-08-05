@@ -2,6 +2,7 @@
 using AccountingWorkInstruments.DataAccess.Models;
 using AccountingWorksIinstruments.Web.Interfaces;
 using AccountingWorksIinstruments.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace AccountingWorksIinstruments.Web.Controllers
 {
+    [Authorize(Roles = "Stock Boy, Admin")]
     public class StockController : Controller
     {
         private readonly IMapperConfig _mapperConfig;
@@ -26,6 +28,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
         private readonly ISubmissionWriteToolService _submissionWriteToolService;
         private readonly ISubmissionWriteOffService _submissionWriteOffService;
         private readonly UserManager<ApplicationUser> _identityUserManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public StockController(IMapperConfig mapperConfig, 
             IToolService toolService, 
@@ -37,7 +40,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
             INotesDeliveryToolService notesDeliveryToolService, 
             ISubmissionWriteOffService submissionWriteOffService,
             ISubmissionWriteToolService submissionWriteToolService,
-            UserManager<ApplicationUser> identityUserManager)
+            UserManager<ApplicationUser> identityUserManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _mapperConfig = mapperConfig;
             _toolService = toolService;
@@ -50,6 +54,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             _submissionWriteOffService = submissionWriteOffService;
             _submissionWriteToolService = submissionWriteToolService;
             _identityUserManager = identityUserManager;
+            _roleManager = roleManager;
         }
 
 

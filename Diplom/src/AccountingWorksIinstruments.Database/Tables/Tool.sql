@@ -10,5 +10,6 @@
     [MarkWriteOffTools] BIT NULL, 
     [MarkForShipment] BIT NULL, 
     [MarkFromWorker] BIT NULL, 
-    [MarkDestinationUser] NVARCHAR(450) NULL
+    [MarkDestinationUser] NVARCHAR(450) NULL, 
+    [MarkForDecline] BIT NULL
 )
