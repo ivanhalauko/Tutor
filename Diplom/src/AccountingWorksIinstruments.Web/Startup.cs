@@ -39,7 +39,7 @@ namespace AccountingWorksIinstruments.Web
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddRazorPages();
+            services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddControllersWithViews();
             services.Configure<IdentityOptions>(options =>
             {

@@ -38,7 +38,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
             return View();
         }
 
-        
+
         [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
@@ -93,7 +93,7 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction(nameof(CheckUpRole));
                 }
             }
             else
@@ -102,6 +102,21 @@ namespace AccountingWorksIinstruments.Web.Controllers
             }
 
             return View(model);
+        }
+
+        [AllowAnonymous]
+        public IActionResult CheckUpRole()
+        {
+            if (User.IsInRole("worker"))
+            {
+                return RedirectToAction(nameof(WorkerAccountController.PersonalAccount),nameof(WorkerAccountController).Replace("Controller",""));
+            }
+            else if (User.IsInRole("Stock Boy"))
+            {
+                return RedirectToAction(nameof(StockController.StockAccount),nameof(StockController).Replace("Controller",""));
+            }
+
+            return RedirectToAction(nameof(HomeController.Error),nameof(HomeController).Replace("Controller",""),new {message = "Contact the Administrator of the site" });
         }
 
         [AllowAnonymous]

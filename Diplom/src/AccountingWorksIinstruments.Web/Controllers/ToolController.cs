@@ -2,6 +2,7 @@
 using AccountingWorkInstruments.DataAccess.Models;
 using AccountingWorksIinstruments.Web.Interfaces;
 using AccountingWorksIinstruments.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,6 +17,7 @@ using System.Threading.Tasks;
 
 namespace AccountingWorksIinstruments.Web.Controllers
 {
+    [Authorize(Roles = "Stock Boy, Admin")]
     public class ToolController : Controller
     {
         private readonly IMapperConfig _mapperConfig;
@@ -48,6 +50,10 @@ namespace AccountingWorksIinstruments.Web.Controllers
 
         public IActionResult Index()
         {
+            if (User.Identity.Name == null)
+            {
+                return RedirectToAction(nameof(AccountController.Login));
+            }
             return View();
         }
 
