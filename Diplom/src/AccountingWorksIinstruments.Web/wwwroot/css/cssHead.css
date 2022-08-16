@@ -1,0 +1,15 @@
+head
+{
+    background-image: url(wwwroot/bg-new2.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.bodyImage
+{
+    background-image: url(/images/Logo/bg-new2.jpg) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    position: relative;
+}

@@ -273,7 +273,7 @@ template {
 }
 
 body, button, input, select, textarea {
-    color: #333;
+    color: #fff;
     font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
     font-size: 15px;
     font-size: .9375rem;
@@ -552,7 +552,7 @@ input[type="radio"], input[type="checkbox"] {
     }
 
 button, input[type="button"], input[type="submit"] {
-    background-color: #222;
+    background-color: #fff;
     border: 0;
     -webkit-border-radius: 2px;
     border-radius: 2px;
@@ -675,7 +675,7 @@ td {
     }
 
 a {
-    color: #222;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -946,7 +946,7 @@ body {
 }
 
 .site-header {
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
     position: relative;
 }
 
