@@ -2,24 +2,33 @@
 @*@using Microsoft.AspNetCore.Mvc.Localization
 @inject IViewLocalizer Localizer*@
 @*<h2>@Localizer["NewUserRegistration"]</h2>*@
-<form method="post" asp-controller="Account" asp-action="Register">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="PasswordConfirm"></label><br />
-        <input asp-for="PasswordConfirm" />
-        <span asp-validation-for="PasswordConfirm"></span>
-    </div>
-    <div>
-        <input type="submit" value="Registration" />
-    </div>
-</form>
+<div class="d-flex justify-content-center">
+    <form method="post" asp-controller="Account" asp-action="Register">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label asp-for="Email" class="text-white">Введите почту: </label><br />
+                <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="text-white" asp-for="Password">Введите пароль: </label><br />
+                <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="text-white" asp-for="PasswordConfirm">Подтвердите пароль: </label><br />
+                <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default asp-for="PasswordConfirm" />
+                <span asp-validation-for="PasswordConfirm"></span>
+            </div>
+        </div>
+        <div>
+            <input class="btn btn-outline-light text-dark" type="submit" value="Регистрация" />
+        </div>
+    </form>
+</div>
+

@@ -3,19 +3,19 @@
     ViewData["Title"] = "PersonalAccount";
 }
 
-<h1>PersonalAccount</h1>
+<h1 class="text-center">Персональный аккаунт</h1>
 
-<div>
+<div class="d-flex justify-content-center">
     <div>
-        <a class="btn-dark" asp-controller="WorkerAccount" asp-action="ShowMyTools">Show Tools</a>
+        <a class="btn btn-outline-light" asp-controller="WorkerAccount" asp-action="ShowMyTools">Показать инструмент</a>
     </div>
     <div>
-        <a class="btn" asp-controller="WorkerAccount" asp-action="ShowMySubmission">Show my Submission</a>
+        <a class="btn btn-outline-light" asp-controller="WorkerAccount" asp-action="ShowMySubmission">Показать мои заявки</a>
     </div>
     <div>
-        <a class="btn" asp-controller="WorkerAccount" asp-action="CreateWorkerSubmission">Create Delivery Note</a>
+        <a class="btn btn-outline-light" asp-controller="WorkerAccount" asp-action="CreateWorkerSubmission">Создать заявку</a>
     </div>
     <div>
-        <a class="btn" asp-controller="WorkerAccount" asp-action="ShipmentFromBaseStock">Shipment From Base Stock</a>
+        <a class="btn btn-outline-light" asp-controller="WorkerAccount" asp-action="ShipmentFromBaseStock">Отправленный материал с базы</a>
     </div>
 </div>

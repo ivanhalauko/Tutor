@@ -1,25 +1,27 @@
 ﻿@model AccountingWorksIinstruments.Web.Models.LoginViewModel
 @using Microsoft.AspNetCore.Mvc.Localization
 @*@inject IViewLocalizer Localizer*@
-<h2>EnterInApp</h2>
-<form method="post" asp-controller="Account" asp-action="Login"
-      asp-route-returnUrl="@Model.ReturnUrl">
-    <div asp-validation-summary="ModelOnly"></div>
-    <div>
-        <label asp-for="Email"></label><br />
-        <input asp-for="Email" />
-        <span asp-validation-for="Email"></span>
-    </div>
-    <div>
-        <label asp-for="Password"></label><br />
-        <input asp-for="Password" />
-        <span asp-validation-for="Password"></span>
-    </div>
-    <div>
-        <label asp-for="RememberMe"></label><br />
-        <input asp-for="RememberMe" />
-    </div>
-    <div>
-        <input type="submit" value=Enter />
-    </div>
-</form>
+<h2 class="text-center text-white">Авторизация</h2>
+<div class="d-flex justify-content-center">
+    <form class="text-center" method="post" asp-controller="Account" asp-action="Login"
+          asp-route-returnUrl="@Model.ReturnUrl">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label asp-for="Email" class="text-white">Введите почту: </label><br />
+                <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="text-white" asp-for="Password">Введите пароль: </label><br />
+                <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+        </div>
+        <div>
+            <input class="btn btn-outline-light text-dark" type="submit" value=Войти />
+        </div>
+    </form>
+</div>

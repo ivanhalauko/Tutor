@@ -9,6 +9,7 @@ html {
 
 body {
     margin: 0;
+    height: 100%;
 }
 
 article, aside, footer, header, nav, section {
@@ -3014,7 +3015,7 @@ p > embed:only-child, p > iframe:only-child, p > object:only-child {
         font-size: 14px;
         font-size: .875rem;
         line-height: 1.6;
-        margin-top: 3em;
+        /* margin-top: 3em; */
     }
 
         .site-footer .widget-column.footer-widget-1 {
@@ -3797,13 +3798,14 @@ textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required {
             }
 
 footer {
-    margin-top: 0 !important;
-    background: #373737;
+    flex: 0 0 auto;
     color: #fff;
     /*     background-image: url(/wp-content/uploads/2019/05/bg-new.jpg) !important; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    margin-top: 200px;
+    height: 120px;
 }
 
 .site-info {
@@ -3818,6 +3820,7 @@ footer p {
     font-size: 21px;
     line-height: 1;
     text-align: center;
+    text-justify: auto;
 }
 
     footer p span {
