@@ -4,13 +4,13 @@
     ViewData["Title"] = "ShowMyTools";
 }
 
-<h1>ShowMyTools</h1>
+<h1 class="text-center">Показать мой инструмент</h1>
 
 <p>
-    <a asp-action="PersonalAccount">Back to personal account</a>
+    <a class="btn btn-outline-light" asp-action="PersonalAccount">На главную</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
             @*<th>
                 @Html.DisplayNameFor(model => model.Id)
@@ -35,7 +35,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="text-white">
             @*<td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>*@

@@ -4,12 +4,12 @@
     ViewData["Title"] = "HistoryOfADeliveryNotes";
 }
 
-<h1>HistoryOfADeliveryNotes</h1>
+<h1 class="text-center">HistoryOfADeliveryNotes</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+</p>*@
+<table class="table text-white">
     <thead>
         <tr>
             <th>
@@ -26,7 +26,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="text-white">
             <td>
                 @Html.DisplayFor(modelItem => item.NumberOfDeliveryNote)
             </td>
@@ -36,11 +36,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DeliveryDate)
             </td>
-            <td>
+            @*<td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>

@@ -4,11 +4,11 @@
     ViewData["Title"] = "UpdateTool";
 }
 
-<h1>UpdateTool</h1>
+<h1>Изменение инструмента</h1>
 
-<h4>ToolViewModel</h4>
+@*<h4>ToolViewModel</h4>*@
 <hr />
-<div class="row">
+<div class="row ">
     <div class="col-md-4">
         <form asp-action="UpdateTool">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -17,12 +17,12 @@
                 <span type="hidden" asp-validation-for="Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label text-white">Название инструмента</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label text-white">Описание инструмента</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
@@ -32,22 +32,23 @@
             <span asp-validation-for="LocationId" class="text-danger"></span>
         </div>*@
             <div>
-                <label asp-for="NameOfLocation" class="control-label">Name of the Organization</label>
+                <label asp-for="NameOfLocation" class="control-label text-white">Местоположение инструмента</label>
                 @Html.DropDownList("NameOfLocation", ViewBag.Locations as SelectList, new { id = "nameOfLocation" })
             </div>
             <div>
-                <label asp-for="StatusDiscription" class="control-label">Status</label>
+                <label asp-for="StatusDiscription" class="control-label text-white">Статус инструмента</label>
                 @Html.DropDownList("StatusDiscription", ViewBag.Status as SelectList, new { id = "statusDiscription" })
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-                @*@Html.ActionLink("Update Tool", "UpdateTool", "Tool", new {id = Model.Id})*@
+            <p></p>
+            <div class="form-group ">
+                <input type="submit" value="Save" class="btn btn-outline-light text-dark"/>
+                @Html.ActionLink("Update Tool", "UpdateTool", "Tool", new {id = Model.Id})
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div class="form-group btn btn-outline-light">
     <a asp-action="Tool" asp-controller="Tool">Back to List</a>
 </div>
 

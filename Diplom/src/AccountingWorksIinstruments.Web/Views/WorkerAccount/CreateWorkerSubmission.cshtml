@@ -6,26 +6,26 @@
 }
  
 
-<h1>CreateSubmissionFromWorker</h1>
+<h1 class="text-center">Создать заявку</h1>
 
-<h4>SubmissionFromWorkers</h4>
-<hr />
+@*<h4>SubmissionFromWorkers</h4>*@
+@*<hr />*@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="CreateWorkerSubmission" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Purpose" class="control-label"></label>
+                <label asp-for="Purpose" class="control-label text-white"></label>
                 <input id="purp" asp-for="Purpose" class="form-control" />
                 <span asp-validation-for="Purpose" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DateOfDelivery" class="control-label"></label>
+                <label asp-for="DateOfDelivery" class="control-label text-white"></label>
                 <input asp-for="DateOfDelivery" class="form-control" />
                 <span asp-validation-for="DateOfDelivery" class="text-danger"></span>
             </div>
             <table class="table">
-                <thead>
+                <thead class="text-white">
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.AvailableTools.FirstOrDefault().Name)
@@ -42,12 +42,12 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-white">
                     @foreach (var item in Model.AvailableTools)
                     {
                         @if (item.MarkFromWorker == true)
                         {
-                            <tr style="background-color:burlywood; color:slategray">
+                            <tr style="background-color:yellowgreen; color:black">
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Name)
                                 </td>
@@ -81,7 +81,7 @@
                                     <img src="@item.PosterImageUrl" style="width:100px" />
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Add to List", "AddToSubmissionList", new { toolId = item.Id }) |
+                                    @Html.ActionLink("Add to List", "AddToSubmissionList", new { toolId = item.Id }) 
                                 </td>
                             </tr>
                         }
@@ -90,7 +90,7 @@
                 </tbody>
             </table>
             <table class="table">
-                <thead>
+                <thead class="text-white">
                     <tr>
                         <th>
                             @Html.DisplayNameFor(model => model.ToolForShipment.FirstOrDefault().Name)
@@ -107,7 +107,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-white">
                     @foreach (var item in Model.ToolForShipment)
                     {
                         @if (item.MarkFromWorker == true)
@@ -126,7 +126,7 @@
                                     <img src="@item.PosterImageUrl" style="width:100px" />
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Remove", "RemoveFromSubmissionList", new { toolId = item.Id }) |
+                                    @Html.ActionLink("Remove", "RemoveFromSubmissionList", new { toolId = item.Id }) 
                                 </td>
                             </tr>
                         }
@@ -134,13 +134,13 @@
                 </tbody>
             </table>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-outline-light text-dark" />
             </div>
         </form>
         <table></table>
     </div>
 </div>
 
-<div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@

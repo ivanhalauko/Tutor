@@ -1,13 +1,13 @@
 ﻿<form method="get" asp-action="GetWorkersTool" asp-controller="Stock">
     <div class="form-group">
-        <label class="control-label">Worker</label>
+        <label class="control-label text-white">Рабочий на котором числится</label>
         @Html.DropDownList("WorkerId", ViewBag.WorkersList as SelectList, new { id = "userName" })
     </div>
     <div class="form-group">
-        <label class="control-label">Worker Destination</label>
+        <label class="control-label text-white">Рабочий на которого переместить</label>
         @Html.DropDownList("WorkerId", ViewBag.DestinationWorker as SelectList, new { id = "destinationUserName" })
     </div>
     <div class="form-group">
-    <input type="submit" value="Get Workers Tool" class="btn btn-outline-dark" />
+    <input type="submit" value="Переместить инструмент" class="btn btn-outline-light text-dark" />
     </div>
     </form>

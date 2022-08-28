@@ -4,16 +4,16 @@
     ViewData["Title"] = "CreateWriteOffTool";
 }
 
-<h1>CreateWriteOffTool</h1>
+<h1 class="text-center">Создание заявки на списание инструмента</h1>
 
-<p>
-    <button style="btn-light">
+@*<p>
+    <button  class="btn btn-outline-light text-dark">
         <a asp-action="WriteOffToolsSubmissions">Write off tools submissions</a>
     </button>
-</p>
+</p>*@
 
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -30,12 +30,12 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-white">
         @foreach (var item in Model)
         {
             @if (item.MarkWriteOffTools == true)
             {
-                <tr style="background-color:burlywood; color:slategray">
+                <tr style="background-color:greenyellow; color:black">
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
@@ -78,7 +78,7 @@
     </tbody>
 </table>
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
@@ -95,7 +95,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-white">
         @foreach (var item in Model)
         {
             @if (item.MarkWriteOffTools == true)
@@ -122,7 +122,7 @@
     </tbody>
 </table>
 <p>
-    <button style="btn-light">
-        <a asp-action="CreateSubmissionWriteOffTools">Create Submission</a>
+    <button class="text-dark btn btn-outline-light">
+        <a asp-action="CreateSubmissionWriteOffTools">Создать заявку</a>
     </button>
 </p>

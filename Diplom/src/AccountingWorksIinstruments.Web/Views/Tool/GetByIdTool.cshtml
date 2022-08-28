@@ -4,12 +4,12 @@
     ViewData["Title"] = "GetByIdTool";
 }
 
-<h1>GetByIdTool</h1>
+<h1 class="text-center">Информация о инструменте</h1>
 
 <div>
-    <h4>ToolViewModel</h4>
+    @*<h4>ToolViewModel</h4>*@
     <hr />
-    <dl class="row">
+    <dl class="row text-white">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -36,7 +36,9 @@
         </dd>
     </dl>
 </div>
-<div>
-    @Html.ActionLink("Edit", "UpdateTool", new {  id = Model.FirstOrDefault().Id }) |
+<div class="form-group btn btn-outline-light">
+    @Html.ActionLink("Edit", "UpdateTool", new {  id = Model.FirstOrDefault().Id }) 
+</div>
+<div class="form-group btn btn-outline-light">
     <a asp-action="Tool" asp-controller="Tool">Back to List</a>
 </div>

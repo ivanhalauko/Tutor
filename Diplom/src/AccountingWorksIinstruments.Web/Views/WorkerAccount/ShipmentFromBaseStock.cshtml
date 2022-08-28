@@ -5,13 +5,13 @@
     ViewData["Title"] = "ShipmentFromBaseStock";
 }
 
-<h1>ShipmentFromBaseStock</h1>
+<h1 class="text-center">Отправленный материал с базы</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Id)
@@ -37,7 +37,7 @@
             <th>Status</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-white">
         @foreach (var item in Model)
         {
             <tr>
@@ -51,7 +51,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.PosterImageUrl)
+                    <img src="@item.PosterImageUrl" style="width:100px" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.NameOfLocation)
@@ -65,7 +65,7 @@
             
             @if (item.AspNetUsersId == _identityUserManager.FindByNameAsync(User.Identity.Name).Result.Id)
             {
-            <td style="background-color:greenyellow">
+            <td style="background-color:greenyellow; color:red">
                 Accepted
             </td>
             }

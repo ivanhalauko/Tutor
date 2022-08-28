@@ -4,15 +4,13 @@
     ViewData["Title"] = "SubmissionsFromWorkers";
 }
 
-<h1>SubmissionsFromWorkers</h1>
+<h1 class="text-center">SubmissionsFromWorkers</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
-            <th>
+            <th >
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
@@ -32,7 +30,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="text-white">
             <td>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
@@ -49,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.SubmissionId)
             </td>
             <td>
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) 
             </td>
         </tr>
 }

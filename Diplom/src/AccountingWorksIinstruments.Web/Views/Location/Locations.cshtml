@@ -4,41 +4,41 @@
     ViewData["Title"] = "Locations";
 }
 
-<h1>Locations</h1>
+<h1>Локации</h1>
 
 <p>
-    <a asp-action="CreateLocation">Create New</a>
+    <a asp-action="CreateLocation">Создать новую локацию</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="text-white text-center">
         <tr>
-            <th>
+            <th hidden>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.NameOfLocation)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.WarehouseId)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-white ">
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td hidden>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NameOfLocation)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.WarehouseId)
-            </td>
-            <td>
+            </td>*@
+            <td class="text-right">
                 @Html.ActionLink("Edit", "UpdateLocation", new {  id=item.Id }) |
-                @Html.ActionLink("Details", "GetByIdLocation", new { id=item.Id }) |
+                @*@Html.ActionLink("Details", "GetByIdLocation", new { id=item.Id }) |*@
                 @Html.ActionLink("Delete", "DeleteLocation", new { id=item.Id })
             </td>
         </tr>

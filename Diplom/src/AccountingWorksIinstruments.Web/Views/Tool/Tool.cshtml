@@ -4,44 +4,49 @@
     ViewData["Title"] = "Tool";
 }
 
-<h1>Tool</h1>
+<h1 class="text-center">Инструменты</h1>
 
 <p>
-    <a asp-action="CreateTool">Create New</a>
+    <a asp-action="CreateTool">Создать новый инструмент</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
+                <label class="control-label text-white">Название</label>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
+                <label class="control-label text-white">Описание</label>
             </th>
             @*<th hidden>
             @Html.DisplayNameFor(model => model.LocationId)
         </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.NameOfLocation)
-            </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfLocation)
+            <label class="control-label text-white">Местоположение</label>
+        </th>
             @*<th>
             @Html.DisplayNameFor(model => model.StatusId)
         </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.StatusDiscription)
+            <label class="control-label text-white">Состояние инструмента</label>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+            <label class="control-label text-white">Владелец</label>
+        </th>
             <th>
-                @Html.DisplayNameFor(model => model.StatusDiscription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th>
-                Picture
+                Картинка
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="text-white">
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -70,7 +75,7 @@
                 @Html.ActionLink("Edit", "UpdateTool", new { id = item.Id }) |
                 @Html.ActionLink("Details", "GetByIdTool", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "DeleteTool", new { id = item.Id }) |
-                @Html.ActionLink("Change owner", "ChangeOwner", new { id = item.Id })
+                @Html.ActionLink("ChangeOwner", "ChooseWorkers","Stock", new { id = item.Id })
             </td>
         </tr>
 }

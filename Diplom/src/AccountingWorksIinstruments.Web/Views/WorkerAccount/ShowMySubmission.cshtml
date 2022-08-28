@@ -4,17 +4,17 @@
     ViewData["Title"] = "ShowMySubmission";
 }
 
-<h1>ShowMySubmission</h1>
+<h1 class="text-center">Показать мои заявки</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
-    <thead>
+    <thead class="text-white">
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Id)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -32,10 +32,10 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr class="text-white">
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Id)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -48,11 +48,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfDelivery)
             </td>
-            <td>
+            @*<td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>

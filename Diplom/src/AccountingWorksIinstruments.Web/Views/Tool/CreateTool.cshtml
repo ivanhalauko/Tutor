@@ -4,26 +4,26 @@
     ViewData["Title"] = "CreateTool";
 }
 
-<h1>CreateTool</h1>
+<h1 class="text-center">Новый инструмент</h1>
 
-<h4>ToolViewModel</h4>
+@*<h4>ToolViewModel</h4>*@
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 ">
         <form enctype="multipart/form-data" asp-action="CreateTool">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div asp-validation-summary="ModelOnly" class="text-white"></div>
             @*<div hidden class="form-group">
             <label asp-for="Id" class="control-label"></label>
             <input asp-for="Id" class="form-control" />
             <span asp-validation-for="Id" class="text-danger"></span>
         </div>*@
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+            <div class="form-group text-white">
+                <label asp-for="Name" class="control-label text-white">Название</label>
                 <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <span asp-validation-for="Name" class="text-white"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
+                <label asp-for="Description" class="control-label text-white">Описание</label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
@@ -38,7 +38,7 @@
             <span asp-validation-for="NameOfTheOrganization" class="text-danger"></span>
         </div>*@
             <div>
-                <label asp-for="NameOfLocation" class="control-label">Name of Location</label>
+                <label asp-for="NameOfLocation" class="control-label text-white">Местоположение</label>
                 @Html.DropDownList("LocationId", ViewBag.Locations as SelectList, new { id = "nameOfLocation" })
             </div>
             @*<div hidden class="form-group">
@@ -47,23 +47,23 @@
                 <span asp-validation-for="StatusId" class="text-danger"></span>
             </div>*@
             <div>
-                <label asp-for="StatusDiscription" class="control-label">Status</label>
+                <label asp-for="StatusDiscription" class="control-label text-white">Статус инструмента</label>
                 @Html.DropDownList("StatusId", ViewBag.Status as SelectList, new { id = "statusDiscription" })
             </div>
-            <label asp-for="PosterImage" class="control-label">Poster-Image</label>
+            <label asp-for="PosterImage" class="control-label text-white">Картинка инструмента</label>
             <div class="custom-file">
                 <input type="file" asp-for="PosterImage" class="custom-file-input" id="customFile" />
-                <label class="custom-control-label" for="customFile">Choose File</label>
+                <label class="custom-control-label text-white" for="customFile">Выберите файл</label>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-outline-light text-dark" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Tool" asp-controller="Tool">Back to List</a>
+    <a asp-action="Tool" asp-controller="Tool">Вернуться к списку инструментов</a>
 </div>
 
 <script type="text/javascript">
