@@ -13,3 +13,20 @@ head
     background-size: cover !important;
     position: relative;
 }
+#nameOfLocation
+{
+    color:black;
+}
+
+#statusDiscription
+{
+    color:black;
+}
+#userName
+{
+    color:black;
+}
+#destinationUserName
+{
+    color:black;
+}

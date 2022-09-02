@@ -70,6 +70,33 @@ namespace AccountingWorksIinstruments.Web.Controllers
             var submissionForToolTools = _submissionForToolToolService.ReadAll();
             var submissionForTools = _submissionForToolsService.ReadAll();
             var viewsubmissionForToolTools = _mapperConfig.Mapper.Map<IEnumerable<SubmissionForToolTool>, IEnumerable<SubmissionFromWorkersViewModel>>(submissionForToolTools);
+            foreach (var item in viewsubmissionForToolTools)
+            {
+                var submissionById = submissionForTools.Where(x => x.Id == item.SubmissionId).FirstOrDefault();
+                 item.Purpose = submissionById.Purpose;
+                item.DateOfDelivery = submissionById.DateOfDelivery;
+            }
+            return View(viewsubmissionForToolTools);
+        }
+
+        public ActionResult SubmissionsFromWorkersDetails(int id)
+        {
+            var submissionForToolTools = _submissionForToolToolService.ReadAll();
+            var submissionById = submissionForToolTools.Where(x => x.SubmissionId == id).FirstOrDefault();
+            var submissionForTools = _submissionForToolsService.ReadAll();
+            var tools = _toolService.ReadAll();
+            var locations = _locationServices.ReadAll();
+            var viewsubmissionForToolTools = _mapperConfig.Mapper.Map<SubmissionForToolTool, SubmissionFromWorkersDetailsViewModel>(submissionById);
+            var submissionByIdSubmission = submissionForTools.Where(x => x.Id == viewsubmissionForToolTools.SubmissionId).FirstOrDefault();
+            viewsubmissionForToolTools.Purpose = submissionByIdSubmission.Purpose;
+            viewsubmissionForToolTools.DateOfDelivery = submissionByIdSubmission.DateOfDelivery;
+            var toolById = tools.Where(x => x.Id == viewsubmissionForToolTools.ToolId).FirstOrDefault();
+            viewsubmissionForToolTools.ToolName = toolById.Name;
+            viewsubmissionForToolTools.PosterImage = toolById.PosterImageUrl;
+            var userById = _identityUserManager.FindByIdAsync(toolById.AspNetUsersId).Result;
+            viewsubmissionForToolTools.UserName = userById.UserName;
+            var locationById = locations.Where(x => x.Id == toolById.LocationId).FirstOrDefault();
+            viewsubmissionForToolTools.NameOfLocation = locationById.NameOfLocation;
             return View(viewsubmissionForToolTools);
         }
         public ActionResult HistoryOfADeliveryNotes()

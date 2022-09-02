@@ -40,6 +40,7 @@
                 <span asp-validation-for="WorkerId" class="text-danger"></span>
                 @Html.DropDownList("WorkerId", ViewBag.Workers as SelectList, new { id = "userName" })
             </div>
+
             <table class="table">
                 <thead class="text-white">
                     <tr>
@@ -147,19 +148,27 @@
                             </tr>
                         }
                     }
+
                 </tbody>
+                <div>
+                    <button id="btnPrint" class="btn btn-outline-light ignoreForPdf">Print</button>
+                </div>
             </table>
+
             <div class="form-group">
                 <input type="submit" value="Сохранить" class="btn btn-outline-light text-dark" />
             </div>
         </form>
-        <table></table>
     </div>
 </div>
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<div>
+    <button id="btnPrint" class="btn btn-outline-light ignoreForPdf">Print</button>
+</div>
+
 
 <script type="text/javascript">
     $(function() {
@@ -175,4 +184,15 @@
             });
         });
     })
+</script>
+
+<script src="~/js/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnPrint").click(function () {
+            $(".ignoreForPdf").hide();
+            window.print();
+            $(".ignoreForPdf").show();
+        });
+    });
 </script>

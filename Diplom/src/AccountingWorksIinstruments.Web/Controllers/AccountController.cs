@@ -115,6 +115,10 @@ namespace AccountingWorksIinstruments.Web.Controllers
             {
                 return RedirectToAction(nameof(StockController.StockAccount),nameof(StockController).Replace("Controller",""));
             }
+            else if (User.IsInRole("Admin"))
+            {
+                return RedirectToAction(nameof(AccountController.Index), nameof(AccountController).Replace("Controller", ""));
+            }
 
             return RedirectToAction(nameof(HomeController.Error),nameof(HomeController).Replace("Controller",""),new {message = "Ошибка: Controller - AccountController, Action - CheckUpRole. Пожалуйста, обратитесь к администратору" });
         }

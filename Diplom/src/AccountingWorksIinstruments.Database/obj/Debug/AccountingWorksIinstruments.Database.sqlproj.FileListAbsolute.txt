@@ -1,0 +1,10 @@
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.dacpac
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\bin\Debug\AccountingWorksIinstruments.Database.pdb
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.sqlproj.AssemblyReference.cache
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\Model.xml
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\refactor.xml
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\postdeploy.sql
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\predeploy.sql
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.dll
+D:\LearnDotNet\Tutor\Diplom\src\AccountingWorksIinstruments.Database\obj\Debug\AccountingWorksIinstruments.Database.pdb

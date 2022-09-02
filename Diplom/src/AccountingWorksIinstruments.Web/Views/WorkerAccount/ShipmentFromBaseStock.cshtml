@@ -25,12 +25,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.PosterImageUrl)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.NameOfLocation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Purpose)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DateOfDelivery)
             </th>
@@ -53,12 +53,12 @@
                 <td>
                     <img src="@item.PosterImageUrl" style="width:100px" />
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.NameOfLocation)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Purpose)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.DateOfDelivery)
                 </td>

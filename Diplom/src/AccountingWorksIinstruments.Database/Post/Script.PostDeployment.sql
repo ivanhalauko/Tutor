@@ -78,7 +78,9 @@ if not exists (SELECT*FROM dbo.AspNetUserRoles WHERE UserId='b8055e4f-d51d-4422-
 begin 
 insert into dbo.AspNetUserRoles(UserId,RoleId)
 values
-('b8055e4f-d51d-4422-a59a-bd1f87ab616b','93288d77-4729-4b10-8d58-caa19f6a73cf')
+('b8055e4f-d51d-4422-a59a-bd1f87ab616b','93288d77-4729-4b10-8d58-caa19f6a73cf'),
+('283b1569-66d6-461e-8f72-f92c394884fe','03b995ca-b196-43c9-9a54-b1be52f97412'),
+('54301f6b-5463-4024-9cac-770a6eaee02f','2834e398-f2e5-4477-8e43-8211d3dc9d5b')
 end
 GO
 

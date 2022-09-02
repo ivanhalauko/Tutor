@@ -10,7 +10,7 @@
 <table class="table">
     <thead class="text-white">
         <tr>
-            <th >
+            <th hidden>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
@@ -19,19 +19,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.DateOfDelivery)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ToolId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubmissionId)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr class="text-white">
-            <td>
+            <td hidden>
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
@@ -41,13 +34,7 @@
                 @Html.DisplayFor(modelItem => item.DateOfDelivery)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ToolId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubmissionId)
-            </td>
-            <td>
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) 
+                @Html.ActionLink("Details", "SubmissionsFromWorkersDetails", new {id=item.Id}) 
             </td>
         </tr>
 }

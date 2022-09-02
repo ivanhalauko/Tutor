@@ -77,7 +77,8 @@ namespace AccountingWorksIinstruments.Web.Controllers
                 Status status = statuses.Find(p => p.Id == statusId);
                 item.StatusDiscription = status.StatusDiscription;
                 //item.UserName = User.Identity.Name;
-                //var temp = await _identityUserManager.FindByIdAsync(item.AspNetUserId);
+                var temp = await _identityUserManager.FindByIdAsync(item.AspNetUsersId);
+                item.UserName = temp.UserName;
                 //var secTemp = temp.UserName.ToString();
                 //item.UserName = (await _identityUserManager.FindByIdAsync(item.AspNetUserId)).UserName.ToString();
             }
