@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountingWorkInstruments.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountingWorksIinstruments.IntegrationTests", "test\AccountingWorksIinstruments.IntegrationTests\AccountingWorksIinstruments.IntegrationTests.csproj", "{8C7569B2-A43D-4134-A6D4-37EF4407A793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingWorksIinstruments.Web", "src\AccountingWorksIinstruments.Web\AccountingWorksIinstruments.Web.csproj", "{BDA768C8-58BA-4451-8576-0CC754D080A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccountingWorksIinstruments.Web", "src\AccountingWorksIinstruments.Web\AccountingWorksIinstruments.Web.csproj", "{BDA768C8-58BA-4451-8576-0CC754D080A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

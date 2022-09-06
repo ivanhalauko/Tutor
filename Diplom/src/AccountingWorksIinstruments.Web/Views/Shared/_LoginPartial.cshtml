@@ -1,28 +1,28 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
-@*@using Microsoft.AspNetCore.Mvc.Localization*@
-@*@inject IViewLocalizer Localizer*@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-            <a class="btn btn-outline-light" asp-controller="Account" asp-action="CheckUpRole" title="Manage">Привет @User.Identity.Name!</a>
+            <a class="btn btn-outline-light" asp-controller="Account" asp-action="CheckUpRole" title="Manage">@Localizer["Hello"] @User.Identity.Name!</a>
         </li>
         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
             <form class="form-inline" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="btn btn-outline-light">Выйти</button>
+                <button type="submit" class="btn btn-outline-light">@Localizer["LogOut"]</button>
             </form>
         </li>
     }
     else
     {
         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-            <a class="btn btn-outline-light" asp-controller="Account" asp-action="Register">Регистрация</a>
+            <a class="btn btn-outline-light" asp-controller="Account" asp-action="Register">@Localizer["Register"]</a>
         </li>
         <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
-            <a class="btn btn-outline-light" asp-controller="Account" asp-action="Login">Авторизация</a>
+            <a class="btn btn-outline-light" asp-controller="Account" asp-action="Login">@Localizer["Authorization"]</a>
         </li>
     }
 </ul>

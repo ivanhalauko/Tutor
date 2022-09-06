@@ -10,14 +10,14 @@ end
 GO
 
 --- Location
-if not exists (SELECT*FROM dbo.Location WHERE NameOfLocation='RKP' and WarehouseId=1)
+if not exists (SELECT*FROM dbo.Location WHERE NameOfLocation='RKP')
 begin
-insert into dbo.Location(NameOfLocation,WarehouseId)
+insert into dbo.Location(NameOfLocation)
 values
-('RKP',1),
-('Alcopack',2),
-('KSK',1),
-('DELCOM',3)
+('RKP'),
+('Alcopack'),
+('KSK'),
+('DELCOM')
 end
 GO
 
